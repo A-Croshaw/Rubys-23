@@ -1,0 +1,107 @@
+{% load static %}
+<header class="container-fluid">
+    <div class="fixed-top">
+        <div id="topnav" class="row d-none d-lg-flex nav-bg p-2">
+            <div class="col-12 col-md-4 px-4">
+                <a href="{% url 'home' %}" class="nav-link nav-txt" aria-label="return to home page">
+                    <h1 class="logo">Ruby's</h1>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 pt-1">
+                <form method="GET" action="">
+                    <div class="input-group">
+                        <input class="form-control rounded" type="text" name="q" placeholder="Search our site">
+                        <div>
+                            <button class="btn nav-txt" type="submit">
+                                <span>
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-4 d-md-flex justify-content-end pe-5">
+                <ul class="list-inline list-unstyled my-0 d-md-flex gap-md-4">
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link nav-txt" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" aria-label="My account">
+                            <div class="text-center nav-txt">
+                                <div><i class="fas fa-user fa-md"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu border-0">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <!--Product management links for admin users-->
+                                <a href="" class="dropdown-item"
+                                    aria-label="View Book management">Book Management</a>
+                                {% endif %}
+                            <!--Profile link-->
+                            <a href="" class="dropdown-item" aria-label="View profile">My Profile</a>
+                            <!--Account links-->
+                            <li><a href="" class="dropdown-item"
+                                    aria-label="logout">Logout</a></li>
+                            {% else %}
+                            <li><a href="" class="dropdown-item"
+                                    aria-label="sign up">Register</a></li>
+                            <li><a href="" class="dropdown-item" aria-label="login">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <!--Shopping Cart-->
+                    <li class="list-inline-item">
+                        <a class="nav-link" href="" aria-label="shopping cart">
+                            <div class="text-center nav-txt">
+                                <div><i class="fas fa-shopping-bag fa-md"></i></div>
+                                <p class="my-0">
+                                    {% if overal_total %}
+                                    €{{ overal_total|floatformat:2 }}
+                                    {% else %}
+                                    €0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Delivery Banner Showing Free Delivery Amount-->
+        <div class="row delivery-banner w-110 my-0">
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                <h1 class="m-0 p-1 delivery-txt">Free delivery on orders over €{{ free_delivery }} ----
+                    Red tag <i class="fa-solid fa-tag fa-beat banner-tag"></i> sale on used books ----
+                    Free delivery on orders over €{{ free_delivery }} ----
+                    Red tag <i class="fa-solid fa-tag fa-beat banner-tag"></i> sale on used books ----
+                    Free delivery on orders over €{{ free_delivery }} ----
+                    Red tag <i class="fa-solid fa-tag fa-beat banner-tag"></i> sale on used books ----
+                    Free delivery on orders over €{{ free_delivery }} ----
+                    Red tag <i class="fa-solid fa-tag fa-beat banner-tag"></i> sale on used books ----
+                    Free delivery on orders over €{{ free_delivery }}
+                </h1>
+            </marquee>
+        </div>
+        <div class="row nav-bg">
+            <nav class="navbar navbar-expand-lg ps-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-header.html' %}
+                <div class="offcanvas offcanvas-menu offcanvas-start " tabindex="-1" id="navbarOffcanvasLg"
+                    aria-labelledby="navbarOffcanvasLgLabel">
+                    <div class="offcanvas-header nav-bg">
+                        <h1 class="logo">Ruby's</h1>
+                        <button type="button" class="btn-close mb-5 p-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body nav-bg">
+                        {% include 'includes/categories.html' %}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

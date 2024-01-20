@@ -1,0 +1,23 @@
+<!--Logo for mobile view -->
+<li class="list-inline-item d-block d-lg-none">
+    <div class="py-1">
+        <a href="{% url 'home' %}" class="nav-link p-0 nav-txt" aria-label="Return to home page">
+            <h1 class="logo">Ruby's</h1>
+        </a>
+    </div>
+</li>
+<!--Shopping cart for mobile view-->
+<li class="list-inline-item pe-3">
+    <a class="nav-link d-block d-lg-none" href="" aria-label="View shopping cart">
+        <div class="text-center nav-txt">
+            <div><i class="fas fa-shopping-bag fa-md"></i></div>
+            <p class="my-0">
+                {% if overal_total %}
+                €{{ overal_total|floatformat:2 }}
+                {% else %}
+                €0.00
+                {% endif %}
+            </p>
+        </div>
+    </a>
+</li>

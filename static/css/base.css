@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Yatra+One&family=Zilla+Slab&display=swap');
+
+:root {
+    /* Fonts */
+    --logo: 'Shadows Into Light', serif;
+    --delivery: 'Yatra One', serif;
+    --headers: 'Shadows Into Light', serif;
+    --txt: 'Zilla Slab', serif, arial;
+
+    /* Colours */
+    --bg-color: #aaaaaa;
+    /* Header and Footer Colours */
+    --nav-footer: #504f4f;
+    --nav-footer-hover: #ff0000;
+    --side-nav: #ffffff;
+    /* Banner Colours */
+    --banners: #000000;
+    --banner-txt: #ffffff;
+    --banner-tag: #fa0000;
+    /* Text */
+    --txt-color: #000000;
+}
+
+body {
+    background: url(/media/background-image.webp) no-repeat center;
+    background-attachment: fixed;
+    background-color: var(--bg-color);
+}
+
+.bg-fade {
+    background-color: var(--bg-fade);
+    z-index: 99999999999;
+
+}
+
+/* header */
+.nav-bg {
+    background-color: var(--nav-footer);
+}
+
+.nav-txt {
+    color: var(--txt-color);
+    font-family: var(--nav);
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.nav-txt:hover {
+    color: var(--nav-footer-hover);
+}
+
+.logo {
+    font-family: var(--logo);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.side-nav{
+    border: none;
+}
+
+.side-nav-txt{
+    font-size: 1rem;
+}
+
+/* Delivery Banner */
+.delivery-banner {
+    background-color: var(--banners);
+    color: var(--banner-txt);
+    font-family: var(--delivery);
+}
+
+.delivery-txt {
+    font-size: 1.5rem;
+
+}
+
+.banner-tag{
+    color: var(--banner-tag);
+}
+
+/* footer */
+footer {
+    background-color: var(--nav-footer);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 2.5rem;
+}
+
+footer a {
+    padding-top: 10px;
+}
+
+footer a:hover {
+    background-color: var(--nav-footer-hover);
+    border-radius: 50%;
+}
+
+/* Generic */
+
+.header-offset {
+    margin-top: 125px;
+}
+
+@media (max-width: 991px){
+    .offcanvas-menu{
+        max-width: 200px;
+        margin-top: 100px;
+        min-height: fit-content;
+    }
+}
