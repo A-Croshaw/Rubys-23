@@ -1,6 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+
 <head>
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,6 +27,7 @@
     <!-- Stripe js -->
     {% endblock %}
 </head>
+
 <body>
     {% include 'includes/header.html' %}
     <div class="container row d-flex float-right">
@@ -58,7 +60,6 @@
     </main>
     <!--Footer-->
     {% include 'includes/footer.html' %}
-
     <!--Post Load JS-->
     {% block postloadjs %}
     {% endblock %}
