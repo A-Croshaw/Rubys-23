@@ -31,18 +31,21 @@
                                 <p class="my-0 dropdown-toggle">Account</p>
                             </div>
                         </a>
-                        <ul class="dropdown-menu nav-bg text-center p-0 m-0">
+                        <ul class="dropdown-menu account-menu nav-bg text-center p-0 m-0">
                             {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <!--Product management links for admin users-->
-                            <a href="" class="nav-link p-0 m-0" aria-label="View Book management">Book Management</a>
-                            {% endif %}
+                                {% if request.user.is_superuser %}
+                                <!--Book management links for admin users-->
+                                <a href="" class="nav-link nav-txt p-0 m-0"
+                                    aria-label="View Book management">Book Management</a>
+                                {% endif %}
                             <!--Profile link-->
                             <a href="" class="nav-link nav-txt p-0 m-0" aria-label="View profile">My Profile</a>
                             <!--Account links-->
-                            <li><a href="" class="nav-link nav-txt p-0 m-0" aria-label="logout">Logout</a></li>
+                            <li><a href="" class="nav-link nav-txt p-0 m-0"
+                                    aria-label="logout">Logout</a></li>
                             {% else %}
-                            <li><a href="" class="nav-link nav-txt p-0 m-0" aria-label="sign up">Register</a></li>
+                            <li><a href="" class="nav-link nav-txt p-0 m-0"
+                                    aria-label="sign up">Register</a></li>
                             <li><a href="" class="nav-link nav-txt p-0 m-0" aria-label="login">Login</a>
                             </li>
                             {% endif %}
@@ -92,8 +95,7 @@
                     aria-labelledby="navbarOffcanvasLgLabel">
                     <div class="offcanvas-header nav-bg">
                         <h1 class="nav-txt logo">Ruby's</h1>
-                        <button type="button" class="btn-close mb-5 p-1" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close mb-5 p-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body nav-bg">
                         {% include 'includes/nav-items.html' %}

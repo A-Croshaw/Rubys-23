@@ -1,5 +1,5 @@
 <!-- Nav bar Items for offcanvas side menu -->
-<ul class="navbar-nav justify-content-evenly flex-grow-1 d-block d-lg-none ">
+<ul class="navbar-nav justify-content-evenly flex-grow-1 d-block d-lg-none">
     <!--Nave items-->
     <li class="nav-item m-0 mb-1 p-0">
         <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="{% url 'home' %}" id="home-link"
@@ -255,13 +255,40 @@
             </li>
         </ul>
     </li>
-    <li class="nav-item m-0 mb-1 p-0">
-        <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="" aria-label="View about our company">
+    <li class="nav-item dropdown m-0 mb-1 p-0">
+        <a class="nav-link dropdown-toggle nav-txt side-nav-txt m-0 p-0" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account">
             Account
         </a>
+        <ul class="dropdown-menu nav-bg side-nav">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <li class="nav-item m-0 mb-1 p-0">
+                <!--Product management links for admin users-->
+                <a href="" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View Book management">Book
+                    Management</a>
+            </li>
+            {% endif %}
+            <li class="nav-item m-0 mb-1 p-0">
+                <!--Profile link-->
+                <a href="" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View profile">My Profile</a>
+            </li>
+            <!--Account links-->
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="logout">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="sign up">Register</a>
+            </li>
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="login">Login</a>
+            </li>
+            {% endif %}
+        </ul>
     </li>
     <li class="nav-item m-0 mb-1 p-0">
-        <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="" aria-label="View you account">
+        <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="" aria-label="View about section">
             About
         </a>
     </li>

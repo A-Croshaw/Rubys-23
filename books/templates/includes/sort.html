@@ -1,0 +1,166 @@
+<!--Sorting buttons large Screens-->
+<div class="row d-flex justify-content-center pt-1 d-none d-lg-flex">
+    <p class="sort-txt text-center">
+        {{ books|length }} Books{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+    </p>
+    <p class="sort-txt text-center"><strong>Order by:</strong> </p>
+    <ul class="nav justify-content-center gap-4 gap-md-4">
+        <li class="nav-item">
+            <a href="{% url 'books' %}" class="sort-txt" aria-label="rest sorting filters">Reset</a>
+        </li>
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Price</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="price-up" value="price_asc" {% if sorted == 'price_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by price assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="price-down" value="price_desc" {% if sorted == 'price_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by price dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Author</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="author-up" value="author_asc" {% if sorted == 'author_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by author assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="author-down" value="author_desc" {% if sorted == 'author_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by author dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Title</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="title-up" value="title_asc" {% if sorted == 'title_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by title assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="title-down" value="title_desc" {% if sorted == 'title_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by title dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Rating</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="rating-up" value="rating_asc" {% if sorted == 'rating_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by rating assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="rating-down" value="rating_desc" {% if sorted == 'rating_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by rating dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <hr class="mt-1 mb-4 black-bg">
+</div>
+<!--Sorting buttons for screen widths 992px and less -->
+<div class="row d-flex justify-content-center pt-1 d-block d-lg-none">
+    <p class="sort-txt text-center">
+        {{ books|length }} Books{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+    </p>
+    <p class="sort-txt text-center"><strong>Order by:</strong> </p>
+    <ul class="nav justify-content-center gap-4 gap-md-4">
+        <li class="nav-item">
+            <div>
+                <a href="{% url 'books' %}" class="sort-txt">Reset</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Price</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="price-up" value="price_asc" {% if sorted == 'price_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by price assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="price-down" value="price_desc" {% if sorted == 'price_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by prive dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Author</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="author-up" value="author_asc" {% if sorted == 'author_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by author assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="author-down" value="author_desc" {% if sorted == 'author_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by author dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="nav justify-content-center gap-4 gap-md-4">
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Title</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="title-up" value="title_asc" {% if sorted == 'title_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by title assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="title-down" value="title_desc" {% if sorted == 'title_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by title dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="row">
+                <div class="col pe-1">
+                    <p class="sort-txt p-0 m-0">Rating</p>
+                </div>
+                <div class="col p-0 m-0 pe-1">
+                    <button id="rating-up" value="rating_asc" {% if sorted == 'rating_asc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by rating assending"><i
+                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                </div>
+                <div class="col p-0 m-0">
+                    <button id="rating-down" value="rating_desc" {% if sorted == 'rating_desc' %}selected{% endif %}
+                        class="sort-btn p-0 m-0" aria-label="Sort by rating dessending"><i
+                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <hr class="mt-1 mb-4 black-bg">
+</div>

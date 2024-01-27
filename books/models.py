@@ -27,8 +27,8 @@ class Genre(models.Model):
     def __str__(self):
         return self.genre
 
-    def get_genre(self):
-        return self.genre
+    def get_view_genre(self):
+        return self.view_genre
 
 
 class Book(models.Model):

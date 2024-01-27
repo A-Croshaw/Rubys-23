@@ -8,18 +8,21 @@
     --txt: 'Zilla Slab', serif, arial;
 
     /* Colours */
-    --bg-color: #aaaaaa;
-    --nav-footer: #504f4f;
-    --nav-footer-hover: #ff0000;
-    --side-nav: #ffffff;
+    --main-bg: #aaaaaa;
     --black-bg: #000000;
+    --card-bg: #d3d0d0;
+    --nav-footer: #504f4f;
+    --side-nav: #ffffff;
     --red-tag: #fa0000;
+    --red-hover: #ff0000;
     --black-txt: #000000;
     --white-txt: #ffffff;
+    --clear: #ffffff00;
+    --sort-hover: #9c9c9c;
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--main-bg);
 }
 
 /* Custom webkit Browser Scrollbar */
@@ -51,7 +54,7 @@ body {
 }
 
 .nav-txt:hover {
-    color: var(--nav-footer-hover);
+    color: var(--red-hover);
 }
 
 .logo {
@@ -77,6 +80,10 @@ body {
 .nav-menu {
 	width: 100%;
     background-color: var(--black-bg);
+}
+
+.account-menu{
+    min-width: 12rem;
 }
 
 /* Delivery Banner */
@@ -109,7 +116,7 @@ footer a {
 }
 
 footer a:hover {
-    background-color: var(--nav-footer-hover);
+    background-color: var(--red-hover);
     border-radius: 50%;
 }
 
@@ -117,6 +124,14 @@ footer a:hover {
 
 .header-offset {
     margin-top: 125px;
+}
+
+.content-offset{
+    margin-bottom: 60px;
+}
+
+.black-bg{
+    background-color: var(--black-bg);
 }
 
 /* Home Page */
@@ -129,55 +144,8 @@ footer a:hover {
     margin-bottom: 30px;
 }
 
-.home-header{
-    font-family: var(--headers);
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--white-txt);
-    background-color: var(--black-bg);
-    width: fit-content;
-    margin-top: 20px;
 
-}
-
-.header-box{
-    max-width: 900px;
-}
-
-.home-txt{
-    font-family: var(--txt);
-    font-size: 2rem;
-    color: var(--white-txt);
-    background-color: var(--black-bg);
-    width: fit-content;
-    padding: 10px;
-}
-
-.home-txt-2{
-    font-family: var(--txt);
-    font-size: 1.5rem;
-}
-
-.btn-home{
-    font-family: var(--txt);
-    background-color: var(--btn-color);
-    border: var(--btn-border-2);
-    text-align: center;
-    padding: 10px 0;
-    color: var(--txt-color);
-    text-decoration: none;
-    font-size: 1.5rem;
-    width: 200px;
-}
-
-.btn-home:hover{
-    background-color: var(--btn-color);
-    border: var(--btn-border-1);
-    color: var(--txt-color);
-    text-decoration: none;
-}
-
-
+/* Media Queries*/
 @media (max-width: 991px){
     .offcanvas-menu{
         max-width: 200px;
@@ -188,7 +156,7 @@ footer a:hover {
 }
 
 @media (min-width: 992px){
-    .content-offset {
-        margin-top: 170px;
+    .content-offset{
+        margin-top: 150px;
     }
 }

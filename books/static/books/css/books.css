@@ -1,0 +1,84 @@
+/*Books */
+
+.book-bg {
+    background-color: var(--black-bg);
+    width: 19rem;
+    height: 15rem;
+}
+
+.book-card{
+    width: 18rem;
+    height: 14rem;
+    background-color: var(--card-bg);
+}
+
+.book-card-body {
+    width: 12rem;
+    height: 10rem;
+}
+
+.book-card-img {
+    width: 6rem;
+    height: 10rem;
+}
+
+.card-img {
+    width: 6rem;
+    height: 9rem;
+    border: 2px solid var(--black-bg);
+}
+
+.book-card-title{
+    height: 3rem;
+}
+
+.all-view-txt {
+    color: var(--black-txt);
+    font-family: var(--txt);
+    font-size: .93rem;
+    text-decoration: none;
+    padding: 0;
+}
+
+.book-card-txt {
+    font-family: var(--txt);
+    color: var(--black-txt);
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+
+.rating-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
+    text-decoration: none;
+}
+
+.rating-txt:hover{
+    color: var(--red-hover);
+}
+
+.rating {
+    color: var(--red-tag);
+    padding-right: 5px;
+}
+
+/* Sorting menu */
+
+.sort-btn {
+    color: var(--black-txt);
+    border: none;
+    background-color: var(--clear);
+    text-decoration: none;
+}
+
+.sort-btn:hover {
+    color: var(--red-hover);
+    background-color: var(--sort-hover);
+}
+
+.sort-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
+    text-decoration: none;
+    
+}
