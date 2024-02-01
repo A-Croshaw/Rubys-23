@@ -55,3 +55,15 @@ def all_books(request):
     }
 
     return render(request, 'books/books.html', context)
+
+
+def book_view(request, book_id):
+    """ View to see full book """
+
+    book = get_object_or_404(Book, pk=book_id)
+
+    context = {
+        'book': book,
+    }
+
+    return render(request, 'books/book_view.html', context)
