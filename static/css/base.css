@@ -120,6 +120,37 @@ footer a:hover {
     border-radius: 50%;
 }
 
+/* Buttons */
+
+.btn-qty{
+    border: none;
+    text-decoration: none;
+    background-color: var(--card-bg);
+}
+
+.btn-qty:hover {
+    background-color: var(--red-hover);
+}
+
+/* Forms */
+
+.qty-form{
+    max-width: 45px;
+}
+
+
+/* hides arrows on number input types */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 /* Generic */
 
 .header-offset {

@@ -2,42 +2,34 @@
 
 .book-bg {
     background-color: var(--black-bg);
-    width: 19rem;
-    height: 15rem;
+    width: 21rem;
+    height: 16rem;
 }
 
 .book-card{
-    width: 18rem;
-    height: 14rem;
+    width: 20rem;
+    height: 15rem;
     background-color: var(--card-bg);
 }
 
 .book-card-body {
-    width: 12rem;
+    width: 13rem;
     height: 10rem;
 }
 
 .book-card-img {
-    width: 6rem;
+    width: 6.5rem;
     height: 10rem;
 }
 
 .card-img {
-    width: 6rem;
-    height: 9rem;
     border: 2px solid var(--black-bg);
+    width: 6.5rem;
+    height: 10rem;
 }
 
 .book-card-title{
     height: 3rem;
-}
-
-.all-view-txt {
-    color: var(--black-txt);
-    font-family: var(--txt);
-    font-size: .93rem;
-    text-decoration: none;
-    padding: 0;
 }
 
 .book-card-txt {
@@ -62,6 +54,10 @@
     padding-right: 5px;
 }
 
+.view-sale-tag{
+    color: var(--red-tag);
+}
+
 /* Sorting menu */
 
 .sort-btn {
@@ -81,4 +77,25 @@
     color: var(--black-txt);
     text-decoration: none;
     
+}
+
+/* Single View*/
+
+.view-price-txt{
+    font-size: 1.25rem;
+}
+
+.view-price-txt,
+.view-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
+    font-weight: 400;
+}
+
+.view-txt{
+    font-size: 1.05rem;
+}
+
+.view-bg{
+    background-color: var(--card-bg);
 }

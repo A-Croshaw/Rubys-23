@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Book: {{ book.title }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'books/css/books.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 py-2">
+    <div class="card mt-5 p-0 pb-3 view-bg" style="max-width: 1300px;">
+        <div class="row m-0 p-0">
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-0 p-3">
+                    {%if book.condition == 'used'%} <i class="fa-solid fa-tag fa-beat fa-2xl view-sale-tag">
+                    </i>{%endif%}
+                </div>
+            </div>
+            <div class="row d-flex justify-content-end p-0 m-0 ms-1">
+                <!--Link to all books-->
+                <a href="{% url 'books' %}" class="btn-close p-2" aria-label="return to all books"></a>
+            </div>
+            <div class="row d-flex justify-content-end p-0 m-0">
+                <h2 class="page-header text-center">{{ book.title }}</h2>
+            </div>
+            <div class="col-md-3 ms-md-3 mt-md-3 pt-md-3">
+                {% if book.image %}
+                <!--Link to view picture in new tab-->
+                <a href="{{ book.image.url }}" target="_blank" aria-label="View image on a new tab">
+                    <img class="card-img-top img-fluid single-img" src="{{ book.image.url }}" alt="{{ book.title }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top img-fluid single-img" src="{{ MEDIA_URL }}no-image.png"
+                        alt="{{ book.title }}">
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-md-8 m-0 p-0">
+                <div class="card-body">
+                    <!--Book Details-->
+                    <hr class="mb-1">
+                    <div>
+                        <h3 class="view-section-header">
+                            Book Details
+                        </h3>
+                        <div class="row pt-2">
+                            <div class="col">
+                                <p class="view-txt p-0 pb-1 m-0">By: <strong>{{ book.author }}</strong></p>
+                                <p class="view-txt p-0 pb-1 m-0">First Published: {{ book.first_published }}</p>
+                                <p class="view-txt p-0 pb-1 m-0">This version was
+                                    Published: {{ book.this_publication_date }}</p>
+                                <p class="view-txt p-0 pb-1 m-0">Category: {{ book.category|title}}</p>
+                                <p class="view-txt p-0 pb-1 m-0">Genre: <strong>{{ book.genre.view_genre}}</strong></p>
+                                <p class="view-txt p-0 pb-1 m-0">Language: {{ book.language }}</p>
+                            </div>
+                            <div class="col">
+                                <p class="view-txt p-0 pb-1 m-0">Number of Pages: {{ book.pages }}</p>
+                                <p class="view-txt p-0 pb-1 m-0">Condition: {{ book.condition }}</p>
+                                {% if book.rating %}
+                                <p class="view-txt p-0 pb-1 m-0"><i class="fas fa-star mr-1 rating"></i>Rating
+                                    {{ book.rating }}
+                                    / 5</p>
+                                {% else %}
+                                <p class="view-txt p-0 pb-1 m-0">No Rating</p>
+                                {% endif %}
+                                <p class="view-txt p-0 pb-1 m-0">SKU: {{ book.sku }}</p>
+                                <p class="view-txt p-0 pb-1 m-0">ISBN-13: {{ book.ISBN }}</p>
+                            </div>
+                            <div class="col">
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price: €{{ book.price }}</strong>
+                                </p>
+                                <!--Form to update Quantity-->
+                                <form class="form" action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="row justify-content-center">
+                                        <div class="container row">
+                                            <p class="view-txt text-center p-0 m-0"><strong>Quantity:</strong></p>
+                                            <div class="input-group justify-content-center">
+                                                <div class="input-group-prepend p-1">
+                                                    <button class="take-qty btn-qty rounded" data-item_id="{{ book.id }}"
+                                                        id="take-qty_{{ book.id }}" aria-label="remove items">
+                                                        <span class="icon">
+                                                            <i class="fas fa-minus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control qty-form qty_input view-txt text-center rounded" type="number" name="quantity"
+                                                    value="1" min="1" max="99" data-item_id="{{ book.id }}"
+                                                    id="id_qty_{{ book.id }}">
+                                                <div class="input-group-append p-1">
+                                                    <button class="add-qty btn-qty rounded" data-item_id="{{ book.id }}"
+                                                        id="add-qty_{{ book.id }}" aria-label="Add more items">
+                                                        <span class="icon">
+                                                            <i class="fas fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container justify-content-center pt-2">
+                                            <div class="text-center nav-txt">
+                                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                                <input type="submit" class="btn view-txt  text-uppercase" value="Add to cart"
+                                                    aria-label="Add updates to cart">
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr class="mb-1">
+                        <div class="row">
+                            <div class="col">
+                                <h3>
+                                    Description
+                                </h3>
+                                <p class="view-txt p-0 pb-1 m-0">{{ book.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Link to Goodreads.ie -->
+                    <hr class="mb-1">
+                    <p class="view-txt p-0 pb-1 m-0">Click here to see what other people think on
+                        <a href="{{ book.link }}" aria-label="Go to Goodreads" rel="external" target="_blank">
+                            <strong class="view-txt p-0 pb-1 m-0">Goodreads</strong>.
+                        </a>
+                    </p>
+                </div>
+                {% if request.user.is_superuser %}
+                <div class="row justify-content-center">
+                    <small class="text-center">
+                        <!--Edit + Delete buttons-->
+                        <a class="text-center"href="" aria-label="Edit {{ book.title }}">Edit</a> |
+                        <a class="text-danger" href="" aria-label="Delete {{ book.title }}">Delete</a>
+                    </small>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    <!--Post load js-->
+    {% block postloadjs %}
+    {{ block.super }}
+    {% include 'includes/quantity_script.html' %}
+    {% endblock %}

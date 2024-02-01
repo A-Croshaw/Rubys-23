@@ -9,7 +9,7 @@ CONDITION = (
 
 CATEGORY = (
     ("non-fiction", "Non-Fiction"),
-    ("fiction","fiction"),
+    ("fiction","Fiction"),
     ("childrens", "Childrens"),
     )
 
