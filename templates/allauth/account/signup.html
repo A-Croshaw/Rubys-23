@@ -5,8 +5,8 @@
 {% block title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container text-center bg-fade mt-2 py-2 rounded">
-  <h1 class="account-login">{% trans "Sign Up" %}</h1>
+<div class="container text-center mt-2 py-5">
+  <h1 class="login-header">{% trans "Sign Up" %}</h1>
 
   <p class="login-txt">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
   <div class="d-flex justify-content-center">
@@ -18,8 +18,8 @@
     {% endif %}
     
     <div class="d-flex justify-content-center gap-4">
-      <button type="submit" class="btn btn-account rounded">{% trans "Sign Up" %}</button>
-      <a class="btn btn-sign-up rounded" href="{% url 'account_login' %}">{% trans "Cancel" %}</a>
+      <button type="submit" class="btn rounded">{% trans "Sign Up" %}</button>
+      <a class="btn rounded" href="{% url 'account_login' %}">{% trans "Cancel" %}</a>
     </div>
   </form>
   </div>

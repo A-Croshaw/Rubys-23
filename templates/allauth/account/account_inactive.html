@@ -5,7 +5,9 @@
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
 {% block content %}
-<h1 class="account-login mb-4">{% trans "Account Inactive" %}</h1>
-allauth
-<p>{% trans "This account is inactive." %}</p>
+<div class="container text-center mt-5 py-5">
+    <h1 class="login-header mb-4">{% trans "Account Inactive" %}</h1>
+    allauth
+    <p class="login-txt">{% trans "This account is inactive." %}</p>
+</div>
 {% endblock %}

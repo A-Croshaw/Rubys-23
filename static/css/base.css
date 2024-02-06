@@ -162,13 +162,9 @@ footer a:hover {
     padding: 3px;
 }
 
-/* Forms */
-
 .qty-form{
     max-width: 45px;
 }
-
-
 
 /* hides arrows on number input types */
 /* Chrome, Safari, Edge, Opera */
@@ -227,6 +223,21 @@ input[type=number] {
     color: var(--black-txt);
 }
 
+/* all auth */
+
+/* Accounts */
+.login-header {
+    font-family: var(--headers);
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.login-txt{
+    font-size: 1rem;
+    font-family: var(--txt);
+    color: var(--black-txt);
+
+}
 
 /* Media Queries*/
 @media (max-width: 991px){
