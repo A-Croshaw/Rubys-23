@@ -122,14 +122,26 @@ footer a:hover {
 
 /* Buttons */
 
-.btn-qty{
-    border: none;
-    text-decoration: none;
-    background-color: var(--card-bg);
+.close-btn{
+    text-align: center;
+    width: 2rem;
+    padding: 2px;
+    margin: 0;
 }
 
-.btn-qty:hover {
+.btn{
+    font-family: var(--txt);
+    color: var(--red-hover);
+    font-size: 1.15rem;
+    background-color: var(--black-bg);
+    border: 2px solid var(--red-hover);
+    font-weight: 400;
+}
+
+.btn:hover{
     background-color: var(--red-hover);
+    border: 2px solid var(--black-bg);
+    color: var(--black-txt);
 }
 
 /* Forms */
@@ -137,6 +149,7 @@ footer a:hover {
 .qty-form{
     max-width: 45px;
 }
+
 
 
 /* hides arrows on number input types */

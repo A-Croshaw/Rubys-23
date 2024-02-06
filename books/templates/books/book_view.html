@@ -16,12 +16,12 @@
                     </i>{%endif%}
                 </div>
             </div>
-            <div class="row d-flex justify-content-end p-0 m-0 ms-1">
+            <div class="row d-flex justify-content-end p-1 m-0">
                 <!--Link to all books-->
-                <a href="{% url 'books' %}" class="btn-close p-2" aria-label="return to all books"></a>
+                <a href="{% url 'books' %}" class="btn close-btn rounded" aria-label="return to all books"> <i class="fa-solid fa-x fa-lg"></i></a>
             </div>
             <div class="row d-flex justify-content-end p-0 m-0">
-                <h2 class="page-header text-center">{{ book.title }}</h2>
+                <h2 class="view-header text-center">{{ book.title }}</h2>
             </div>
             <div class="col-md-3 ms-md-3 mt-md-3 pt-md-3">
                 {% if book.image %}
@@ -68,7 +68,8 @@
                                 <p class="view-txt p-0 pb-1 m-0">ISBN-13: {{ book.ISBN }}</p>
                             </div>
                             <div class="col">
-                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price: €{{ book.price }}</strong>
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price:
+                                        €{{ book.price }}</strong>
                                 </p>
                                 <!--Form to update Quantity-->
                                 <form class="form" action="" method="POST">
@@ -78,18 +79,20 @@
                                             <p class="view-txt text-center p-0 m-0"><strong>Quantity:</strong></p>
                                             <div class="input-group justify-content-center">
                                                 <div class="input-group-prepend p-1">
-                                                    <button class="take-qty btn-qty rounded" data-item_id="{{ book.id }}"
-                                                        id="take-qty_{{ book.id }}" aria-label="remove items">
+                                                    <button class="take-qty btn rounded"
+                                                        data-item_id="{{ book.id }}" id="take-qty_{{ book.id }}"
+                                                        aria-label="remove items">
                                                         <span class="icon">
                                                             <i class="fas fa-minus"></i>
                                                         </span>
                                                     </button>
                                                 </div>
-                                                <input class="form-control qty-form qty_input view-txt text-center rounded" type="number" name="quantity"
-                                                    value="1" min="1" max="99" data-item_id="{{ book.id }}"
-                                                    id="id_qty_{{ book.id }}">
+                                                <input
+                                                    class="form-control qty-form qty_input view-txt text-center rounded"
+                                                    type="number" name="quantity" value="1" min="1" max="99"
+                                                    data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
                                                 <div class="input-group-append p-1">
-                                                    <button class="add-qty btn-qty rounded" data-item_id="{{ book.id }}"
+                                                    <button class="add-qty btn rounded" data-item_id="{{ book.id }}"
                                                         id="add-qty_{{ book.id }}" aria-label="Add more items">
                                                         <span class="icon">
                                                             <i class="fas fa-plus"></i>
@@ -101,8 +104,8 @@
                                         <div class="container justify-content-center pt-2">
                                             <div class="text-center nav-txt">
                                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                                <input type="submit" class="btn view-txt  text-uppercase" value="Add to cart"
-                                                    aria-label="Add updates to cart">
+                                                <input type="submit" class="btn text-uppercase"
+                                                    value="Add to cart" aria-label="Add updates to cart">
                                             </div>
                                         </div>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -113,7 +116,7 @@
                         <hr class="mb-1">
                         <div class="row">
                             <div class="col">
-                                <h3>
+                                <h3 class="view-section-header">
                                     Description
                                 </h3>
                                 <p class="view-txt p-0 pb-1 m-0">{{ book.description }}</p>
@@ -123,8 +126,8 @@
                     <!--Link to Goodreads.ie -->
                     <hr class="mb-1">
                     <p class="view-txt p-0 pb-1 m-0">Click here to see what other people think on
-                        <a href="{{ book.link }}" aria-label="Go to Goodreads" rel="external" target="_blank">
-                            <strong class="view-txt p-0 pb-1 m-0">Goodreads</strong>.
+                        <a href="{{ book.link }}" class="view-txt external-link-txt" aria-label="Go to Goodreads" rel="external" target="_blank">
+                            <strong class="pb-1 m-0">Goodreads</strong>.
                         </a>
                     </p>
                 </div>
@@ -132,8 +135,9 @@
                 <div class="row justify-content-center">
                     <small class="text-center">
                         <!--Edit + Delete buttons-->
-                        <a class="text-center"href="" aria-label="Edit {{ book.title }}">Edit</a> |
-                        <a class="text-danger" href="" aria-label="Delete {{ book.title }}">Delete</a>
+                        <a class="text-center" href="{% url 'edit_book' book.id %}"
+                            aria-label="Edit {{ book.title }}">Edit</a> |
+                        <a class="text-danger" href="{% url 'book_delete' book.id %}" aria-label="Delete {{ book.title }}">Delete</a>
                     </small>
                 </div>
                 {% endif %}
@@ -145,4 +149,5 @@
     <!--Post load js-->
     {% block postloadjs %}
     {{ block.super }}
+    {% include 'includes/quantity_script.html' %}
     {% endblock %}

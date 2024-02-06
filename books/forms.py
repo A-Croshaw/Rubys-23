@@ -1,4 +1,3 @@
-
 from django import forms
 from .widgets import MyClearableFileInput
 from .models import Book, Genre

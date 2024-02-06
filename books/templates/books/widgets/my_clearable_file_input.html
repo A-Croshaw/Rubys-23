@@ -1,21 +1,32 @@
 {% if widget.is_initial %}
 <p>{{ widget.initial_text }}:</p>
-<a href="{{ widget.value.url }}">
-    <img width="96" height="96" class="rounded shadow-sm" src="{{ widget.value.url }}">
-</a>
-{% if not widget.required %}
-<div class="mt-2">
-    <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
-    <label class="text-danger" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
-</div>
-{% endif %}<br>
-{{ widget.input_text }}
+<div class="row justify-content-center gap-md-1">
+    <div class="col-12 col-md-4 form-border rounded p-2">
+        <div class="text-center">
+            <p>Current Imange</p>
+            <a href="{{ widget.value.url }}">
+                <img width="150" height="150" class="rounded-5 text-center" src="{{ widget.value.url }}">
+            </a>
+        </div>
+        {% if not widget.required %}
+        <div class="mt-2 text-center">
+            <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
+            <label class="text-danger" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
+        </div>
+        {% endif %}
+        {{ widget.input_text }}
+    </div>
 {% endif %}
-<p>Select Imange</p>
-<span class=" btn-select">
-    <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"
-        {% include "django/forms/widgets/attrs.html" %}>
-</span>
-<strong>
-    <p id="filename"></p>
-</strong>
+    <div class="col-12 col-md-7 form-border rounded text-center p-0 ps-1">
+        <p>Change Imange</p>
+        <span class=" btn-select form-fields">
+            <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"
+                {% include "django/forms/widgets/attrs.html" %}>
+        </span>
+        <strong>
+            <p id="filename"></p>
+        </strong>
+    </div>
+</div>
+<br>
+

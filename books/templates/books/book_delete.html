@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Books{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'books/css/books.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-5 py-2">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <hr class="mb-1">
+            <!--Headers and adds Category name to beginning when they are selected-->
+            <h2 class="delete-header mb-1">
+                Confirm deletion of book?
+            </h2>
+            <hr class="mb-1">
+        </div>
+    </div>
+    <form action="." method="POST">{% csrf_token %}
+        <div class="col justify-content-center p-2">
+            <div class="row justify-content-center">
+                <h3 class=" delete-item-header text-center">{{ book.title }}</h3>
+                <p class="delete-txt text-center">By: <strong>{{ book.author }}</strong></p>
+                <hr class="mb-1">
+            </div>
+            <div class="row justify-content-center p-3">
+                {% if book.image %}
+                <img class="delete-img" src="{{ book.image.url }}" alt="{{ book.title }}">
+                {% else %}
+                <img class="delete-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ book.title }}">
+                {% endif %}
+            </div>
+            <div class="row justify-content-center">
+                <hr class="mb-3">
+                <div class="d-flex justify-content-center gap-5">
+                    <input class="btn" type="submit" value="Confirm" />
+                    <a href="{% url 'books' %}" class="btn">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

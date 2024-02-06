@@ -35,18 +35,18 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <!--Book management links for admin users-->
-                                <a href="" class="nav-link nav-txt p-0 m-0"
+                                <a href="{% url 'book_management' %}" class="nav-link nav-txt p-0 m-0"
                                     aria-label="View Book management">Book Management</a>
                                 {% endif %}
                             <!--Profile link-->
                             <a href="" class="nav-link nav-txt p-0 m-0" aria-label="View profile">My Profile</a>
                             <!--Account links-->
-                            <li><a href="" class="nav-link nav-txt p-0 m-0"
+                            <li><a href="{% url 'account_logout' %}" class="nav-link nav-txt p-0 m-0"
                                     aria-label="logout">Logout</a></li>
                             {% else %}
-                            <li><a href="" class="nav-link nav-txt p-0 m-0"
+                            <li><a href="{% url 'account_signup' %}" class="nav-link nav-txt p-0 m-0"
                                     aria-label="sign up">Register</a></li>
-                            <li><a href="" class="nav-link nav-txt p-0 m-0" aria-label="login">Login</a>
+                            <li><a href="{% url 'account_login' %}" class="nav-link nav-txt p-0 m-0" aria-label="login">Login</a>
                             </li>
                             {% endif %}
                         </ul>

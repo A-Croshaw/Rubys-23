@@ -1,3 +1,4 @@
+
 /*Books */
 
 .book-bg {
@@ -30,13 +31,19 @@
 
 .book-card-title{
     height: 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
+.book-card-title,
 .book-card-txt {
     font-family: var(--txt);
     color: var(--black-txt);
+}
+
+.book-card-txt {
     font-weight: 400;
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .rating-txt{
@@ -81,8 +88,27 @@
 
 /* Single View*/
 
+.view-header,
+.view-section-header{
+    font-family: var(--headers);
+    color: var(--black-txt);
+    font-weight: 600;
+}
+
+.view-header{
+    font-size: 3.5rem;
+}
+
+.view-section-header{
+    font-size: 2.5rem;
+}
+
 .view-price-txt{
     font-size: 1.25rem;
+}
+
+.view-txt{
+    font-size: 1.05rem;
 }
 
 .view-price-txt,
@@ -92,10 +118,78 @@
     font-weight: 400;
 }
 
-.view-txt{
-    font-size: 1.05rem;
+.external-link-txt{
+    text-decoration: none;
+    font-size: 1.10rem;
 }
 
 .view-bg{
     background-color: var(--card-bg);
+}
+
+/* Add Books */
+
+.add-header{
+    font-family: var(--headers);
+    color: var(--black-txt);
+    font-weight: 600;
+    font-size: 3.5rem;
+}
+
+/* Edit Books */
+
+.form-border{
+    border: 2px solid var(--black-bg);
+}
+
+.form-control{
+    border: 2px solid var(--black-bg);
+    font-family: var(--txt);
+    color: var(--black-txt);
+    font-size: 1.15rem;
+}
+
+.edit-header,
+.edit-item-header{
+    font-family: var(--headers);
+    color: var(--black-txt);
+    font-weight: 600;
+}
+
+.edit-header{
+    font-size: 3.5rem;
+}
+
+.edit-item-header{
+    font-size: 2.5rem;
+}
+
+/* Delete book */
+
+.delete-item-header,
+.delete-header {
+    font-family: var(--headers);
+    color: var(--black-txt);
+}
+
+.delete-header {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.delete-item-header{
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.delete-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
+    font-weight: 400;
+    font-size: 1.75rem;
+}
+
+.delete-img{
+    max-height: 26rem;
+    max-width: 20rem;
 }

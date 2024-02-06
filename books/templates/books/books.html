@@ -3,7 +3,7 @@
 {% block title %}Books{% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'books/css/books.css' %}">
+<link rel="stylesheet" href="{% static 'books/css/books.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@
         <div class="col text-center mt-3">
             <hr class="mb-1">
             <!--Headers and adds Category name to beginning when they are selected-->
-            <h2 class="page-header mb-1">
+            <h2 class="view-header mb-1">
                 {% for g in sorted_genres %}{{ g.view_genre }}{% endfor %} Books
             </h2>
             <hr class="mb-1">
@@ -29,12 +29,12 @@
                 <div class="row book-card justify-content-center p-0 rounded">
                     <div class="position-relative p-0 m-0">
                         <div class="position-absolute top-0 end-0 p-1 m-0">
-                            {%if book.condition == 'used'%} <i class="fa-solid fa-tag fa-beat fa-xl view-sale-tag">
+                            {%if book.condition == 'used'%} <i class="fa-solid fa-tag fa-beat fa-lg view-sale-tag">
                             </i>{%endif%}
                         </div>
                     </div>
                     <div class="row book-card-txt p-0 m-0">
-                        <p class="my-0 py-0 px-4 text-center book-card-title">{{ book.title }}</p>
+                        <p class="my-0 py-0 px-3 text-center book-card-title">{{ book.title }}</p>
                     </div>
                     <hr class="mb-1">
                     <div class="col-4 book-card-img m-0 py-0 px-1">
@@ -58,10 +58,11 @@
                                 {{ book.genre.view_genre }}
                             </a>
                         </p>
-                        <p class="book-card-txt my-1">By: <strong>{{ book.author }}</strong></p>
                         {% endif %}
+                        <p class="book-card-txt my-1">By: <strong>{{ book.author }}</strong></p>
                         {% if book.rating %}
-                        <small class="text-muted my-1 rating-txt"><i class="fas fa-star mr-1 rating"></i>{{ book.rating }} /
+                        <small class="text-muted my-1 rating-txt"><i
+                                class="fas fa-star mr-1 rating"></i>{{ book.rating }} /
                             5</small>
                         {% else %}
                         <small class="text-muted my-1">No Rating</small>
@@ -70,9 +71,9 @@
                         <div class="row my-1">
                             <small>
                                 <!--edit button-->
-                                <a href="" aria-label="Edit {{ book.title }}">Edit</a> |
+                                <a href="{% url 'edit_book' book.id %}" aria-label="Edit {{ book.title }}">Edit</a> |
                                 <!--delete button-->
-                                <a class="text-danger" href="" aria-label="Delete {{ book.title }}">Delete</a>
+                                <a class="text-danger" href="{% url 'book_delete' book.id %}" aria-label="Delete {{ book.title }}">Delete</a>
                             </small>
                         </div>
                         {% endif %}
