@@ -35,7 +35,7 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <!--Book management links for admin users-->
-                                <a href="" class="nav-link nav-txt p-0 m-0"
+                                <a href="{% url 'book_management' %}" class="nav-link nav-txt p-0 m-0"
                                     aria-label="View Book management">Book Management</a>
                                 {% endif %}
                             <!--Profile link-->

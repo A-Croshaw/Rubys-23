@@ -193,3 +193,31 @@
     max-height: 26rem;
     max-width: 20rem;
 }
+
+/* Book Management */
+
+.manage-img {
+    width: 2.5rem;
+    height: 4rem;
+}
+
+.manage-txt {
+    font-family: var(--txt);
+    color: var(--black-txt);
+}
+
+.manage-header {
+    font-size: 4rem;
+    font-family: var(--headers);
+}
+
+.manage-header-2 {
+    font-size: 2.5rem;
+    font-family: var(--headers);
+}
+
+.book-list {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+

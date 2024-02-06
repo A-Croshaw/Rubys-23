@@ -151,3 +151,32 @@ def book_delete(request, book_id):
     }
     return render(request, "books/book_delete.html", context)
 
+
+@login_required
+@permission_required("books.book_management", raise_exception=True)
+def book_management(request):
+    """
+    A view for book management for admin users
+    """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Admin users can only manage books.')
+        return redirect(reverse('home'))
+
+    books = Book.objects.all()
+    query = None
+
+    if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "No Books with that criteria")
+            
+            queries = Q(title__icontains=query) | Q(description__icontains=query)
+            books = books.filter(queries)
+
+    context = {
+        'books': books,
+        'search_term': query,
+    }
+
+    return render(request, 'books/book-management.html', context)

@@ -2,12 +2,14 @@
 
 :root {
     /* Fonts */
+
     --logo: 'Shadows Into Light', serif;
     --delivery: 'Yatra One', serif;
     --headers: 'Shadows Into Light', serif;
     --txt: 'Zilla Slab', serif, arial;
 
     /* Colours */
+
     --main-bg: #aaaaaa;
     --black-bg: #000000;
     --card-bg: #d3d0d0;
@@ -26,6 +28,7 @@ body {
 }
 
 /* Custom webkit Browser Scrollbar */
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -41,6 +44,7 @@ body {
 }
 
 /* header */
+
 .nav-bg {
     background-color: var(--nav-footer);
 }
@@ -87,6 +91,7 @@ body {
 }
 
 /* Delivery Banner */
+
 .delivery-banner {
     background-color: var(--black-bg);
     color: var(--white-txt);
@@ -103,6 +108,7 @@ body {
 }
 
 /* footer */
+
 footer {
     background-color: var(--nav-footer);
     display: flex;
@@ -151,6 +157,8 @@ footer a:hover {
     color: var(--black-txt);
 }
 
+/* Quantity */
+
 .take-qty,
 .add-qty{
     height: 2rem;
@@ -167,12 +175,14 @@ footer a:hover {
 }
 
 /* hides arrows on number input types */
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
@@ -223,9 +233,8 @@ input[type=number] {
     color: var(--black-txt);
 }
 
-/* all auth */
-
 /* Accounts */
+
 .login-header {
     font-family: var(--headers);
     font-weight: 800;
@@ -240,6 +249,7 @@ input[type=number] {
 }
 
 /* Media Queries*/
+
 @media (max-width: 991px){
     .offcanvas-menu{
         max-width: 200px;
