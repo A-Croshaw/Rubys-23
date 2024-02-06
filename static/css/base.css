@@ -123,9 +123,16 @@ footer a:hover {
 /* Buttons */
 
 .close-btn{
-    text-align: center;
-    width: 2rem;
-    padding: 2px;
+    width: 1.5rem;
+    height: 1.75rem;
+    padding: 0;
+    margin: 0;
+}
+
+.close-message-btn{
+    width: 1.5rem;
+    height: 1.75rem;
+    padding: 0;
     margin: 0;
 }
 
@@ -142,6 +149,17 @@ footer a:hover {
     background-color: var(--red-hover);
     border: 2px solid var(--black-bg);
     color: var(--black-txt);
+}
+
+.take-qty,
+.add-qty{
+    height: 2rem;
+    padding: 3px;
+}
+
+.qty_input{
+    height: 2.5rem;
+    padding: 3px;
 }
 
 /* Forms */
@@ -186,6 +204,27 @@ input[type=number] {
     width: 100%;
     margin-top: 5px;
     margin-bottom: 30px;
+}
+
+/* toasts/ messages */
+
+.message-container {
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    z-index: 99999999999;
+    max-width: 280px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--black-bg);
+}
+
+.toast-capper {
+    height: 3px;
+}
+
+.toast-message-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
 }
 
 

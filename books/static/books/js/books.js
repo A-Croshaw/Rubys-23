@@ -6,6 +6,9 @@ document.getElementById("title-up").addEventListener("click", ordered);
 document.getElementById("title-down").addEventListener("click", ordered);
 document.getElementById("author-up").addEventListener("click", ordered);
 document.getElementById("author-down").addEventListener("click", ordered);
+document.getElementById("category-up").addEventListener("click", ordered);
+document.getElementById("category-down").addEventListener("click", ordered);
+
 
 function ordered() {
     const selector = $(this);

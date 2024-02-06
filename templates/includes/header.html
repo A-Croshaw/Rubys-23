@@ -91,11 +91,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/mobile-header.html' %}
-                <div class="offcanvas offcanvas-menu offcanvas-start scrollbar" tabindex="-1" id="navbarOffcanvasLg"
+                <div class="offcanvas offcanvas-menu offcanvas-start scrollbar " tabindex="-1" id="navbarOffcanvasLg"
                     aria-labelledby="navbarOffcanvasLgLabel">
-                    <div class="offcanvas-header nav-bg">
+                    <div class="offcanvas-header nav-bg py-0 px-1">
                         <h1 class="nav-txt logo">Ruby's</h1>
-                        <button type="button" class="btn-close mb-5 p-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <div class="row d-flex justify-content-end p-0 m-0">
+                            <!--closes messages-->
+                            <button type="button" class="btn close-btn p-0 m-0" data-bs-dismiss="offcanvas"
+                            aria-label="Close"><i class="fa-solid fa-x fa-xs p-0 m-0"></i></button>
+                        </div>
                     </div>
                     <div class="offcanvas-body nav-bg">
                         {% include 'includes/nav-items.html' %}

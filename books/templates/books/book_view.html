@@ -17,8 +17,8 @@
                 </div>
             </div>
             <div class="row d-flex justify-content-end p-1 m-0">
-                <!--Link to all books-->
-                <a href="{% url 'books' %}" class="btn close-btn rounded" aria-label="return to all books"> <i class="fa-solid fa-x fa-lg"></i></a>
+                <!--closes single book view and returns to all books-->
+                <a href="{% url 'books' %}" class="btn close-btn rounded p-0 m-0" aria-label="return to all books"> <i class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
             </div>
             <div class="row d-flex justify-content-end p-0 m-0">
                 <h2 class="view-header text-center">{{ book.title }}</h2>
@@ -148,6 +148,7 @@
 
     <!--Post load js-->
     {% block postloadjs %}
+    {% include 'includes/quantity_script.html' %}
     {{ block.super }}
 
     {% endblock %}

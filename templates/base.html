@@ -43,7 +43,20 @@
         <!--Messages-->
         <div class="col">
             {% if messages %}
-            <div class="message-container" id="my-alert-2">
+            <div class="message-container p-2" id="my-alert-2">
+                {% for message in messages %}
+                {% with message.level as level %}
+                {% if level == 40 %}
+                {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+                {% endwith %}
+                {% endfor %}
             </div>
             {% endif %}
         </div>
@@ -52,10 +65,10 @@
         <!--Search Bar For Mobile View-->
         <form method="GET" action="">
             <div class="input-group">
-                <input class="form-control rounded " type="text" name="q" placeholder="Search Books">
+                <input class="form-control rounded" type="text" name="q" placeholder="Search our site">
                 <div>
-                    <button class="form-control btn nav-txt" type="submit">
-                        <span class="icon">
+                    <button class="btn nav-txt" type="submit">
+                        <span>
                             <i class="fas fa-search"></i>
                         </span>
                     </button>
