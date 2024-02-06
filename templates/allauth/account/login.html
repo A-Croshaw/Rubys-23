@@ -1,0 +1,32 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+
+{% block title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<div class="container text-center bg-fade mt-5 py-3 rounded">
+  <h1 class="account-login mb-4">{% trans "Sign In" %}</h1>
+
+
+  <p class="login-txt">{% blocktrans %}If you do have an account with us. <br> You can created an account by following the sign up link below.{% endblocktrans %}</p>
+  
+  <div class="d-flex justify-content-center">
+    <form class="login p-4 my-2 login-txt" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <div class="d-flex justify-content-center gap-4">
+        <button class="btn btn-account rounded" type="submit">{% trans "Sign In" %}</button>
+        <a class="btn btn-sign-up rounded" href="{{ signup_url }}">{% trans "Sign Up" %}</a>
+      </div>
+    </form>
+  </div>
+
+
+
+</div>
+{% endblock %}

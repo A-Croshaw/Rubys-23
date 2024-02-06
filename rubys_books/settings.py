@@ -33,8 +33,9 @@ development = os.environ.get('DEVELOPMENT', False)
 
 DEBUG = development
 
-ALLOWED_HOSTS = ['rubys-97a7171770c1.herokuapp.com','localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['rubys-97a7171770c1.herokuapp.com','localhost', '8000-acroshaw-rubys23-aumiaqq0yag.ws-eu108.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS=['https://rubys-97a7171770c1.herokuapp.com', 'https://8000-acroshaw-rubys23-aumiaqq0yag.ws-eu108.gitpod.io']
 
 # Application definition
 

@@ -1,0 +1,354 @@
+[
+    {
+        "pk": 1,
+        "model": "books.genre",
+        "fields": {
+            "genre": "erotic",
+            "view_genre": "Erotic"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "books.genre",
+        "fields": {
+            "genre": "biographical",
+            "view_genre": "Biographical"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "books.genre",
+        "fields": {
+            "genre": "speculative",
+            "view_genre": "Speculative"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "books.genre",
+        "fields": {
+            "genre": "myths_fairy_tales",
+            "view_genre": "Myths & Fairy Tales"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "books.genre",
+        "fields": {
+            "genre": "humorous",
+            "view_genre": "Humorous"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "books.genre",
+        "fields": {
+            "genre": "horror_supernatural",
+            "view_genre": "Horror & Supernatural"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "books.genre",
+        "fields": {
+            "genre": "adventure",
+            "view_genre": "Adventure"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "books.genre",
+        "fields": {
+            "genre": "fantasy",
+            "view_genre": "Fantasy"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "books.genre",
+        "fields": {
+            "genre": "historical",
+            "view_genre": "Historical"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "books.genre",
+        "fields": {
+            "genre": "science_fiction",
+            "view_genre": "Science Fiction"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "books.genre",
+        "fields": {
+            "genre": "romance",
+            "view_genre": "Romance"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "books.genre",
+        "fields": {
+            "genre": "thriller",
+            "view_genre": "Thriller"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "books.genre",
+        "fields": {
+            "genre": "crime_mystery",
+            "view_genre": "Crime & Mystery"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "books.genre",
+        "fields": {
+            "genre": "general_literary",
+            "view_genre": "General & Literary"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "books.genre",
+        "fields": {
+            "genre": "generational_sagas",
+            "view_genre": "Generational Sagas"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "books.genre",
+        "fields": {
+            "genre": "sport_fiction",
+            "view_genre": "Sport Fiction"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "books.genre",
+        "fields": {
+            "genre": "other_fiction",
+            "view_genre": "Other Fiction"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "books.genre",
+        "fields": {
+            "genre": "art",
+            "view_genre": "Art"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "books.genre",
+        "fields": {
+            "genre": "biography",
+            "view_genre": "Biography"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "books.genre",
+        "fields": {
+            "genre": "business_finance",
+            "view_genre": "Business & Finance"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "books.genre",
+        "fields": {
+            "genre": "climate_sustainability",
+            "view_genre": "Climate & Sustainability"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "books.genre",
+        "fields": {
+            "genre": "cookbooks",
+            "view_genre": "Cookbooks"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "books.genre",
+        "fields": {
+            "genre": "fashion",
+            "view_genre": "Fashion"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "books.genre",
+        "fields": {
+            "genre": "home_gardening",
+            "view_genre": "Home & Gardening"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "books.genre",
+        "fields": {
+            "genre": "health_wellbeing",
+            "view_genre": "Health & Wellbeing"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "books.genre",
+        "fields": {
+            "genre": "history",
+            "view_genre": "History"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "books.genre",
+        "fields": {
+            "genre": "language_dictionaries",
+            "view_genre": "Language & Dictionaries"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "books.genre",
+        "fields": {
+            "genre": "medical",
+            "view_genre": "Medical"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "books.genre",
+        "fields": {
+            "genre": "nature",
+            "view_genre": "Nature"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "books.genre",
+        "fields": {
+            "genre": "parenting",
+            "view_genre": "Parenting"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "books.genre",
+        "fields": {
+            "genre": "philosophy",
+            "view_genre": "Philosophy"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "books.genre",
+        "fields": {
+            "genre": "photography",
+            "view_genre": "Photography"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "books.genre",
+        "fields": {
+            "genre": "science",
+            "view_genre": "Science"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "books.genre",
+        "fields": {
+            "genre": "sport",
+            "view_genre": "Sport"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "books.genre",
+        "fields": {
+            "genre": "travel",
+            "view_genre": "Travel"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "books.genre",
+        "fields": {
+            "genre": "true_crime",
+            "view_genre": "True Crime"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "books.genre",
+        "fields": {
+            "genre": "other_Non-Fiction",
+            "view_genre": "Other Non-Fiction"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "books.genre",
+        "fields": {
+            "genre": "childrens_0_to_4",
+            "view_genre": "Childrens 0 to 4"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "books.genre",
+        "fields": {
+            "genre": "childrens_5_to_8",
+            "view_genre": "Childrens 5 to 8"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "books.genre",
+        "fields": {
+            "genre": "childrens_9",
+            "view_genre": "Childrens 9+"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "books.genre",
+        "fields": {
+            "genre": "childrens_other",
+            "view_genre": "Childrens Other"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "books.genre",
+        "fields": {
+            "genre": "teen_young_adult",
+            "view_genre": "Teen & Young Adult"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "books.genre",
+        "fields": {
+            "genre": "technology",
+            "view_genre": "Technology"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "books.genre",
+        "fields": {
+            "genre": "music",
+            "view_genre": "Music"
+        }
+    }
+]
