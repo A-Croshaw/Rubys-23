@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="container py-5 my-5">
+    <div class="container row ">
+        <hr>
+        <h1 class="headers text-center mb-3">Contact Us</h1>
+        <hr>
+        <p class="about-txt text-center mb-3" id="enquirey"></p>
+    </div>
+    <div class=" col-md-6 container justify-content-center p-4">
+        <form method="post" action=".">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="contact-name" class="form-control mb-5" placeholder="Your Name">
+                </div>
+                <div class="col">
+                    <input type="email" name="contact-email" class="form-control mb-5" placeholder="Your Email">
+                </div>
+                <div class="col">
+                    <textarea name="contact-message" class="form-control mb-5" placeholder="Your Message"></textarea>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mb-2">
+                <button type="submit" class="btn rounded">Send</button>
+            </div>
+        </form>
+    </div>
+    <div class="container justify-content-center contact-info mt-4 mt-md-1 pb-2">
+        <p class="about-txt mt-3 mb-2 pb-0 text-center">Ruby's Online Bookshop,<br> Ballybunion,<br> Ireland</p>
+        <p class="about-txt my-0 mb-2 py-0 text-center">E-Mail: <a
+                href="mailto:rubysbooksonline@gmial.com">rubysbooksonline@gmial.com</a></p>
+        <p class="about-txt my-0 mb-3 py-0 text-center">www.rubys.ie</p>
+        <p class="text-center"><a class="mb-5 pb-5 " href="" target="_blank" rel="npppener"
+                aria-label="Ruby's Facebook page - Opens in a new tab">
+                <i class="fa-brands fa-facebook fa-xl" style="color: #619bff;"></i>
+            </a></p>
+    </div>
+</div>
+{% endblock %}
