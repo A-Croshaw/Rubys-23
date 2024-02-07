@@ -21,7 +21,7 @@ def contact(request):
             contact_name,
             contact_message,
             contact_email,
-            ['rubysbooksonline@gmial.com'],
+            ['andrewcroshaw88@outlook.com'],
         )
         messages.success(request, f'Thank you {contact_name}, We have recived your email and will be in touch soon')
         return render(request, 'about/contact.html',{'contact_name': contact_name})

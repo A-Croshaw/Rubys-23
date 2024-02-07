@@ -3,42 +3,52 @@
 {% block title %}Contact{% endblock %}
 
 {% block content %}
-<div class="container py-5 my-5">
-    <div class="container row ">
+<div class="container-fluid py-5 my-5">
+    <div class="row justify-content-center">
         <hr>
-        <h1 class="headers text-center mb-3">Contact Us</h1>
+        <h1 class="about-headers text-center mb-3">Contact Us</h1>
         <hr>
-        <p class="about-txt text-center mb-3" id="enquirey"></p>
     </div>
-    <div class=" col-md-6 container justify-content-center p-4">
-        <form method="post" action=".">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col">
-                    <input type="text" name="contact-name" class="form-control mb-5" placeholder="Your Name">
-                </div>
-                <div class="col">
-                    <input type="email" name="contact-email" class="form-control mb-5" placeholder="Your Email">
-                </div>
-                <div class="col">
-                    <textarea name="contact-message" class="form-control mb-5" placeholder="Your Message"></textarea>
+    <div class="row justify-content-center">
+        <div class=" col-12 col-md-5 col-lg-6  justify-content-center order-last order-md-first mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 ">
+                    <div class="row justify-content-center">
+                        <iframe src="
+                            https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9712.64472683347!2d-9.680985721279026!3d52.
+                            51242206190545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485ac5d03d63cefb%3A0x405d1789dca5f96!2sBallybunnion%2C%20Co.
+                            %20Kerry!5e0!3m2!1sen!2sie!4v1707342465908!5m2!1sen!2sie"
+                            height="350px" class="contact-form p-0" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="row justify-content-center">
+                        <p class="contact-txt text-center mt-4 mb-0 py-1">Ruby's Online Bookshop,<br> Ballybunion,<br> Ireland</p>
+                        <p class="contact-txt text-center my-0 py-1">E-Mail: <a
+                                href="mailto:rubysbooksonline@gmial.com">rubysbooksonline@gmial.com</a></p>
+                        <p class="contact-txt text-center my-0 py-1">www.rubys.ie</p>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-6  p-0 m-0 justify-content-center order-first order-md-last ">
+            <form method="post" action=".">
+                {% csrf_token %}
+                <div class="row justify-content-center p-0 m-0">
+                    <h2 class="about-txt text-center mb-3 mt-0 pt-0">Enquiries</h2>
+                    <div class="col-10 col-md-8 ">
+                        <input type="text" name="contact-name" class="form-control contact-form mb-4" placeholder="Your Name">
+                        <input type="email" name="contact-email" class="form-control contact-form mb-4" placeholder="Your Email">
+                        <textarea name="contact-message" class="form-control contact-form mb-4" rows="8" placeholder="Message"></textarea>
+                        <div class="d-flex justify-content-center m-0 mb-2 p-0">
+                            <button type="submit" class="btn rounded">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
 
-            <div class="d-flex justify-content-center mb-2">
-                <button type="submit" class="btn rounded">Send</button>
-            </div>
-        </form>
-    </div>
-    <div class="container justify-content-center contact-info mt-4 mt-md-1 pb-2">
-        <p class="about-txt mt-3 mb-2 pb-0 text-center">Ruby's Online Bookshop,<br> Ballybunion,<br> Ireland</p>
-        <p class="about-txt my-0 mb-2 py-0 text-center">E-Mail: <a
-                href="mailto:rubysbooksonline@gmial.com">rubysbooksonline@gmial.com</a></p>
-        <p class="about-txt my-0 mb-3 py-0 text-center">www.rubys.ie</p>
-        <p class="text-center"><a class="mb-5 pb-5 " href="" target="_blank" rel="npppener"
-                aria-label="Ruby's Facebook page - Opens in a new tab">
-                <i class="fa-brands fa-facebook fa-xl" style="color: #619bff;"></i>
-            </a></p>
-    </div>
 </div>
 {% endblock %}

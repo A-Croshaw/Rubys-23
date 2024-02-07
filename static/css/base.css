@@ -212,6 +212,41 @@ input[type=number] {
     margin-bottom: 30px;
 }
 
+/* Forms */
+
+.contact-form{
+    border: 2px solid var(--black-txt);
+    font-family: var(--txt);
+}
+
+textarea.contact-form{
+    resize: none;
+  }
+
+/* About and Contact */
+
+.about-headers{
+    font-family: var(--headers);
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--black-txt)
+
+}
+
+.contact-txt,
+.about-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
+}
+
+.about-txt{
+    font-size: 1.5rem;
+}
+
+.contact-txt{
+    font-size: 1.2rem;
+}
+
 /* toasts/ messages */
 
 .message-container {
