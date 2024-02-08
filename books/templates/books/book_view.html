@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5 py-2">
+<div class="container mt-1 mb-5 mt-lg-5 py-2">
     <div class="card mt-5 p-0 pb-3 view-bg" style="max-width: 1300px;">
         <div class="row m-0 p-0">
             <div class="position-relative">
@@ -20,7 +20,7 @@
                 <!--closes single book view and returns to all books-->
                 <a href="{% url 'books' %}" class="btn close-btn rounded p-0 m-0" aria-label="return to all books"> <i class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
             </div>
-            <div class="row d-flex justify-content-end p-0 m-0">
+            <div class="row d-flex justify-content-end p-0 m-0 pb-4 pb-md-0">
                 <h2 class="view-header text-center">{{ book.title }}</h2>
             </div>
             <div class="col-md-3 ms-md-3 mt-md-3 pt-md-3">

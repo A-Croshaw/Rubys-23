@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Home{% endblock %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="container-fluid content-offset home-bg">
-    <div class="row justify-content-center">
-        <h1 class="home-header text-center rounded"> Welcome To Ruby's Books</h1>
+
+<div class="container justify-content-center rounded mt-1 mt-lg-5 py-2">
+    <div class="row justify-content-center p-0 rounded">
+        <div class="row">
+            <div class="col mt-3">
+                <hr class="mb-1">
+                <h1 class="home-header text-center py-2">Welcome To Ruby's</h1>
+                <hr class="mb-1">
+            </div>
+        </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-6 justify-content-center">
@@ -24,6 +31,12 @@
             </div>
 
             <p class="text-center row ">
+                <h3>Subscribe to Newsletter</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input class="btn btn-info btn-block" type="submit" value="Subscribe">
+                </form>
             </p>
             <a class=" btn btn-home" href="" aria-label="View Books">
                 ALL books

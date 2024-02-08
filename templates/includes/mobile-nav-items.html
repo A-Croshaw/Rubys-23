@@ -265,13 +265,13 @@
             {% if request.user.is_superuser %}
             <li class="nav-item m-0 mb-1 p-0">
                 <!--Product management links for admin users-->
-                <a href="" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View Book management">Book
+                <a href="{% url 'book_management' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View Book management">Book
                     Management</a>
             </li>
             {% endif %}
             <li class="nav-item m-0 mb-1 p-0">
                 <!--Profile link-->
-                <a href="{% url 'book_management' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View profile">My Profile</a>
+                <a href="" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View profile">My Profile</a>
             </li>
             <!--Account links-->
             <li class="nav-item m-0 mb-1 p-0">
@@ -288,13 +288,29 @@
         </ul>
     </li>
     <li class="nav-item m-0 mb-1 p-0">
-        <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="" aria-label="View about section">
+        <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="{% url 'about' %}" aria-label="View about section">
             About
         </a>
     </li>
     <li class="nav-item m-0 mb-1 p-0">
-        <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="" aria-label="go to contact us page">
+        <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="{% url 'contact' %}" aria-label="go to contact us page">
             Contact
         </a>
     </li>
+    {% if request.user.is_superuser %}
+    <li class="nav-item dropdown m-0 mb-1 p-0">
+        <a class="nav-link dropdown-toggle nav-txt side-nav-txt m-0 p-0" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account">
+           Newsletters
+        </a>
+        <ul class="dropdown-menu nav-bg side-nav">         
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="{% url 'newsletters' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View Book management">Newsletters</a>
+            </li>
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="{% url 'new_newsletter' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View profile">New Newsletters</a>
+            </li>
+        </ul>
+    </li>
+    {% endif %}
 </ul>

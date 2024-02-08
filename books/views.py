@@ -97,8 +97,6 @@ def add_book(request):
     context = {
         'form': form,
     }
-
-
     return render(request, template, context)
 
 @login_required

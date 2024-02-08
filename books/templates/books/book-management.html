@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container rounded text-center pb-4 mb-4 ">
+<div class="container rounded text-center mb-5 mt-1 mt-lg-5 py-2 ">
     <div class="container-fluid pb-3">
         <div class="row d-flex justify-content-center">
             <div class="col text-center">
@@ -20,8 +20,8 @@
             <div class="col-12 col-md-8 d-flex justify-content-center">
                 <h2 class="manage-header-2 text-center pt-3">Book list</h2>
             </div>
-            <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end mb-2">
-                <div class="container rounded py-3 my-2 bg-fade box-shadow">
+            <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end mb-1">
+                <div class="container rounded py-3 my-1 ">
                     <!--Search Bar For Mobile View-->
                     <form method="GET" action="">
                         <div class="input-group">
@@ -39,9 +39,9 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center m-0 p-0">
-            <div class="col-12 col-lg-8 order-last order-lg-first book-list p-3">
+            <div class="col-12 col-lg-8 order-last order-lg-first book-list p-3 pt-1 book-management-bg">
                 {% for book in books %}
-                <div class="container-fluid row text-center">
+                <div class="container-fluid row text-center pt-2">
                     <div class="col-2 col-sm-1 p-0 m-0 ">
                         {% if book.image %}
                         <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}">

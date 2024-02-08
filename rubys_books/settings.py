@@ -58,11 +58,13 @@ INSTALLED_APPS = [
     'home',
     'books',
     'about',
+    'newsletter.apps.NewsletterConfig',
 
 
     #Others
     "crispy_forms",
     "crispy_bootstrap5",
+    'django_pandas',
 ]
 
 MIDDLEWARE = [
@@ -205,6 +207,7 @@ else:
     EMAIL_PORT = 587
     EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

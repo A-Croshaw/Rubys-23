@@ -3,30 +3,30 @@
 
 .book-bg {
     background-color: var(--black-bg);
-    width: 21rem;
+    width: 20rem;
     height: 16rem;
 }
 
 .book-card{
-    width: 20rem;
+    width: 19rem;
     height: 15rem;
     background-color: var(--card-bg);
 }
 
 .book-card-body {
-    width: 13rem;
+    width: 12rem;
     height: 10rem;
 }
 
 .book-card-img {
-    width: 6.5rem;
+    width: 5.5rem;
     height: 10rem;
 }
 
 .card-img {
     border: 2px solid var(--black-bg);
-    width: 6.5rem;
-    height: 10rem;
+    width: 6rem;
+    height: 9.5rem;
 }
 
 .book-card-title{
@@ -164,37 +164,12 @@
     font-size: 2.5rem;
 }
 
-/* Delete book */
-
-.delete-item-header,
-.delete-header {
-    font-family: var(--headers);
-    color: var(--black-txt);
-}
-
-.delete-header {
-    font-weight: 600;
-    font-size: 3rem;
-}
-
-.delete-item-header{
-    font-weight: 400;
-    font-size: 2.5rem;
-}
-
-.delete-txt{
-    font-family: var(--txt);
-    color: var(--black-txt);
-    font-weight: 400;
-    font-size: 1.75rem;
-}
-
-.delete-img{
-    max-height: 26rem;
-    max-width: 20rem;
-}
-
 /* Book Management */
+
+.book-management-bg{
+    background-color: var(--card-bg);
+    border: 2px solid var(--black-bg)
+}
 
 .manage-img {
     width: 2.5rem;

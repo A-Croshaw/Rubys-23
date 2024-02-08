@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Newsletter: {{ newsletter.title }}{% endblock %}
+
+{% block content %}
+<div class="container mb-5 mt-1 mt-lg-5 py-2">
+    <div class="card mt-5 p-0 pb-3 view-bg" style="max-width: 1300px;">
+        <div class="row m-0 p-0">
+            <div class="row d-flex justify-content-end p-1 m-0">
+                <!--closes single newsletter view and returns to all newsletters-->
+                <a href="{% url 'newsletters' %}" class="btn close-btn rounded p-0 m-0" aria-label="return to all newsletters"> <i class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
+            </div>
+            <div class="col p-0 m-0">
+                <h1 class="about-headers text-center">Newsletter</h1>
+                <hr class="mb-3">
+                <h2 class="subscribe-headers text-center">{{ newsletter.title|title }}</h2>
+                <p class="subscribe-txt text-center">{{ newsletter.newsletter_date }}</p>
+                <p class="subscribe-txt text-center">{{ newsletter.message }}</p>
+                <hr class="mb-2">
+            </div>
+        </div>
+        <div class="row my-1 justify-content-center">
+            <small class="text-center">
+                <!--delete button-->
+                <a class="text-danger" href="{% url 'newsletter_delete' newsletter.id %}" aria-label="Delete {{ newsletter.title }}">Delete</a>
+            </small>
+        </div>
+    </div>
+</div>
+{% endblock %}

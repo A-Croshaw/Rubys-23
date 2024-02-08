@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Newsletter{% endblock %}
+
+{% block content %}
+<div class="container-fluid mb-5 mt-1 mt-lg-5 py-2">
+    <div class="row">
+        <div class="col mt-3">
+            <hr class="mb-1">
+            <h1 class="about-headers text-center py-2">Newsletters</h1>
+            <hr class="mb-1">
+        </div>
+    </div>
+    <!--Newsletters-->
+    <div class="mt-3 mb-5 ">
+        <div class="container-fluid d-flex flex-row flex-wrap gap-1 gap-lg-2 justify-content-center m-0 p-0">
+            <!-- searches through newsletters rendering each one individually as small cards-->
+            {% for newsletter in newsletter %}
+            <div class="subscribe-bg d-flex flex-wrap justify-content-center p-2 rounded">
+                <div class="row subscribe-card justify-content-center p-0 rounded">
+                    <a href="{% url 'newsletter_view' newsletter.id %}" aria-label="View {{ newsletter.title }}">
+                        <div class="row pt-3">
+                            <p class="subscribe-txt px-3 text-center">{{ newsletter.title|title }}</p>
+                        </div>
+                        <hr class="m-0 p-0">
+                        <div class="row pt-3">
+                            <p class="subscribe-txt text-center">Date: {{ newsletter.newsletter_date }}</p>
+                        </div>
+                    </a>
+                    <div class="row my-1">
+                        <small>
+                            <!--delete button-->
+                            <a class="text-danger" href="{% url 'newsletter_delete' newsletter.id %}"
+                                aria-label="Delete {{ newsletter.title }}">Delete</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

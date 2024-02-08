@@ -1,11 +1,34 @@
 {% load static %}
 <footer class="fixed-bottom mt-5">
-    <!-- Social media icons -->
-    <a href="" target="_blank" rel="noopener" aria-label="Ruby's Facebook page - Opens in a new tab">
-        <i class="fa-brands fa-facebook fa-bounce fa-2xl" style="color: #619bff;"></i>
-    </a>
-    <a href="" target="_blank" rel="noopener"
-        aria-label="Github - Opens in a new tab">
-        <i class="fa-brands fa-github fa-bounce fa-2xl" style="color: #000000;"></i>
-    </a>
+    <div class="container-fluid row p-0 m-0">
+        <!-- Social media icons -->
+        <div class="col-12 col-sm-4 col-md-6 col-lg-8">
+            <div class="row justify-content-evenly">
+                <div class="col-2 mt-3">
+                    <div class="row mt-3">
+                        <a href="" target="_blank" rel="noopener" class="text-center" aria-label="Ruby's Facebook page - Opens in a new tab">
+                            <i class="fa-brands fa-facebook fa-bounce fa-2xl facebook-icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2 mt-3"> 
+                    <div class="row mt-3">
+                        <a href="" target="_blank" rel="noopener" class="text-center" aria-label="Github - Opens in a new tab">
+                            <i class="fa-brands fa-github fa-bounce fa-2xl footer-icon" ></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <p class ="footer-txt text-center pt-2"> Click subsribe! To subscribe to our monthly newsletter!</p>
+                </div>
+                <div class="col-4 pt-3">
+                    <a href="{% url 'subscribe' %}" class="btn btn-subscribe rounded" aria-label="Go to newsletter subcription page">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>

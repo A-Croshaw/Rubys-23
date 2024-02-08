@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Subscribe{% endblock %}
+
+{% block content %}
+<div class="container-fluid mb-5 mt-1 mt-lg-5 py-2">
+    <div class="row justify-content-center p-0 m-0 ">
+        <hr>
+        <h1 class="about-headers text-center py-2">Subscribe To Our Monthly News Letter</h1>
+        <hr>
+    </div>
+    <div class="row justify-content-center">
+        <div class=" col-12 col-md-5 col-lg-6  justify-content-center pb-4 mb-2">
+            <h2 class=" subscribe-headers text-center py-2">Subscribe to Newsletter</h2>
+            <hr class="pb-4">
+            <div class="row justify-content-center">
+                <div class="col-11 col-lg-8 justify-content-center">
+                    <form method="POST" class="subscribe-txt">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="d-flex justify-content-center m-0 mb-2 p-0">
+                            <input class="btn" type="submit" value="Subscribe">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-6 justify-content-center">
+                <h2 class="subscribe-headers text-center py-2">This months newsletter</h2>
+                <hr class="pb-4">
+            {% for newsletter in newsletter %}
+                {% if newsletter.newsletter_date.month == today %}
+                    {% if newsletter.newsletter_date.year == year %}
+                    <div class="container newsletter-bg rounded">
+                        <div class="row p-0 m-0">
+                            <p class="subscribe-headers my-0 py-0 px-3 text-center">{{ newsletter.title|title }}</p>
+                        </div>
+                        <div class="row p-0 m-0">
+                            <p class="subscribe-txt my-0 py-0 px-3 text-center">{{ newsletter.newsletter_date }}</p>
+                        </div>
+                        <div class="row p-0 m-0">
+                            <p class="subscribe-txt my-0 py-0 px-3 text-center">{{ newsletter.message }}</p>
+                        </div>
+                    </div>
+
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

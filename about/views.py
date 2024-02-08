@@ -2,6 +2,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 def about(request):
     """ A view to return the about page """
@@ -21,9 +22,9 @@ def contact(request):
             contact_name,
             contact_message,
             contact_email,
-            ['andrewcroshaw88@outlook.com'],
+            ['rubysbooksonline@gmail.com'],
         )
         messages.success(request, f'Thank you {contact_name}, We have recived your email and will be in touch soon')
-        return render(request, 'about/contact.html',{'contact_name': contact_name})
+        return HttpResponseRedirect('../contact' , {'contact_name': contact_name})
     else:
         return render(request, 'about/contact.html',)

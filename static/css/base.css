@@ -24,7 +24,9 @@
 }
 
 body {
+    background: url(/static/images/bg-image.png) no-repeat center;
     background-color: var(--main-bg);
+    background-attachment: fixed;
 }
 
 /* Custom webkit Browser Scrollbar */
@@ -114,16 +116,29 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 2.5rem;
+    min-height: 2.5rem;
 }
 
-footer a {
-    padding-top: 10px;
+.footer-txt{
+    color: var(--black-txt);
+    font-family: var(--txt);
+    font-size: 1.1rem;
 }
 
-footer a:hover {
+.footer-icon {
+    color: var(--black-txt);
+}
+
+.facebook-icon{
+    color: #1e3ffc;
+}
+
+.facebook-icon:hover,
+.footer-icon:hover {
     background-color: var(--red-hover);
+    height: 2rem;
     border-radius: 50%;
+    padding-top: 16px;
 }
 
 /* Buttons */
@@ -155,6 +170,11 @@ footer a:hover {
     background-color: var(--red-hover);
     border: 2px solid var(--black-bg);
     color: var(--black-txt);
+}
+
+.btn-subscribe{
+    font-size: 1.25rem;
+    height: fit-content;
 }
 
 /* Quantity */
@@ -202,15 +222,20 @@ input[type=number] {
     background-color: var(--black-bg);
 }
 
+.bg-fade{
+    background-color: #aaaaaae0;
+    min-height: 700px;
+}
+
 /* Home Page */
 
-.home-bg{
-    background: url(../images/home-image.webp) no-repeat center;
-    height: 610px;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 30px;
+.home-header{
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: var(--headers);
+    color: var(--black-txt)
 }
+
 
 /* Forms */
 
@@ -223,28 +248,48 @@ textarea.contact-form{
     resize: none;
   }
 
-/* About and Contact */
-
+/* About and Contact and Subscribe */
 .about-headers{
-    font-family: var(--headers);
     font-size: 3.5rem;
     font-weight: 600;
+}
+
+.subscribe-headers{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.subscribe-headers,
+.about-headers{
+    font-family: var(--headers);
     color: var(--black-txt)
 
 }
 
+.subscribe-txt,
 .contact-txt,
 .about-txt{
     font-family: var(--txt);
     color: var(--black-txt);
-}
-
-.about-txt{
-    font-size: 1.5rem;
-}
-
-.contact-txt{
     font-size: 1.2rem;
+}
+
+
+.subscribe-bg {
+    background-color: var(--black-bg);
+    width: 17rem;
+    height: 11rem;
+}
+
+.subscribe-card{
+    width: 16rem;
+    height: 10rem;
+    background-color: var(--card-bg);
+}
+
+.newsletter-bg{
+    background-color: var(--card-bg);
+    border: 2px solid var(--black-bg)
 }
 
 /* toasts/ messages */
@@ -255,6 +300,9 @@ textarea.contact-form{
     right: 5px;
     z-index: 99999999999;
     max-width: 280px;
+}
+
+.message-bg{
     background-color: var(--card-bg);
     border: 2px solid var(--black-bg);
 }
@@ -281,6 +329,36 @@ textarea.contact-form{
     font-family: var(--txt);
     color: var(--black-txt);
 
+}
+
+/* Delete */
+
+.delete-item-header,
+.delete-header {
+    font-family: var(--headers);
+    color: var(--black-txt);
+}
+
+.delete-header {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.delete-item-header{
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.delete-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
+    font-weight: 400;
+    font-size: 1.75rem;
+}
+
+.delete-img{
+    max-height: 26rem;
+    max-width: 20rem;
 }
 
 /* Media Queries*/

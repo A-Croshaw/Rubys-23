@@ -299,4 +299,30 @@
             Contact
         </a>
     </li>
+    {% if request.user.is_superuser %}
+    <li class="nav-item dropcenter">
+        <a class="nav-link nav-txt dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+            Newsletters
+        </a>
+        <div class="dropdown-menu nav-menu row justify-content-center">
+            <div class="container row justify-content-center nav-bg py-3">
+                <div class="col-3 col-xl-2 px-0 mx-0">
+                    <ul class="nav-menu-items">
+                        <li class="nav-item m-0 p-0">
+                            <a class="nav-link nav-txt small-nav-txt m-0 p-0 pb-1" href="{% url 'newsletters' %}" id="all-books-link "
+                                aria-label="View newsletters">
+                                Newsletters
+                            </a>
+                        </li>
+                        <li class="nav-item m-0 p-0">
+                            <a class="nav-link nav-txt small-nav-txt m-0 p-0 pb-1" href="{% url 'new_newsletter' %}" aria-label="create a new newsletter">
+                                New Newletter
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endif %}
 </ul>
