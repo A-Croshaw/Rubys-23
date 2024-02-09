@@ -1,34 +1,32 @@
 {% load static %}
-<footer class="fixed-bottom mt-5">
-    <div class="container-fluid row p-0 m-0">
-        <!-- Social media icons -->
-        <div class="col-12 col-sm-4 col-md-6 col-lg-8">
-            <div class="row justify-content-evenly">
-                <div class="col-2 mt-3">
-                    <div class="row mt-3">
-                        <a href="" target="_blank" rel="noopener" class="text-center" aria-label="Ruby's Facebook page - Opens in a new tab">
-                            <i class="fa-brands fa-facebook fa-bounce fa-2xl facebook-icon"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-2 mt-3"> 
-                    <div class="row mt-3">
-                        <a href="" target="_blank" rel="noopener" class="text-center" aria-label="Github - Opens in a new tab">
-                            <i class="fa-brands fa-github fa-bounce fa-2xl footer-icon" ></i>
-                        </a>
-                    </div>
+<div class="row p-1 m-0 justify-content-center">
+    <!-- Social media icons -->
+    <div class="col-12 col-sm-4 col-lg-5 col-xl-6 m-0">
+        <div class="row justify-content-evenly">
+            <div class="col-2 m-0">
+                <div class="row mt-3">
+                    <a href="" target="_blank" rel="noopener" class="text-center" aria-label="Ruby's Facebook page - Opens in a new tab">
+                        <i class="fa-brands fa-facebook fa-bounce fa-2xl facebook-icon"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-            <div class="row justify-content-center">
-                <div class="col-8">
-                    <p class ="footer-txt text-center pt-2"> Click subsribe! To subscribe to our monthly newsletter!</p>
-                </div>
-                <div class="col-4 pt-3">
-                    <a href="{% url 'subscribe' %}" class="btn btn-subscribe rounded" aria-label="Go to newsletter subcription page">Subscribe</a>
+            <div class="col-2 m-0"> 
+                <div class="row mt-3">
+                    <a href="" target="_blank" rel="noopener" class="text-center" aria-label="Github - Opens in a new tab">
+                        <i class="fa-brands fa-github fa-bounce fa-2xl footer-icon" ></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</footer>
+    <div class="col-12 col-sm-8 col-lg-7 col-xl-6 mt-3 mt-sm-0">
+        <div class="row justify-content-center justify-content-md-end ">
+            <div class="col-7 col-md-6 col-xl-5 m-0">
+                <p class ="footer-txt text-center pt-1 m-0"> Click subsribe! To subscribe to our monthly newsletter!</p>
+            </div>
+            <div class="col-5 col-md-4 col-xl-3 pt-1 m-0">
+                <a href="{% url 'subscribe' %}" class="btn btn-subscribe rounded" aria-label="Go to newsletter subcription page">Subscribe</a>
+            </div>
+        </div>
+    </div>
+</div>

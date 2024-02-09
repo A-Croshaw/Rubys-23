@@ -71,34 +71,30 @@
                                 <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price:
                                         €{{ book.price }}</strong>
                                 </p>
-                                <!--Form to update Quantity-->
-                                <form class="form" action="" method="POST">
+                                <!--Form add to cart with quantities-->
+                                <form class="form" action="{% url 'add_to_cart' book.id %}" method="POST">
                                     {% csrf_token %}
                                     <div class="row justify-content-center">
                                         <div class="container row">
                                             <p class="view-txt text-center p-0 m-0"><strong>Quantity:</strong></p>
                                             <div class="input-group justify-content-center">
-                                                <div class="input-group-prepend p-1">
-                                                    <button class="take-qty btn rounded"
-                                                        data-item_id="{{ book.id }}" id="take-qty_{{ book.id }}"
-                                                        aria-label="remove items">
-                                                        <span class="icon">
-                                                            <i class="fas fa-minus"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
+                                                <button class="take-qty btn m-1"
+                                                    data-item_id="{{ book.id }}" id="take-qty_{{ book.id }}"
+                                                    aria-label="remove items">
+                                                    <span class="icon">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                </button>
                                                 <input
                                                     class="form-control qty-form qty_input view-txt text-center rounded"
                                                     type="number" name="quantity" value="1" min="1" max="99"
                                                     data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
-                                                <div class="input-group-append p-1">
-                                                    <button class="add-qty btn rounded" data-item_id="{{ book.id }}"
-                                                        id="add-qty_{{ book.id }}" aria-label="Add more items">
-                                                        <span class="icon">
-                                                            <i class="fas fa-plus"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
+                                                <button class="add-qty btn m-1" data-item_id="{{ book.id }}"
+                                                    id="add-qty_{{ book.id }}" aria-label="Add more items">
+                                                    <span class="icon">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </button>
                                             </div>
                                         </div>
                                         <div class="container justify-content-center pt-2">

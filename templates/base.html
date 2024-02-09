@@ -77,12 +77,18 @@
         </form>
     </div>
     <!--Main Content-->
-    <main class="content-offset bg-fade pb-5 mb-5">
+    <main class="content-offset bg-fade mb-md-5">
         {% block content %}
         {% endblock %}
     </main>
     <!--Footer-->
-    {% include 'includes/footer.html' %}
+    <footer class="d-md-none d-block">
+        {% include 'includes/footer.html' %}
+    </footer>
+    <footer class="fixed-bottom  d-md-block d-none mt-md-5">
+        {% include 'includes/footer.html' %}
+    </footer>
+    
 
     <!--Post Load JS-->
     {% block postloadjs %}

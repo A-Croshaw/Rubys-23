@@ -116,7 +116,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    min-height: 2.5rem;
+    min-height: 2rem;
 }
 
 .footer-txt{
@@ -177,6 +177,17 @@ footer {
     height: fit-content;
 }
 
+.btn-keep-shopping{
+    height: 50px;
+}
+
+.btn-toast{
+    font-size: 1rem;
+    font-weight:600;
+    padding:3px;
+    width: 255px
+}
+
 /* Quantity */
 
 .take-qty,
@@ -214,10 +225,6 @@ input[type=number] {
     margin-top: 125px;
 }
 
-.content-offset{
-    margin-bottom: 60px;
-}
-
 .black-bg{
     background-color: var(--black-bg);
 }
@@ -247,6 +254,52 @@ input[type=number] {
 textarea.contact-form{
     resize: none;
   }
+
+/* Cart */
+
+/* Shopping Cart */
+
+.cart-card{
+    border: 2px solid var(--black-bg);
+    background-color: var(--card-bg);
+}
+
+.cart-img{
+    max-width: 110px;
+    border: 2px solid var(--black-bg);
+}
+
+.cart-header{
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: var(--headers);
+    color: var(--black-txt)
+    
+}
+
+.cart-title{
+    font-size: 1.35rem;
+    font-family: var(--headers);
+}
+
+.cart-grand-total,
+.cart-author{
+    font-size: 1.15rem;
+}
+
+.cart-totals {
+    font-size: 1.25rem;
+}
+
+.cart-author,
+.cart-totals,
+.cart-grand-total,
+.cart-txt,
+.cart-txt-price,
+.cart-title{
+    font-family: var(--txt);
+    color: var(--black-txt)
+}
 
 /* About and Contact and Subscribe */
 .about-headers{
@@ -311,9 +364,42 @@ textarea.contact-form{
     height: 3px;
 }
 
+.toast-title,
+.toast-txt,
 .toast-message-txt{
     font-family: var(--txt);
     color: var(--black-txt);
+    padding: 0;
+    margin: 0;
+}
+
+.toast-img-box{
+    width: 65px;
+}
+
+.toast-img{
+    width:45px;
+}
+
+.toast-item-txt-box{
+    width: 165px;
+}
+
+.toast-item-list {
+    max-height: 300px;
+    width: 240px;
+    overflow-y: scroll;
+}
+
+.toast-title{
+    font-size: 1rem;
+}
+.toast-txt {
+    font-size: .9rem;
+}
+
+.toast-box{
+    width: 250px;
 }
 
 /* Accounts */
@@ -360,6 +446,7 @@ textarea.contact-form{
     max-height: 26rem;
     max-width: 20rem;
 }
+
 
 /* Media Queries*/
 
