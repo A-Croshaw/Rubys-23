@@ -10,7 +10,7 @@
         <p class=" text-center toast-message-txt"> {{ message }}</p>
     </div>
     <div class="w-100 toast-capper bg-success pt-1"></div>
-    {% if overal_total %}
+    {% if overal_total and not profile_page %}
     <p class="toast-message-txt text-center">Your cart has {{ item_count }} items</p>
     <hr class="mt-1 mb-3">
     <div class="container-fluid bg-white toast-item-list">
@@ -36,7 +36,7 @@
                     </strong>
                 </p>
             </div>
-        </div
+        </div>
         <hr class="p-0 m-0">
         {% endfor %}
     </div>
@@ -50,7 +50,7 @@
             </strong>
             {% if delivery_difference > 0 %}
             <p class="bg-warning text-center toast-message-txt toast-box p-2">
-                Spend <strong>€w{{ delivery_difference }}</strong> more To qualify for free delivery
+                Spend <strong>€{{ delivery_difference }}</strong> more To qualify for free delivery
             </p>
             {% endif %}
     </div>
@@ -59,7 +59,7 @@
             <span class="text-uppercase pe-2">Basket</span>
             <span class="icon"><i class="fas fa-shopping-bag fa-sm"></i></span>
         </a>
-        <a href="" class="btn btn-toast mt-1 mb-0">
+        <a href="{% url 'checkout' %}" class="btn btn-toast mt-1 mb-0">
             <span class="text-uppercase">Secure Checkout</span>
             <span class="icon"><i class="fas fa-lock"></i></span>
         </a>

@@ -61,12 +61,11 @@ INSTALLED_APPS = [
     'newsletter',
     'cart',
     'profiles',
-
+    'checkout',
 
     #Others
     "crispy_forms",
     "crispy_bootstrap5",
-    'django_pandas',
 ]
 
 MIDDLEWARE = [

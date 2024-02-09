@@ -39,7 +39,7 @@
                                     aria-label="View Book management">Book Management</a>
                                 {% endif %}
                             <!--Profile link-->
-                            <a href="" class="nav-link nav-txt p-0 m-0" aria-label="View profile">My Profile</a>
+                            <a href="{% url 'profile' %}" class="nav-link nav-txt p-0 m-0" aria-label="View profile">My Profile</a>
                             <!--Account links-->
                             <li><a href="{% url 'account_logout' %}" class="nav-link nav-txt p-0 m-0"
                                     aria-label="logout">Logout</a></li>
