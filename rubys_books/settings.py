@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'about',
     'newsletter',
     'cart',
+    'profiles',
 
 
     #Others

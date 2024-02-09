@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container mb-5ms-lg-5">
+    <div class="container book-bg box-shadow pt-2 my-5 h-100">
+        <hr>
+        <h1 class="headers text-center py-2">Your Details</h1>
+        <hr>
+        <div class="row justify-content-center gap-3 p-4">
+            <div class="col-12 col-md-10 pt-2 order-table box-shadow order-last order-xl-first">
+                <div class="row text-center">
+                    <p class="update-header">Order History</p>
+                    <hr>
+                </div>
+                <div class="table-responsive ">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}" class="update-txt">
+                                        {{ order.order_number|truncatechars:10 }}
+                                    </a>
+                                </td>
+                                <td class="update-txt">{{ order.date }}</td>
+                                <td class="update-txt">€{{ order.overal_total }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 text-center pt-2  order-first order-xl-last">
+                <div class="row p-2 mt-lg-2 ms-lg-1 box-shadow">
+                    <div>
+                        <a class="btn update-btn" href="{% url 'personal_details' %}"
+                            aria-label="update you person details">Update Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+{% endblock %}
