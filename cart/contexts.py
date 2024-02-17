@@ -10,34 +10,34 @@ def shopping_items(request):
     total = 0
     item_count = 0
     cart = request.session.get('cart', {})
-    delivery = 0
 
-    for item_id, quantity in cart.items():
-        book = get_object_or_404(Book, pk=item_id)
-        if book.condition == "used":
-            price_used = Decimal(book.price / 2)
-            total += quantity * price_used
-            item_count += quantity
+    for item_id, item_data in cart.items():
+        if isinstance(item_data, int):
+            book = get_object_or_404(Book, pk=item_id)
+            if book.condition == "used":
+                price_used = Decimal(book.price / 2)
+                total += item_data * price_used
+                item_count += item_data
 
-            cart_items.append({
-                'item_id': item_id,
-                'quantity': quantity,
-                'book': book,
-                'price_used':price_used,
-            })
-        else:
-            total += quantity * book.price
-            item_count += quantity
-            cart_items.append({
-                'item_id': item_id,
-                'quantity': quantity,
-                'book': book,
-            })
-    
+                cart_items.append({
+                    'item_id': item_id,
+                    'quantity': item_data,
+                    'book': book,
+                    'price_used':price_used,
+                })
+            else:
+                total += item_data * book.price
+                item_count += item_data
+                cart_items.append({
+                    'item_id': item_id,
+                    'quantity': item_data,
+                    'book': book,
+                })
+
     if total > 0:
-         delivery = settings.STANDARD_DELIVERY
-    if total < settings.FREE_DELIVERY:
-        delivery_difference = settings.FREE_DELIVERY - total
+        if total < settings.FREE_DELIVERY:
+            delivery = settings.STANDARD_DELIVERY
+            delivery_difference = settings.FREE_DELIVERY - total
     else:
         delivery = 0
         delivery_difference = 0

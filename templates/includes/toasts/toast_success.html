@@ -48,6 +48,11 @@
                     <span class="float-right">€{{ total|floatformat:2 }}</span>
                 </p>
             </strong>
+            {% if total > 20 %}
+            <p class="bg-warning text-center toast-message-txt toast-box p-2">
+                <strong>Free Delivery</strong>
+            </p>
+            {% endif %}
             {% if delivery_difference > 0 %}
             <p class="bg-warning text-center toast-message-txt toast-box p-2">
                 Spend <strong>€{{ delivery_difference }}</strong> more To qualify for free delivery

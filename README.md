@@ -1,110 +1,398 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# _Rubys_
+Rubys is an fictional online book store based in Ballybunion.
 
-Welcome ACroshaw88,
+![Mockup Image](docs/readme_images/mockup.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[_Click here to view live deployment_](https://rubys-97a7171770c1.herokuapp.com)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+# _Content Menu_
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- [Rubys](#rubys)
+- [Content Menu](#content-menu)
+- [Strategy Plane](#strategy-plane)
+- [Scope Plane](#scope-plane)
+- [Structure Plane](#structure-plane)
+    - [Features](#features)
+        - [Implemented Features](#implemented-features)
+            - [Site Features](#site-features)
+            - [Books](#books)
+            - [Cart](#cart)
+            - [Checkout](#checkout)
+            - [User-Profile](#user-profiles)
+            - [Administration](#administration)
+            - [Messages](#messages)
+            - [Favicon](#favicon)
+            - [Errors](#errors)
+        - [Features to be Implemented](#features-to-be-implemented)
+- [Skeleton Plane](#skeleton-plane)
+    - [Database](#design)
+    - [WireFrames](#wireframes)
+- [Surface Plane](#surface-plane)
+    - [Design](#design)
+    - [Colour And Style Scheme](#colour-and-style-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+- [Bugs, Testing & Validation](#bugs,-testing-&-validation)
+    - [Bugs](#bugs)
+    - [Testing](#testing)
+    - [Validation](#validation)
+- [Technologies](#technologies)
+- [Deployment](#deployment)
+    - [1 - Version Control](#1---version-control)
+    - [2 - Page Deployment](#2---page-deployment)
+    - [3 - Cloning Repository](#3---cloning-repository)
+- [Credits](#credits)
 
-`python3 -m http.server`
+# **_Strategy Plane_**
+* The project Consists of 9 main Epics
 
-A blue button should appear to click: _Make Public_,
+**EPIC 1** - Base Setup
+* As a developer, I need to create the base.html and structure so all pages can use the same layout
+* As a developer, I need to create static resources for all css and Images and JavaScript
+* As a developer, I need to set up the project ready for implementing core features
+* As a developer, I need to create the footer
+* As a developer, I need to create the navbar sousers can navigate from any device
 
-Another blue button should appear to click: _Open Browser_.
+**EPIC 2** - Stand alone Pages
+* As a developer, I need to implement a 404 error page
+* As a developer, I need to implement a 500 error page
+* As a developer, I need to implement a 403 error page
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+**EPIC 3** - Authentication
+* As a developer, I need to implement allauth so that users can sign up and have access to the websites features
+* As a site owner,  allauth pages to be customized to that they fit in with the sites styling
 
-A blue button should appear to click: _Make Public_,
+**EPIC 4** - Books
+* As a user, I would like to be able to view books.
+* As a user, I would like to be able to search books.
+* As a user, I would like to add books to the cart.
+* As a Admin user, I would like to add a books.
+* As a Admin user, I would like to edit a books.
+* As a Admin user, I would like to delete a books.
 
-Another blue button should appear to click: _Open Browser_.
+**EPIC 5** - Cart
+* As a user,I would like to be able to add books to the cart
+* As a user,I would like to be able to view the cart
+* As a user,I would like to be able to remove books from the cart
+* As a user,I would like to be able to update book quanties in thecart cart
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**EPIC 6** - Checkout
+* As a User,I would like to be able to securely checkout with books in the cart
+* As a User,I would like to be able to have order confirmation displayed on screen.
+* As a User,I would like to be able to have order confirmation emailed to my email.
+* As a User,I would like to be able to complete an order with out creating an account.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**EPIC 7** - Profile
+* As a User,I would like to be able to create a profile to save my orders.
+* As a User,I would like to be able to create a profile to save my details for faster checkout on future purchases.
+* As a User,I would like to be able to view orders that i have made.
+* As a User,I would like to be able to view my details that i have saved to my profile.
+* As a User,I would like to be able to edit my details that i have saved to my profile.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**EPIC 8** - Deployment
+* As a developer, I need to deploy the project to heroku so that it is live for customer
 
-------
+**EPIC 9** - Documentation
+* Complete readme documentation
+* Complete testing documentation write up
 
-## Release History
+# **_Scope Plane_**
+* Fully responsive Design that will function on all device off 320px and up.
+* Hamburger with offcanvus menu for mobile devices.
+* Full CRUD functionality on Books and Orders.
+* Restricted role for different user types features.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+# **_Structure Plane_**
+## **_Features_**
+### **_Implemented Features_**
+#### **Site Features**
+##### **Home Page**
 
-**September 20 2023:** Update Python version to 3.9.17.
+* The home page has
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Home Page](docs/readme_images/home.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+##### **Header**
+###### **Header Styling**
+* The nav bar is a medium shade of grey with black text,
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+###### **Medium Screens and Above**
+* The top navbar has the logo to the left, A search bar feature allowing the user to books on the site centered, and to the left is accont dropdown men and the shopping cart link with the cart total.
+* Then there is a black banner with white text that scrolls displaying about free delivery annd red tag sale.
+* Then there is a bottom navbar with links to the home page, all books, book genres, about page, contact page, and the newsletters page.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Navebar Medium Screens Plus](docs/readme_images/navbar-medium-plus.png)
+![Dropdown Menus](docs/readme_images/dropdown-menus.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+###### **Mobile to Medium Screens**
+* The black banner with white text that scrolls displaying about free delivery annd red tag sale is displayed on top.
+* Then navbar is displayed next a hamburger men that displays off canvas, The Logo is centered and on the left is the shopping cart link with the cart total.
+* Then the search bar is below the main navbar allowing the user to books on the site
+* The off canvas menu has navigation links to the he home page, all books, book genres, about page, contact page, and the newsletters page.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Navebar Mobile To Medium Screens](docs/readme_images/navbar-mobile-medium.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Off Canvas Menu](docs/readme_images/offcanvas-menu.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+##### **Footer**
+* The footer is a medium shade of grey with black text.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+###### **Medium Screens Plus**
+* Has Links to Rubys Facebook page to the left.
+* Has a button to allow users to subscride to monthly newsletters to the right.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Footer Medium Screens Plus](docs/readme_images/footer-medium.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+###### **Mobile to Medium Screens**
+* Has Links to Rubys Facebook page centered on top.
+* Then has text for monthly newsletter subscription.
+* Then at the bottom there is button to allow users to subscride.
+* At Bootstraps sm screen size the monthly subscription text and buttom move side by side and the facebook link moves to the left.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Footer Mobile](docs/readme_images/footer-mobile.png)
+![Footer Small Screen to Medium](docs/readme_images/footer-small.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### **Books**
+##### **All Books**
+###### **Medium Screens Plus**
+![All Books](docs/readme_images/all-books-medium.png)
 
-------
+###### **Mobile to Medium Screens**
+![All Books Mobile To Medium](docs/readme_images/all-book-mobile.png)
 
-## FAQ about the uptime script
+##### **Single Book View**
+###### **Medium Screens Plus**
+![Single Book View Medium Screens Plus](docs/readme_images/single-book-view-medium.png)
 
-**Why have you added this script?**
+###### **Mobile to Medium Screens**
+![Single Book View Mobile To Medium](docs/readme_images/single-book-view-mobile.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+##### **Add Book**
+###### **Medium Screens Plus**
+![Add Book Medium Screens Plus](docs/readme_images/add-book-medium.png)
 
-**How will this affect me?**
+###### **Mobile to Medium Screens**
+![Add Book Mobile to Medium Screens](docs/readme_images/add-book-mobile.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+##### **Edit Book**
+###### **Medium Screens Plus**
+![Edit Book Medium Screens Plus](docs/readme_images/edit-book-medium.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+###### **Mobile to Medium Screens**
+![Edit Book Mobile to Medium Screens](docs/readme_images/edit-book-mobile.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+##### **Delete Book**
+###### **Medium Screens Plus**
+![Delete Book Medium Screens Plus](docs/readme_images/delete-book-medium.png)
 
-**So….?**
+###### **Mobile to Medium Screens**
+![Delete Book Mobile to Medium Screens](docs/readme_images/delete-book-mobile.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+#### **Cart**
+##### **Medium Screens Plus**
+![Cart Medium Screens Plus](docs/readme_images/cart-medium-plus.png)
 
-**Can I opt out?**
+##### **Mobile To Medium Screens**
+![Cart Mobile To Medium Screens](docs/readme_images/cart-mobile.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### **Checkout**
+##### **Checkout View**
+###### **Medium Screens Plus**
+![Checkout Medium Screens Plus](docs/readme_images/checkout-view-medium-plus.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+###### **Mobile To Medium Screens**
+![Checkout Mobile To Medium Screens](docs/readme_images/checkout-view-mobile.png)
 
-**Anything more?**
+##### **Checkout Success**
+###### **Medium Screens Plus**
+![Checkout Success Medium Screens Plus](docs/readme_images/checkout-success-medium-plus.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+###### **Mobile To Medium Screens**
+![Checkout Success Mobile To Medium Screens](docs/readme_images/checkout-success-mobile.png)
 
----
+##### **Stripe**
+###### **Medium Screens Plus**
+![Stripe Medium Screens Plus](docs/readme_images/Stripe-medium-plus.png)
 
-Happy coding!
+###### **Mobile To Medium Screens**
+![Stripe Mobile To Medium Screens](docs/readme_images/Stripe-mobile.png)
+
+#### **User Profiles**
+##### **Main Profile**
+###### **Medium Screens Plus**
+![Main Profile Medium Screens Plus](docs/readme_images/main-profile-medium-plus.png)
+
+###### **Mobile To Medium Screens**
+![Main Profile Mobile To Medium Screens](docs/readme_images/main-profile-mobile.png)
+
+##### **Order View**
+###### **Medium Screens Plus**
+![Order View Medium Screens Plus](docs/readme_images/order-view-medium-plus.png)
+
+###### **Mobile To Medium Screens**
+![Order View Mobile To Medium Screens](docs/readme_images/order-view-mobile.png)
+
+##### **Details View**
+###### **Medium Screens Plus**
+![Details View Medium Screens Plus](docs/readme_images/details-view-medium-plus.png)
+
+###### **Mobile To Medium Screens**
+![Details View Mobile To Medium Screens](docs/readme_images/details-view-mobile.png)
+
+#### **Administration**
+##### **Book Management**
+###### **Medium Screens Plus**
+![Book Management Medium Screens Plus](docs/readme_images/book-management-medium-plus.png)
+
+###### **Mobile To Medium Screens**
+![Book Management Mobile To Medium Screens](docs/readme_images/book-management-mobile.png)
+
+##### **All Site Orders**
+###### **Medium Screens Plus**
+![All Site Orders Medium Screens Plus](docs/readme_images/all-orders-medium-plus.png)
+
+###### **Mobile To Medium Screens**
+![All Site Orders Mobile To Medium Screens](docs/readme_images/all-orders-mobile.png)
+
+#### **Messages** (Toasts)
+##### **Medium Screens Plus**
+![Messages](docs/readme_images/messages.png)
+
+#### **Favicon**
+* A favicon was implemented to Show the user that They still are pressent on site
+* This also provides an image in the tabs to allow the user to easily identify the website if they have multiple tabs open.
+
+#### **Errors**
+##### **403 Error**
+* A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content or actions.
+* This covers the actions of adding, updating and deleting of content for all users except those how are admin users.
+
+##### **404 Error**
+* A 404 error page has been implemented to provide feedback to the user if they try to open a page that does not exist.
+
+##### **500 Error**
+* A 500 error page has been implemented to provide feedback to the user that the server has encounted a problem.  
+
+### **_Features to be Implemented_**
+
+
+# **_Skeleton Plane_**
+## **_Database_**
+* This shows the schemas for each of the models and how they are related.
+* Entity relationship diagram was created using [DBVisualizer](https://www.dbvis.com/)
+
+![Database 1](docs/readme_images/database1.png)
+![Database 2](docs/readme_images/database2.png)
+![Database 3](docs/readme_images/database3.png)
+![Database 4](docs/readme_images/database4.png)
+![Database 5](docs/readme_images/database5.png)## **_WireFrames_**
+
+# ** _Surface Plane_**
+
+## **_Design_**
+### _Colour And Style Scheme_
+Colour used within the site. 
+* Main background: #aaaaaa;
+* Black background: #000000;
+* Card Backgrond: #d3d0d0;
+* Navbar and footer: #504f4f;
+* Off canavs background: #ffffff;
+* Red tag*: #fa0000;
+* Hover color: #ff0000;
+* Black text: #000000;
+* White text: #ffffff;
+* To clear background colour on the sort buttons: #ffffff00;
+* Sort Button Hover Color: #9c9c9c;
+
+### **_Typography_**
+* Fonts imported from google fonts with buck up fonts if not supported by browsers
+* The logo: 'Shadows Into Light', serif;
+* The delivery Banner: 'Yatra One', serif;
+* All headers: 'Shadows Into Light', serif;
+* All text: 'Zilla Slab', serif, arial;
+
+### **_Imagery_**
+* The Logo is 'Shadows Into Light' font just as black text.
+* The Background image is ai generated from [_Craiyon.com_](https://www.craiyon.com/)
+
+# **_Bugs, Testing & Validation_**
+* For Bugs, Testing & Validation. with results click the link below to navigate to the testing md file (This is separate to reduce the readme file size)
+[TESTING.md](TESTING.md)
+
+# **_Technologies_**
+### **Python/ Django**
+* Python is the main proggraming language whilst using the django framework.
+### **HTML**
+* Used to for main website language.
+### **CSS**
+* For the styling for the website.
+### **Bootstarp 5.3.2**
+* Is used With in the site for different styling and for responsiveness.
+### **[Font Awesome](https://fontawesome.com/)**
+* Used for difrerent icons through out the site.
+### **Git**
+* Used to commit and push through out the development.
+### **[balsamiq](https://balsamiq.com/)**
+* Wireframes were created using balsamiq.
+### **[TinyPNG](https://tinypng.com/)**
+* Was used to compress the background image 
+### **[cloudconvert](https://cloudconvert.com/webp-converter,)**
+* Was used to change image files to webp.
+### **[ElephantSQL](https://www.elephantsql.com/)**
+* To store the site data.  ElephantSQL is a ProsgreSQL based database.
+### **[Cloudinary](https://cloudinary.com/)**
+* Was used For the storage of static file and images.
+### **[favicon](https://favicon.io/favicon-generator/)**
+* Favicon.io was used to generate the favicon.
+### **[DBVisualizer](https://www.dbvis.com/)**
+* Was used to create the flow chart showing the database relationships.
+### **[GitHub](https://www.github.com)**
+* Is the main repository site files.
+### **[Gitpod](https://www.gitpod.io)**
+* Was the main the coding environment.
+### **[Heroku](https://www.heroku.com)**
+* Is used to deploy the website to the web.
+### **[Techsini.com](https://techsini.com/multi-mockup/index.php)**
+* Is used to create the mockup image for the readme.
+
+# **_Deployment_**
+## **_Version Control_**
+* Verion controle was maintained using GIT within GitPod to push code to the GitHub repository
+* From the Gitpod terminal use "git add ." which tells git you would like to make changes/updates to the files.
+* Then use "git commit -m " with a comment, this will commit the changes and update the files.
+* Then using the "git push" command this will push the committed changes to your GitHub repository.
+
+## **_Page Deployment_**
+* Go to Heroku and log in
+* Click "New" to create a new app from the dashboard
+* Choose app name and select your region, press "Create app".
+* Go to "Settings" and navigate to Config Vars.
+* Add Config Vars. 
+    This app used 4 confid vars 
+    * for the clouninary (KEY: CLOUNDINARY_URL / VALUE: *****)
+    * for the database (KEY: DATABASE_URL / VALUE: ****** )
+    * KEY: SECRET_KEY / VALUE:*******
+    * KEY: PORT / VALUE = 8000.
+* Now go to the Deploy tab.
+* Scroll Down to Deployment Method and select GitHub.
+*  Select repository to be deployed and connect to Heroku.
+* Now Scroll down to depoly : 
+    * Option 1 is selecting Automatic deploys (Will Update Automaticly when every git push to the repository).
+    * Option 2 is selecting Manual deploy (Needs to be redeployed after every change manually via Heroku deploy tab).
+
+Visit the live deployment [HERE](https://rubys-97a7171770c1.herokuapp.com).
+
+## **_Cloning Repository_**
+* To clone the repository for download or use within your GitHub head-over to this [link](https://github.com/git-guides/git-clone) 
+
+# **_Credits_**
+* I used [python.org](https://www.python.org/) for References for the Pyhton code and functionality
+
+* I used [w3schools](https://www.w3schools.com/python/default.asp) for References for the Pyhton code and functionality
+
+* I used [stackoverflow](https://stackoverflow.com/) for References for the Pyhton code and functionality
+
+* I Used [Django Docs](https://docs.djangoproject.com/en/5.0/) to the reference for the django code and functionality

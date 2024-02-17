@@ -23,6 +23,7 @@ def cache_data_checkout(request):
             'username': request.user,
         })
         return HttpResponse(status=200)
+        
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
@@ -35,7 +36,7 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-
+        print(cart)
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -117,7 +118,8 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
-
+ 
+    
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
@@ -134,6 +136,7 @@ def success_checkout(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
     if request.user.is_authenticated:
         profile = Profile.objects.get(user=request.user)
         #Attach the user's profile to the order

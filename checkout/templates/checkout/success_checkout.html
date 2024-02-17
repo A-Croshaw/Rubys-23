@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load calc_tool%}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
@@ -56,7 +56,23 @@
                         </p>
                     </div>
                     <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ item.quantity }} @ ${{ item.book.price }} each</p>
+                        <p class="mb-0">{{ item.quantity }} @ <strong>
+                            {% if item.book.condition == 'used' %}
+                            €{{ item.book.price | calc_subtotal_used_success:item.quantity }}
+                            {% else %}
+                            €{{ item.book.price }}
+                            {% endif %}
+                        </strong> each</p>
+                        <p class="checkout-txt my-0">
+                            <strong>
+                                Sub Total:
+                                {% if item.book.condition == 'used' %}
+                                €{{ item.book.price | calc_subtotal_used_success_sub:item.quantity }}
+                                {% else %}
+                                €{{ item.book.price | calc_subtotal:item.quantity }}
+                                {% endif %}
+                            </strong>
+                        </p>
                     </div>
                 </div>
                 {% endfor %}
@@ -145,7 +161,7 @@
                         <p class="mb-0">Order Total</p>
                     </div>
                     <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">€{{ order.order_total }}</p>
+                        <p class="mb-0">€{{ order_total }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -153,7 +169,7 @@
                         <p class="mb-0">Delivery</p>
                     </div>
                     <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">€{{ order.delivery_cost }}</p>
+                        <p class="mb-0">€{{ delivery_cost }}</p>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -161,7 +177,7 @@
                         <p class="mb-0 ">Overal total Total</p>
                     </div>
                     <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">€{{ order.overal_total }}</p>
+                        <p class="mb-0">€{{ overal_total }}</p>
                     </div>
                 </div>
             </div>

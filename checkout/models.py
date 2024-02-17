@@ -69,8 +69,13 @@ class OrderLineTotal(models.Model):
         Method to set the itemline total
         and update the order total.
         """
-        self.itemline_total = self.book.price * self.quantity
-        super().save(*args, **kwargs)
+        if self.book.condition == "used":
+            half_price = self.book.price / 2
+            self.itemline_total = half_price * self.quantity
+            super().save(*args, **kwargs)
+        else:
+            self.itemline_total = self.book.price * self.quantity
+            super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'ISBN {self.book.ISBN} on order {self.order.order_number}'
+        return f'SKU {self.book.sku} on order {self.order.order_number}'

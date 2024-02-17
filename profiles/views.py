@@ -11,11 +11,11 @@ from checkout.models import Order
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(Profile, user=request.user)
-    orders = profile.orders.all()
+    order = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
-        'orders': orders,
+        'order': order,
         'profile_page': True
     }
 
