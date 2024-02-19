@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load calc_tool %}
 {% block title %}Book: {{ book.title }}{% endblock %}
 
 {% block extra_css %}
@@ -7,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-1 mb-5 mt-lg-5 py-2">
+<div class="container mt-1 mb-5 mt-lg-5 py-4">
     <div class="card mt-5 p-0 pb-3 view-bg" style="max-width: 1300px;">
         <div class="row m-0 p-0">
             <div class="position-relative">
@@ -68,9 +69,12 @@
                                 <p class="view-txt p-0 pb-1 m-0">ISBN-13: {{ book.ISBN }}</p>
                             </div>
                             <div class="col">
-                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price:
-                                        €{{ book.price }}</strong>
-                                </p>
+                                {% if book.condition == 'used' %}
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center strike-out">Price: €{{ book.price }}</p>
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price: €{{ book.price | calc_used_price }}</strong></p>
+                                {% else %}
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price: €{{ book.price }}</strong></p>
+                                {% endif %}
                                 <!--Form add to cart with quantities-->
                                 <form class="form" action="{% url 'add_to_cart' book.id %}" method="POST">
                                     {% csrf_token %}

@@ -1,4 +1,5 @@
 from django import template
+from decimal import Decimal
 
 register = template.Library()
 
@@ -8,18 +9,11 @@ def calc_subtotal(price, quantity):
     return price * quantity
 
 @register.filter(name='calc_subtotal_used')
-def calc_subtotal_used(price_used, quantity):
+def calc_subtotal_used(price, quantity):
 
-    return price_used * quantity
+    return Decimal(price / 2) * quantity
     
-@register.filter(name='calc_subtotal_used_success')
-def calc_subtotal_used_success(price, quantity):
+@register.filter(name='calc_used_price')
+def calc_used_price(price):
 
-    price = price / 2
-    return price
-    
-@register.filter(name='calc_subtotal_used_success_sub')
-def calc_subtotal_used_success(price, quantity):
-
-    price = price / 2
-    return price * quantity
+    return Decimal(price / 2)

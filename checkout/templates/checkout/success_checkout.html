@@ -9,196 +9,174 @@
 {% endblock %}
 
 {% block content %}
-<div class="container offset-md-1 text-center">
-    <div class="container-fluid nav-bg pb-3 mb-5">
-        <div class="row">
-            <div class="col">
+<div class="container mt-1 mb-5 mt-lg-5 py-3">
+    <div class="row">
+        <div class="col text-center">
+            <hr class="mb-1">
+            <!--Header-->
+            <h2 class="confirmation-header mb-1">
+               Oreder Confirmation
+            </h2>
+            <hr class="mb-1">
+        </div>
+    </div>
+    <div class="container confirmation-bg">
+        <div class="row p-0">
+            <div class="col p-0">
                 <hr>
-                <h2 class="view-headers mb-1">Thank You</h2>
-                <h3 class="view-header-2">{{ order.full_name }}</h3>
-                <p class="text-black">Your order confirmation has been email to <strong>{{ order.email }}</strong>.</p>
+                <h2 class="confirmation-header-2 mb-1 text-center">Thank You</h2>
+                <h3 class="confirmation-name mb-1 text-center">{{ order.full_name }}</h3>
+                <p class="confirmation-txt mb-1 text-center">Your order confirmation has been email to <strong>{{ order.email }}</strong>.</p>
                 <hr>
             </div>
         </div>
         <div class="row justify-content-center ">
-            <div class="col-12 col-lg-8 box-shadow thank-you-box">
+            <div class="col-12">
                 <div class=" row p-2 ">
-                    <div>
-                        <h3 class="view-header-2 ">Order Info:</h3>
-                    </div>
+                    <h3 class="confirmation-header-order text-center">Order Info</h3>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Order Number</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt ">
-                        <p class="mb-2">{{ order.order_number }}</p>
-                    </div>
+                    <p class="confirmation-txt-order mb-1 text-center">Order Number: {{ order.order_number }}</p>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Order Date</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-2">{{ order.date }}</p>
-                    </div>
+                        <p class="confirmation-txt-order mb-1 text-center">Order Date: {{ order.date }}</p>
+                </div>
+                <hr>
+            </div>
+            <div class="col-12">
+                <div class="row p-2 ">
+                    <h3 class="confirmation-header-order text-center">Order Details</h3>
                 </div>
                 <div class="row">
-                    <div class="col thank-you-order my-3">
-                        <p>Order Details:</p>
-                    </div>
+                    <p class="confirmation-txt-order mb-1 text-center">Order Number: {{ order.order_number }}</p>
                 </div>
-                {% for item in order.itemlines.all %}
                 <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0 ">
-                            {{ item.book.title }}
-                        </p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ item.quantity }} @ <strong>
-                            {% if item.book.condition == 'used' %}
-                            €{{ item.book.price | calc_subtotal_used_success:item.quantity }}
-                            {% else %}
-                            €{{ item.book.price }}
-                            {% endif %}
-                        </strong> each</p>
-                        <p class="checkout-txt my-0">
-                            <strong>
-                                Sub Total:
-                                {% if item.book.condition == 'used' %}
-                                €{{ item.book.price | calc_subtotal_used_success_sub:item.quantity }}
+                        <p class="confirmation-txt-order mb-1 text-center">Order Date: {{ order.date }}</p>
+                </div>
+                <hr>
+            </div>
+            <div class="container col-12">
+                <div class="row p-2 ">
+                    <h3 class="confirmation-header-order text-center">Order Items</h3>
+                </div>
+                <table class="table table-striped confirmation-txt-order">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in order.lineitems.all %}
+                        <tr>
+                            <td>{{ item.book.title }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{% if item.book.condition == 'used' %}
+                                €{{ item.book.price | calc_used_price}}
+                                {% else %}
+                                €{{ item.book.price }}
+                                {% endif %}</td>
+                            <td>{% if item.book.condition == 'used' %}
+                                €{{ item.book.price | calc_subtotal_used:item.quantity }}
                                 {% else %}
                                 €{{ item.book.price | calc_subtotal:item.quantity }}
-                                {% endif %}
-                            </strong>
-                        </p>
+                                {% endif %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <hr>
+            </div>
+            <div class="col-12">
+                <div class="row p-2 ">
+                    <h3 class="confirmation-header-order text-center">Delivery Details</h3>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <p class="confirmation-txt-order">Full Name:</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="confirmation-txt-order">{{ order.full_name }}</p>
                     </div>
                 </div>
-                {% endfor %}
-                <div class="row">
-                    <div class="col thank-you-order my-3">
-                        <p>Delivering To:</p>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <p class="confirmation-txt-order">Billing/Delivery Address:</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="confirmation-txt-order my-0 p-0">{{ order.street_address1 }}</p>
+                        {% if order.street_address2 %}
+                        <p class="confirmation-txt-order my-0 p-0">{{ order.street_address2 }}</p>
+                        {% endif %}
+                        {% if order.county %}
+                        <p class="confirmation-txt-order my-0 p-0">{{ order.county }}</p>
+                        {% endif %}
+                        <p class="confirmation-txt-order my-0 p-0">{{ order.town_or_city }}</p>
+                        {% if order.postcode %}
+                        <p class="confirmation-txt-order my-0 p-0">{{ order.postcode }}</p>
+                        {% endif %}
+                        <p class="confirmation-txt-order my-0 p-0">{{ order.country }}</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Full Name</p>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <p class="confirmation-txt-order">Phone Number:</p>
                     </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.full_name }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0  thank-you-txt">Address 1</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.street_address1 }}</p>
+                    <div class="col-4">
+                        <p class="confirmation-txt-order">{{ order.phone_number }}</p>
                     </div>
                 </div>
-                {% if order.street_address2 %}
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Address 2</p>
+                <hr>
+            </div>
+            <div class="col-12">
+                <div class="row p-2 ">
+                    <h3 class="confirmation-header-order text-center">Billing Info</h3>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <p class="confirmation-txt-order">Order Total:</p>
                     </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.street_address1 }}</p>
+                    <div class="col-4">
+                        <p class="confirmation-txt-order my-0 p-0">€{{ order.order_total }}</p>
                     </div>
                 </div>
-                {% endif %}
-                {% if order.county %}
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">County</p>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <p class="confirmation-txt-order">Delivery Cost:</p>
                     </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.county }}</p>
+                    <div class="col-4">
+                        <p class="confirmation-txt-order my-0 p-0">€{{ order.delivery_cost }}</p>
                     </div>
                 </div>
-                {% endif %}
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Town or City</p>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <p class="confirmation-txt-order">Overal Total:</p>
                     </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.town_or_city }}</p>
-                    </div>
-                </div>
-                {% if order.postcode %}
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Postal Code</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.postcode }}</p>
-                    </div>
-                </div>
-                {% endif %}
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Country</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.country }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Phone Number</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">{{ order.phone_number }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col my-3 thank-you-order ">
-                        <p>Billing Info:</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Order Total</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">€{{ order_total }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0">Delivery</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">€{{ delivery_cost }}</p>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-12 col-md-4 thank-you-txt">
-                        <p class="mb-0 ">Overal total Total</p>
-                    </div>
-                    <div class="col-12 col-md-8 thank-you-txt">
-                        <p class="mb-0">€{{ overal_total }}</p>
+                    <div class="col-4">
+                        <p class="confirmation-txt-order my-0 p-0">€{{ order.overal_total }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mt-4">
-            {% if from_profile %}
-            <a href="{% url 'profile' %}" class="btn-account">
-                <span class="icon mr-2">
-                    <i class="fas fa-angle-left"></i>
-                </span>
-                <span class="text-uppercase">Back to Profile</span>
-            </a>
-            {% else %}
-            <a href="{% url 'books' %}" class="btn btn-sign-up">
-                <span class="icon">
-                    <i class="fas fa-arrow-left fa-md"></i>
-                </span>
-                <span class="text-uppercase">Keep Shopping</span>
-            </a>
-            {% endif %}
-        </div>
+    </div>
+    <div class="row justify-content-evenly my-3">
+        {% if from_profile %}
+        <a href="" class="btn btn-checkout">
+            <span class="icon mr-2">
+                <i class="fas fa-angle-left"></i>
+            </span>
+            <span class="text-uppercase">Back to Profile</span>
+        </a>
+        {% else %}
+        <a href="{% url 'books' %}" class="btn btn-checkout">
+            <span class="icon">
+                <i class="fas fa-arrow-left fa-md"></i>
+            </span>
+            <span class="text-uppercase">Keep Shopping</span>
+        </a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

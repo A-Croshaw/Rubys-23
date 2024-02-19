@@ -18,11 +18,9 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
          cart[item_id] += quantity
-         price_sub = book.price * quantity
          messages.success(request, f'{cart[item_id]} x {book.title} added to cart')
     else:
          cart[item_id] = quantity
-         price_sub = book.price * quantity
          messages.success(request, f'{cart[item_id]} x {book.title} added to cart')
     
     request.session['cart'] = cart

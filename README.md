@@ -285,10 +285,16 @@ Rubys is an fictional online book store based in Ballybunion.
 * Entity relationship diagram was created using [DBVisualizer](https://www.dbvis.com/)
 
 ![Database 1](docs/readme_images/database1.png)
+
 ![Database 2](docs/readme_images/database2.png)
+
 ![Database 3](docs/readme_images/database3.png)
+
 ![Database 4](docs/readme_images/database4.png)
-![Database 5](docs/readme_images/database5.png)## **_WireFrames_**
+
+![Database 5](docs/readme_images/database5.png)
+
+## **_WireFrames_**
 
 # ** _Surface Plane_**
 
@@ -371,11 +377,11 @@ Colour used within the site.
 * Choose app name and select your region, press "Create app".
 * Go to "Settings" and navigate to Config Vars.
 * Add Config Vars. 
-    This app used 4 confid vars 
-    * for the clouninary (KEY: CLOUNDINARY_URL / VALUE: *****)
-    * for the database (KEY: DATABASE_URL / VALUE: ****** )
+    This app used ? confid vars 
+    * Clouninary (KEY: CLOUNDINARY_URL / VALUE: *****)
+    * Database (KEY: DATABASE_URL / VALUE: ****** )
     * KEY: SECRET_KEY / VALUE:*******
-    * KEY: PORT / VALUE = 8000.
+    
 * Now go to the Deploy tab.
 * Scroll Down to Deployment Method and select GitHub.
 *  Select repository to be deployed and connect to Heroku.

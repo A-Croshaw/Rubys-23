@@ -4,29 +4,29 @@
 .book-bg {
     background-color: var(--black-bg);
     width: 20rem;
-    height: 16rem;
+    min-height: 10rem;
 }
 
 .book-card{
     width: 19rem;
-    height: 15rem;
+    min-height: 9rem;
     background-color: var(--card-bg);
 }
 
 .book-card-body {
     width: 12rem;
-    height: 10rem;
+    min-height: 9rem;
 }
 
 .book-card-img {
     width: 5.5rem;
-    height: 10rem;
+    min-height: 9rem;
 }
 
 .card-img {
     border: 2px solid var(--black-bg);
     width: 6rem;
-    height: 9.5rem;
+    height: 8.5rem;
 }
 
 .book-card-title{

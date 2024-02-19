@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from books.models import Book
 
 
-def shopping_items(request):
+def cart_contents(request):
     """ Creates shopping items with price calculations"""
     cart_items = []
     total = 0
@@ -15,16 +15,7 @@ def shopping_items(request):
         if isinstance(item_data, int):
             book = get_object_or_404(Book, pk=item_id)
             if book.condition == "used":
-                price_used = Decimal(book.price / 2)
-                total += item_data * price_used
-                item_count += item_data
-
-                cart_items.append({
-                    'item_id': item_id,
-                    'quantity': item_data,
-                    'book': book,
-                    'price_used':price_used,
-                })
+                total += item_data * Decimal(book.price / 2)
             else:
                 total += item_data * book.price
                 item_count += item_data
@@ -33,17 +24,32 @@ def shopping_items(request):
                     'quantity': item_data,
                     'book': book,
                 })
+        else:
+            book = get_object_or_404(Book, pk=item_id)
+            for quantity in item_data['items_by_size'].items():
+                if book.condition == "used":
+                    total += quantity * Decimal(book.price / 2)
+                else:
+                    total += quantity * book.price
+                item_count += quantity
+                cart_items.append({
+                    'item_id': item_id,
+                    'quantity': quantity,
+                    'product': product,
+                })
 
-    if total > 0:
-        if total < settings.FREE_DELIVERY:
-            delivery = settings.STANDARD_DELIVERY
-            delivery_difference = settings.FREE_DELIVERY - total
+    if total < settings.FREE_DELIVERY:
+        delivery = settings.STANDARD_DELIVERY
+        delivery_difference = settings.FREE_DELIVERY - total
     else:
         delivery = 0
         delivery_difference = 0
     
-    overal_total = delivery + total
-    
+    if total > 0:
+        overal_total = delivery + total
+    else:
+        overal_total = 0
+        
     context = {
         'cart_items': cart_items,
         'total': total,

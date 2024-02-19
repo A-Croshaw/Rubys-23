@@ -25,11 +25,19 @@
             </div>
             <div class="toast-item-txt-box justify-content-center p-0">
                 <p class="toast-title text-center">{{ item.book.title|title }}</p>
-                <p class="toast-txt text-center"><strong>€{{ item.book.price }} X {{ item.quantity }}</strong></p>
+                <p class="toast-txt text-center">
+                    <strong>
+                        {% if item.book.condition == 'used' %}
+                        €{{ item.book.price | calc_used_price }} X {{ item.quantity }}
+                        {% else %}
+                        €{{ item.book.price }} X {{ item.quantity }}
+                        {% endif %}
+                </strong>
+                </p>
                 <p class="toast-txt text-center">
                     <strong>Sub Total:
                         {% if item.book.condition == 'used' %}
-                        €{{ item.price_used | calc_subtotal_used:item.quantity }}
+                        €{{ item.book.price| calc_subtotal_used:item.quantity }}
                         {% else %}
                         €{{ item.book.price | calc_subtotal:item.quantity }}
                         {% endif %}

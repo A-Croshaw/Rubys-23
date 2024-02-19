@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load calc_tool %}
 {% block title %}Books{% endblock %}
 
 {% block extra_css %}
@@ -36,8 +37,8 @@
                     <div class="row book-card-txt p-0 m-0">
                         <p class="my-0 py-0 px-3 text-center book-card-title">{{ book.title }}</p>
                     </div>
-                    <hr class="mb-1">
-                    <div class="col-4 book-card-img m-0 py-0 px-1">
+                    <hr class="my-1">
+                    <div class="col-4 book-card-img m-0 p-0">
                         {% if book.image %}
                         <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}">
                             <img class="card-img" src="{{ book.image.url }}" alt="{{ book.title }}">
@@ -47,9 +48,14 @@
                             <img class="card-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ book.title }}">
                         </a>
                         {% endif %}
+
                     </div>
-                    <div class="col-5 book-card-body text-center m-0 p-0">
-                        <p class="mb-1 book-card-txt"><strong>€{{ book.price }}</strong></p>
+                    <div class="col-8 book-card-body text-center m-0 p-0 ms-2">
+                        {% if book.condition == 'used' %}
+                            <p class="mb-1 book-card-txt">Price:<strong class="strike-out"> €{{ book.price }}</strong> <strong> €{{ book.price | calc_used_price }}</strong></p>
+                        {% else %}
+                        <p class="mb-1 book-card-txt">Price:<strong> €{{ book.price }}</strong></p>
+                        {% endif %}
                         {% if book.genre %}
                         <p class="book-card-txt my-1
                         ">Category: {{ book.category|title}}</p>

@@ -1,28 +1,28 @@
+/* Checkout Page */
+
 .StripeElement,
 .stripe-style-input {
     box-sizing: border-box;
-    height: 40px;
-    padding: 10px 12px;
+    height: 30px;
+    padding: 5px 10px;
     border: 1px solid transparent;
-    border-radius: 0px;
-    background-color: white;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
-    transition: box-shadow 150ms ease;
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    font-family: var(--txt);
 }
 
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-    box-shadow: 0 1px 3px 0 #cfd7df;
+    box-shadow: 0 1px 3px 0 var(--red-tag);
 }
 
 .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
+    background-color: var(--card-bg) !important;
 }
 
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+    color: var(--main-bg);
 }
 
 .fieldset-label {
@@ -32,18 +32,18 @@
 
 #payment-form .form-control,
 #card-element {
-    color: #000;
-    border: 1px solid #000;
+    color: var(--black-txt);
+    border: 1px solid var(--black-bg);
 }
 
 select,
 select option {
-    color: #000000;
+    color: var(--black-txt);
 }
 
 select:invalid,
 select option[value=""] {
-    color: #aab7c4 !important;
+    color: var(--main-bg) !important;
 }
 
 #loading-overlay {
@@ -53,7 +53,7 @@ select option[value=""] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 162, 184, .85);
+    background: var(--overlay);
     z-index: 9999;
 }
 
@@ -65,9 +65,73 @@ select option[value=""] {
     height: 100%;
 }
 
+
+.checkout-img {
+    height: 5rem;
+    width: 3rem;
+}
+
+.checkout-txt {
+    font-family: var(--txt);
+    font-size: 1rem;
+    text-align: left;
+}
+
+.checkout-header{
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: var(--headers);
+    color: var(--black-txt)
+}
+
+.checkout-top-header{
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: var(--headers);
+    color: var(--black-txt)
+}
+
+/* Confirmation Page */
+.confirmation-bg{
+    border: 2px solid var(--black-bg);
+    background-color: var(--card-bg);
+}
+
+.confirmation-header{
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: var(--headers);
+    color: var(--black-txt)
+}
+
+.confirmation-header-2{
+    font-size: 2.25rem;
+    font-family: var(--headers);
+    color: var(--black-txt)
+}
+
+.confirmation-header-order,
+.confirmation-name{
+    font-size: 1.5rem;
+    font-family: var(--txt);
+    color: var(--black-txt)
+}
+
+.confirmation-txt-order,
+.confirmation-txt{
+    font-size: 1.25rem;
+    font-family: var(--txt);
+    color: var(--black-txt)
+}
+
+.confirmation-txt-order{
+    font-size: 1rem;
+}
+
+
 .thank-you-txt {
     font-family: var(--txt);
-    color: #000;
+    color: var(--black-txt)
 }
 
 
@@ -82,14 +146,4 @@ select option[value=""] {
 
 .thank-you-order {
     font-size: 1.2rem;
-}
-
-.checkout-img {
-    height: 140px;
-    width: 100px;
-}
-
-.checkout-txt {
-    font-size: 1rem;
-    text-align: left;
 }

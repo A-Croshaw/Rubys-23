@@ -26,15 +26,12 @@
         </div>
         <hr class="mt-1 mt-sm-0">
     </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-12 col-md-8 order-last order-md-first">
+    <div class="row d-flex justify-content-evenly">
+        <div class="col-12 col-md-8 col-lg-6 order-last order-md-first">
             {% for item in cart_items %}
-            <div class="card cart-card p-1 m-0 mb-1">
-                <div class="row p-0 m-0 pt-1">
-                    <h2 class="cart-title text-center">{{ item.book.title }}
-                        {%if item.book.condition == 'used'%}<i class="fa-solid fa-tag fa-beat"
-                        style="color: #fa0000;"></i>{%endif%}</h2>
-                    <div class="col-12 col-sm-2 p-1 m-0 text-center">
+            <div class="card cart-card mt-1">
+                <div class="row py-1 px-0 mt-1">
+                    <div class="col-12 col-sm-3 py-2 ps-4 text-center">
                         {% if item.book.image %}
                         <a href="{% url 'book_view' item.book.id %}">
                             <img class="img-fluid cart-img rounded" src="{{ item.book.image.url }}"
@@ -42,20 +39,27 @@
                         </a>
                         {% else %}
                         <a href="{% url 'book_view' item.book.id %}">
-                            <img class="img-fluid cart-img rounded" src="{{ MEDIA_URL }}no-image.png"
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}no-image.png"
                                 alt="{{ item.book.title }}">
                         </a>
                         {% endif %}
                     </div>
-                    <div class="col-12 col-sm-7 text-center p-0 m-0 pt-2 mt-1 mt-sm-0">
+                    <div class="col-12 col-sm-5 text-center pt-2 mt-1">
+                        <h2 class="cart-title text-center">{{ item.book.title }} 
+                            {%if item.book.condition == 'used'%}<i class="fa-solid fa-tag fa-beat"
+                            style="color: #fa0000;"></i>{%endif%}</h2>
                         <h3 class="cart-author">By {{ item.book.author }}</h3>
                         <p class="cart-txt p-0 m-0">Category: {{ item.book.category}}</p>
                         <p class="cart-txt p-0 m-0">Condition: {{ item.book.condition }}</p>
                         <p class="cart-txt p-0 m-0">SKU: {{ item.book.sku|upper }}</p>
                         <p class="cart-txt p-0 m-0">ISBN-13: {{ item.book.ISBN|upper }}</p>
                     </div>
-                    <div class="col-12 col-sm-3 text-center p-0 m-0 mt-1 mt-sm-0">
-                        <p class="cart-txt-price p-0 m-0"><strong>Price: €{{ item.book.price }}</strong></p>
+                    <div class="col-12 col-sm-4 text-center pt-2 mt-1">
+                        {% if item.book.condition == 'used' %}
+                            <p class="cart-txt-price p-0 m-0">Price:<strong class="strike-out"> €{{ item.book.price }}</strong> <strong> €{{ item.book.price | calc_used_price }}</strong></p>
+                        {% else %}
+                            <p class="cart-txt-price p-0 m-0"><strong>Price: €{{ item.book.price }}</strong></p>
+                        {% endif %}
                         <form class="form update-form mb-2" method="POST" id="qty-update"
                             action="{% url 'update_cart' item.item_id %}">
                             {% csrf_token %}
@@ -87,7 +91,7 @@
                         <p class="cart-txt pt-2">
                             <strong>Sub Total:
                                 {% if item.book.condition == 'used' %}
-                                €{{ item.price_used | calc_subtotal_used:item.quantity }}
+                                €{{ item.book.price | calc_subtotal_used:item.quantity }}
                                 {% else %}
                                 €{{ item.book.price | calc_subtotal:item.quantity }}
                                 {% endif %}
@@ -99,7 +103,7 @@
             {% endfor %}
         </div>
 
-        <div class=" col-12 col-md-4 order-first p-3 order-md-last">
+        <div class=" col-12 col-md-4 col-xl-3 order-first order-md-last">
             <div class="cart-card p-3 rounded ">
                 <h3 class="cart-totals pt-1">Number of items in Cart : {{ item_count }}</h3>
                 <h3 class="cart-totals pt-1"><strong>Cart Total : €{{ total|floatformat:2 }}</strong></h3>

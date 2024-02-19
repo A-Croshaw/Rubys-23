@@ -6,225 +6,206 @@
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 {% block content %}
-<section class="container text-center bg-fade">
-    <div class="overlay"></div>
-    <div class="container-fluid pb-3 mb-4">
-        <div class="row d-flex justify-content-center">
-            <div class="col">
-                <hr>
-                <h2 class="view-headers mb-4">Checkout</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-12 cart-total-box d-flex justify-content-center justify-content-md-end p-2">
-                <a href="{% url 'books' %}" class="btn btn-sign-up">
-                    <span class="icon">
-                        <i class="fas fa-arrow-left fa-md"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Shopping</span>
-                </a>
-            </div>
+<div class="overlay"></div>
+<div class="container pb-3 mb-4">
+    <div class="row d-flex justify-content-center">
+        <div class="col">
+            <hr>
+            <h2 class="checkout-top-header text-center mb-4">Checkout</h2>
             <hr>
         </div>
-        <div class="accordion box-shadow mb-5" id="accordionExample">
-            <div class="accordion-item p-2">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#summery"
-                        aria-expanded="true" aria-controls="collapseOne">
-                        Order Summary
-                    </button>
-                </h2>
-                <div id="summery" class="accordion-collapse collapse show " aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body ">
-                        <div class="row">
-                            <div class="col-12 col-md-8 ">
-                                {% for item in cart_items %}
-                                <div class="card box-shadow mb-2" style="max-height: 1400px;">
-                                    <div class="d-none d-lg-block">
-                                        <div class="row d-flex justify-content-evenly">
-                                            <div class=" col-12 col-md-2 p-2">
-                                                {% if item.book.image %}
-                                                <img class="img-fluid rounded checkout-img"
-                                                    src="{{ item.book.image.url }}" alt="{{ book.title }}">
-                                                {% else %}
-                                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
-                                                    alt="{{ book.title }}">
-                                                {% endif %}
-                                            </div>
-                                            <div class="col-12 col-md-9 p-0 m-0">
-                                                <div class="card-body p-0 m-0">
-                                                    <div class="row p-0 m-0">
-                                                        <div class="col-12 col-md-6 pt-xl-3">
-                                                            <h6 class="toast-header mt-2">{{ item.book.title }}</h6>
-                                                            <h6 class="toast-header-2 mt-3">By {{ item.book.author }}
-                                                            </h6>
-                                                        </div>
-                                                        <div class="col-12 col-md-6 pt-3">
-                                                            <p class="toast-txt mt-2"><strong>Price:
-                                                                    €{{ item.book.price }}</strong></p>
-                                                            <p class="toast-txt mt-2"><strong>Qty:
-                                                                    {{ item.quantity }}</strong></p>
-                                                            <p class="toast-txt mt-2">
-                                                                <strong>
-                                                                    Sub Total:
-                                                                    {% if item.book.condition == 'used' %}
-                                                                    €{{ item.price_used | calc_subtotal_used:item.quantity }}
-                                                                    {% else %}
-                                                                    €{{ item.book.price | calc_subtotal:item.quantity }}
-                                                                    {% endif %}
-                                                                </strong>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row d-lg-none ">
-                                        <div class="col card-body ">
-                                            <p class="checkout-txt my-0"><strong>{{ item.book.title }}</strong><span> By
-                                                    {{ item.book.author }}</span></p>
-                                            <p class="checkout-txt my-0"><strong>Price: €{{ item.book.price }}</strong>
-                                            </p>
-                                            <p class="checkout-txt my-0">Qty: {{ item.quantity }}</p>
-                                            <p class="checkout-txt my-0">
-                                                <strong>
-                                                    Sub Total:
-                                                    {% if item.book.condition == 'used' %}
-                                                    €{{ item.price_used | calc_subtotal_used:item.quantity }}
-                                                    {% else %}
-                                                    €{{ item.book.price | calc_subtotal:item.quantity }}
-                                                    {% endif %}
-                                                </strong>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
+    </div>
+    <div class="row ">
+        <div class="col-12 cart-total-box d-flex justify-content-center justify-content-md-end p-2">
+            <a href="{% url 'books' %}" class="btn btn-sign-up">
+                <span class="icon">
+                    <i class="fas fa-arrow-left fa-md"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+        </div>
+        <hr>
+    </div>
+    <div class="row d-flex justify-content-evenly">
+        <div class="col-12 col-lg-6 d-flex justify-content-end mb-2">
+            <div class="container">
+                <div>
+                    <h2 class="checkout-header"> Order Details</h2>
+                </div>
+                {% for item in cart_items %}
+                <div class="col cart-card rounded p-1 mt-1">
+                    <div class="row p-1">
+                        <div class="col-4 col-md-2">
+                            {% if item.book.image %}
+                            <a href="{% url 'book_view' item.book.id %}">
+                                <img class="img-fluid checkout-img rounded" src="{{ item.book.image.url }}"
+                                    alt="{{ item.book.title }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'book_view' item.book.id %}">
+                                <img class="img-fluid checkout-img rounded" src="{{ MEDIA_URL }}no-image.png"
+                                    alt="{{ item.book.title }}">
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div class="col-7 ">
+                            <h2 class="toast-txt">{{ item.book.title }} 
+                            <h3 class="toast-txt">By {{ item.book.author }}</h3>
+                            <p class="toast-txt">SKU: {{ item.book.sku|upper }}</p>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="row p-0 m-0">
+                                {% if item.book.condition == 'used' %}
+                                <p class="toast-txt col-4 col-md-12">Price:<strong class="strike-out"> €{{ item.book.price }}</strong> <strong> €{{ item.book.price | calc_used_price }}</strong></p>
+                            {% else %}
+                                <p class="toast-txt col-4 col-md-12">Price: <strong>€{{ item.book.price }}</strong></p>
+                            {% endif %}
+                            <p class="toast-txt col-4 col-md-12">Quantity: <strong>{{ item.quantity }}</strong></p>
+                            <p class="toast-txt col-4 col-md-12">
+                                Total: <strong>
+                                {% if item.book.condition == 'used' %}
+                                €{{ item.book.price | calc_subtotal_used:item.quantity }}
+                                {% else %}
+                                €{{ item.book.price | calc_subtotal:item.quantity }}
+                                {% endif %}
+                                </strong>
+                            </p>
                             </div>
-                            <div class="  col-12 col-md-4 d-flex justify-content-end mb-2">
-                                <div class="container row align-content-end">
-                                    <div class=" box-shadow row p-2">
-                                        <div class="col-7 p-0 m-0">
-                                            <p class="checkout-txt my-0">Order Total:</p>
-                                            <p class="checkout-txt my-0">Delivery:</p>
-                                            <p class="checkout-txt my-0">Overal Total:</p>
-                                        </div>
-                                        <div class="col-3 p-0 m-0">
-                                            <p class="checkout-txt my-0">${{ total | floatformat:2 }}</p>
-                                            <p class="checkout-txt my-0">${{ delivery | floatformat:2 }}</p>
-                                            <p class="checkout-txt my-0">
-                                                <strong>${{ overal_total | floatformat:2 }}</strong></p>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col cart-card rounded mt-1">
+                    <div class="row p-2 justify-content-end">
+                        <div class="col-4 col-md-3">
+                            <p class="checkout-txt my-0">Order Total:</p>
+                            <p class="checkout-txt my-0">Delivery:</p>
+                            <p class="checkout-txt my-0">Overal Total:</p>
+                        </div>
+                        <div class="col-4 col-md-3">
+                            <p class="checkout-txt my-0"><strong>€{{ total | floatformat:2 }}</strong></p>
+                            <p class="checkout-txt my-0"><strong>€{{ delivery | floatformat:2 }}</strong></p>
+                            <p class="checkout-txt my-0"><strong>€{{ overal_total | floatformat:2 }}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6 d-flex justify-content-end mb-2 ">
+            <div class="container">
+                <div>
+                    <h2 class="checkout-header"> Your Details</h2>
+                </div>
+                <div class="col cart-card rounded p-4">
+                    <p>Fill out the form to complete your order</p>
+                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                        {% csrf_token %}
+                        <fieldset class="rounded px-3">
+                            <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.full_name | as_crispy_field }}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.phone_number | as_crispy_field }}
+                                </div>
+                                <div class="col-12">
+                                    {{ order_form.email | as_crispy_field }}
                                 </div>
                             </div>
-                            <div class="submit-button text-right mt-5 mb-2">
-                                <a href="{% url 'shopping_cart' %}" class="btn btn-outline-black rounded-0">
+                        </fieldset>
+                        <fieldset class="rounded px-3">
+                            <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.street_address1 | as_crispy_field }}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.street_address2 | as_crispy_field }}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.town_or_city | as_crispy_field }}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.county | as_crispy_field }}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.postcode | as_crispy_field }}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {{ order_form.country | as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline float-right mr-0">
+                                {% if user.is_authenticated %}
+                                <label class="form-check-label checkout-txt" for="id-save-info">Save delivery
+                                    information to profile</label>
+                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info"
+                                    name="save-info" checked>
+                                {% else %}
+                                <label class="form-check-label" for="id-save-info">
+                                    <a class="text-info" href="{% url 'account_signup' %}">Create an
+                                        account</a> or
+                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save
+                                    this information
+                                </label>
+                                {% endif %}
+                            </div>
+                        </fieldset>
+                        <fieldset class="px-3">
+                            <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                            <!-- A Stripe card element will go here -->
+                            <div class="mb-3" id="card-element"></div>
+                            <!-- Used to display form errors -->
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                            <!-- Pass the client secret to the view so we can get the payment intent id -->
+                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                        </fieldset>
+                        <div class="col justify-content-center">
+                            <div class="row justify-content-evenly">
+                                <a href="{% url 'shopping_cart' %}" class="btn btn-checkout rounded">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="font-weight-bold">Adjust Cart</span>
                                 </a>
+                                <button id="submit-button" class="btn rounded btn-checkout">
+                                    <span class="font-weight-bold">Complete Order</span>
+                                    <span class="icon">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <p class="small text-danger my-0 text-center">
+                                    <span class="icon">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                    </span>
+                                    <span>Your card will be charged
+                                        <strong>${{ overal_total|floatformat:2 }}</strong></span>
+                                </p>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#delivery" aria-expanded="false" aria-controls="collapseTwo">
-                        Delivery Details
-                    </button>
-                </h2>
-                <div id="delivery" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-12">
-                                <p>Fill out the form to complete your order</p>
-                                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                                    {% csrf_token %}
-                                    <fieldset class="rounded px-3 mb-5">
-                                        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
-                                        {{ order_form.full_name | as_crispy_field }}
-                                        {{ order_form.email | as_crispy_field }}
-                                    </fieldset>
-                                    <fieldset class="rounded px-3 mb-5">
-                                        <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
-                                        {{ order_form.phone_number | as_crispy_field }}
-                                        {{ order_form.street_address1 | as_crispy_field }}
-                                        {{ order_form.street_address2 | as_crispy_field }}
-                                        {{ order_form.town_or_city | as_crispy_field }}
-                                        {{ order_form.county | as_crispy_field }}
-                                        {{ order_form.postcode | as_crispy_field }}
-                                        {{ order_form.country | as_crispy_field }}
-                                        <div class="form-check form-check-inline float-right mr-0">
-                                            {% if user.is_authenticated %}
-                                            <label class="form-check-label" for="id-save-info">Save this delivery
-                                                information to my profile</label>
-                                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info"
-                                                name="save-info" checked>
-                                            {% else %}
-                                            <label class="form-check-label" for="id-save-info">
-                                                <a class="text-info" href="{% url 'account_signup' %}">Create an
-                                                    account</a> or
-                                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save
-                                                this information
-                                            </label>
-                                            {% endif %}
-                                        </div>
-                                    </fieldset>
-                                    <fieldset class="px-3">
-                                        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                                        <!-- A Stripe card element will go here -->
-                                        <div class="mb-3" id="card-element"></div>
-                                        <!-- Used to display form errors -->
-                                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                                        <!-- Pass the client secret to the view so we can get the payment intent id -->
-                                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                                    </fieldset>
-
-                                    <div class="submit-button text-right mt-5 mb-2">
-                                        <a href="{% url 'shopping_cart' %}" class="btn btn-outline-black rounded-0">
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </span>
-                                            <span class="font-weight-bold">Adjust Cart</span>
-                                        </a>
-                                        <button id="submit-button" class="btn btn-black rounded-0">
-                                            <span class="font-weight-bold">Complete Order</span>
-                                            <span class="icon">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
-                                        </button>
-                                        <p class="small text-danger my-0">
-                                            <span class="icon">
-                                                <i class="fas fa-exclamation-circle"></i>
-                                            </span>
-                                            <span>Your card will be charged
-                                                <strong>${{ overal_total|floatformat:2 }}</strong></span>
-                                        </p>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+            
                 </div>
             </div>
         </div>
     </div>
-    <div id="loading-overlay">
-        <h1 class="text-light logo-font loading-spinner">
-            <span class="icon">
-                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-            </span>
-        </h1>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12">
+            
+        </div>
     </div>
-</section>
+</div>
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-solid fa-spinner fa-spin-pulse "></i>
+        </span>
+    </h1>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

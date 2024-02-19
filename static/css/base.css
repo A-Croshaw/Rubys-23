@@ -17,6 +17,7 @@
     --side-nav: #ffffff;
     --red-tag: #fa0000;
     --red-hover: #ff0000;
+    --overlay: #ff04048f;
     --black-txt: #000000;
     --white-txt: #ffffff;
     --clear: #ffffff00;
@@ -36,12 +37,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(255, 0, 0);
+    box-shadow: inset 0 0 5px var(--red-tag);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(0, 0, 0);
+    background: var(--black-bg);
     border-radius: 50%;
 }
 
@@ -183,9 +184,14 @@ footer {
 
 .btn-toast{
     font-size: 1rem;
-    font-weight:600;
     padding:3px;
     width: 255px
+}
+
+.btn-checkout{
+    font-size: 1rem;
+    padding:3px;
+    width: 200px
 }
 
 /* Quantity */
@@ -234,6 +240,11 @@ input[type=number] {
     min-height: 700px;
 }
 
+.strike-out{
+    text-decoration: line-through var(--red-tag);
+
+}
+
 /* Home Page */
 
 .home-header{
@@ -265,7 +276,7 @@ textarea.contact-form{
 }
 
 .cart-img{
-    max-width: 110px;
+    max-height: 9rem;
     border: 2px solid var(--black-bg);
 }
 
@@ -330,12 +341,12 @@ textarea.contact-form{
 
 .subscribe-bg {
     background-color: var(--black-bg);
-    width: 17rem;
+    width: 18rem;
     height: 11rem;
 }
 
-.subscribe-card{
-    width: 16rem;
+.newsletter-card{
+    width: 17rem;
     height: 10rem;
     background-color: var(--card-bg);
 }
@@ -352,7 +363,7 @@ textarea.contact-form{
     top: 50px;
     right: 5px;
     z-index: 99999999999;
-    max-width: 280px;
+    max-width: 300px
 }
 
 .message-bg{
