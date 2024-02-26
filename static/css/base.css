@@ -188,6 +188,7 @@ footer {
     width: 255px
 }
 
+.btn-profile,
 .btn-checkout{
     font-size: 1rem;
     padding:3px;
@@ -363,7 +364,7 @@ textarea.contact-form{
     top: 50px;
     right: 5px;
     z-index: 99999999999;
-    max-width: 300px
+    max-width: 320px
 }
 
 .message-bg{
@@ -410,7 +411,7 @@ textarea.contact-form{
 }
 
 .toast-box{
-    width: 250px;
+    max-width: 250px;
 }
 
 /* Accounts */
@@ -458,6 +459,31 @@ textarea.contact-form{
     max-width: 20rem;
 }
 
+/* profile */
+
+.profile-bg{
+    border: 2px solid var(--black-bg);
+    background-color: var(--card-bg);
+}
+
+.profile-txt{
+    font-family: var(--txt);
+    color: var(--black-txt);
+    font-size: 1rem;
+}
+
+.profile-sub-header{
+    font-family: var(--headers);
+    color: var(--black-txt);
+    font-size: 2.5rem;
+}
+
+.profile-header{
+    font-family: var(--headers);
+    color: var(--black-txt);
+    font-weight: 600;
+    font-size: 3rem;
+}
 
 /* Media Queries*/
 

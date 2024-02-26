@@ -3,53 +3,96 @@
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-<div class="container mb-5ms-lg-5">
-    <div class="container book-bg box-shadow pt-2 my-5 h-100">
-        <hr>
-        <h1 class="headers text-center py-2">Your Details</h1>
-        <hr>
-        <div class="row justify-content-center gap-3 p-4">
-            <div class="col-12 col-md-10 pt-2 order-table box-shadow order-last order-xl-first">
-                <div class="row text-center">
-                    <p class="update-header">Order History</p>
-                    <hr>
+<div class="container-fluid mt-1 mb-5 mt-lg-5 p-4">
+    <div class="row">
+        <div class="col text-center">
+            <hr class="mb-1">
+            <!--Header-->
+            <h2 class="profile-header mb-1">
+                Profile for {{user.username}} 
+            </h2>
+            <hr class="mb-1">
+        </div>
+    </div>
+    <div class="row d-flex justify-content-evenly">
+        <div class="col-12 col-md-7 col-lg-8 d-flex justify-content-center my-1">
+            <div class="container">
+                <div>
+                    <h2 class="profile-sub-header text-center py-1"> Order History</h2>
                 </div>
-                <div class="table-responsive ">
-                    <table class="table table-sm table-borderless">
+                <hr>
+                <div class="profile-bg rounded p-4 m-0">
+                    <table class="table table-striped profile-txt">
                         <thead>
                             <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Order Total</th>
+                                <th scope="col">Order Number</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Order Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for order in order %}
                             <tr>
-                                <td>
+                                <td scope="row">
                                     <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}" class="update-txt">
                                         {{ order.order_number|truncatechars:10 }}
                                     </a>
                                 </td>
-                                <td class="update-txt">{{ order.date }}</td>
-                                <td class="update-txt">€{{ order.overal_total }}</td>
-                                {% for item in order.lineitems.all %}
-                                <li class="small">
-                                        {{ item.book.title }} x{{ item.quantity }}
-                                </li>
-                                {% endfor %}
+                                <td scope="row">{{ order.date }}</td>
+                                <td scope="row">€{{ order.overal_total }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="col-12 col-md-2 text-center pt-2  order-first order-xl-last">
-                <div class="row p-2 mt-lg-2 ms-lg-1 box-shadow">
-                    <div>
-                        <a class="btn update-btn" href="{% url 'personal_details' %}"
-                            aria-label="update you person details">Update Details</a>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 d-flex justify-content-center">
+            <div class="container">
+                <div>
+                    <h2 class="profile-sub-header text-center py-1"> Your Details</h2>
+                </div>
+                <hr>
+                <div class="profile-bg rounded p-4 m-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="profile-txt">Full Name:</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="profile-txt">{{ user.profile.user }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="profile-txt">Billing/Delivery Address:</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="profile-txt my-0 p-0">{{ user.profile.street_address1 }}</p>
+                            {% if user.profile.street_address2 %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.street_address2 }}</p>
+                            {% endif %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.town_or_city }}</p>
+                            {% if user.profile.county %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.county }}</p>
+                            {% endif %}
+                            {% if user.profile.postcode %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.postcode }}</p>
+                            {% endif %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.country }}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <p class="profile-txt">Phone Number:</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="profile-txt">{{ user.profile.phone_number }}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                            <a class="btn btn-profile" href="{% url 'personal_details' %}"
+                                aria-label="update you person details">Update Details</a>
                     </div>
                 </div>
             </div>

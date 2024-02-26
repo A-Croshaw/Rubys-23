@@ -3,92 +3,83 @@
 {% block title %}Personal Details{% endblock %}
 
 {% block content %}
-<div class="container book-bg mb-5 pb-4 my-5 box-shadow">
-    <div class="row justify-content-end">
-        <a href="" class="btn-close p-2 m-1" aria-label="return to profile"></a>
+<div class="container-fluid mt-1 mb-5 mt-lg-5 p-4">
+    <div class="row">
+        <div class="col text-center">
+            <hr class="mb-1">
+            <!--Header-->
+            <h2 class="profile-header mb-1">
+                Profile for {{user.username}} 
+            </h2>
+            <hr class="mb-1">
+        </div>
     </div>
-    <hr>
-    <h1 class="headers text-center py-2">Your Details</h1>
-    <hr>
-    <div class="row justify-content-center gap-4 pb-3">
-        <div class="col-12 col-md-4 text-center update-details pt-2 box-shadow">
-            <p class="update-header p-0 m-0">Current Information</p>
-            <p class="update-header p-0 m-0">For: {{user.username}}</p>
-            <hr>
-            <div class="table-responsive ">
-                <table class="table table-sm table-borderless">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p class="update-txt">Phone Number:</p>
-                            </td>
-                            <td>
-                                <p class="update-txt">{{user.profile.phone_number}}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="update-txt">Address 1:</p>
-                            </td>
-                            <td>
-                                <p class="update-txt">{{user.profile.street_address1}}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="update-txt">Address 2:</p>
-                            </td>
-                            <td>
-                                <p class="update-txt">{{user.profile.street_address2}}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="update-txt">Town/City:</p>
-                            </td>
-                            <td>
-                                <p class="update-txt">{{user.profile.town_or_city}}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="update-txt">County:</p>
-                            </td>
-                            <td>
-                                <p class="update-txt">{{user.profile.county}}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="update-txt">Postcode:</p>
-                            </td>
-                            <td>
-                                <p class="update-txt">{{user.profile.postcode}}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="update-txt">Country:</p>
-                            </td>
-                            <td>
-                                <p class="update-txt">{{user.profile.country}}</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div class="row d-flex justify-content-evenly">
+        <div class="col-12 col-md-6 d-flex justify-content-center my-1">
+            <div class="container">
+                <div>
+                    <h2 class="profile-sub-header text-center py-1"> Your Details</h2>
+                </div>
+                <hr>
+                <div class="profile-bg rounded p-4 m-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="profile-txt">Full Name:</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="profile-txt">{{ user.profile.user }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="profile-txt">Billing/Delivery Address:</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="profile-txt my-0 p-0">{{ user.profile.street_address1 }}</p>
+                            {% if user.profile.street_address2 %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.street_address2 }}</p>
+                            {% endif %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.town_or_city }}</p>
+                            {% if user.profile.county %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.county }}</p>
+                            {% endif %}
+                            {% if user.profile.postcode %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.postcode }}</p>
+                            {% endif %}
+                            <p class="profile-txt my-0 p-0">{{ user.profile.country }}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <p class="profile-txt">Phone Number:</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="profile-txt">{{ user.profile.phone_number }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-12 col-md-8 update-details pt-2 box-shadow pb-4">
-            <p class="update-header">Update Information Form</p>
-            <hr>
-            <form class="mt-4 update-txt" action="{% url 'personal_details' %}" method="POST" id="profile-form">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <div class="row justify-content-center">
-                    <button class="update-btn rounded">Update Information</button>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="container">
+                <div>
+                    <h2 class="profile-sub-header text-center py-1"> Your Details</h2>
                 </div>
-            </form>
+                <hr>
+                <div class="profile-bg rounded p-4 m-0">
+                    <div class="row">
+                        <form class="mt-4 profile-txt" action="{% url 'personal_details' %}" method="POST" id="profile-form">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="row justify-content-center">
+                                <button class="btn btn-profile rounded">Update Information</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 {% endblock %}

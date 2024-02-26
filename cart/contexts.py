@@ -18,26 +18,12 @@ def cart_contents(request):
                 total += item_data * Decimal(book.price / 2)
             else:
                 total += item_data * book.price
-                item_count += item_data
-                cart_items.append({
-                    'item_id': item_id,
-                    'quantity': item_data,
-                    'book': book,
-                })
-        else:
-            book = get_object_or_404(Book, pk=item_id)
-            for quantity in item_data['items_by_size'].items():
-                if book.condition == "used":
-                    total += quantity * Decimal(book.price / 2)
-                else:
-                    total += quantity * book.price
-                item_count += quantity
-                cart_items.append({
-                    'item_id': item_id,
-                    'quantity': quantity,
-                    'product': product,
-                })
-
+            item_count += item_data
+            cart_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'book': book,
+            })
     if total < settings.FREE_DELIVERY:
         delivery = settings.STANDARD_DELIVERY
         delivery_difference = settings.FREE_DELIVERY - total
@@ -49,7 +35,7 @@ def cart_contents(request):
         overal_total = delivery + total
     else:
         overal_total = 0
-        
+
     context = {
         'cart_items': cart_items,
         'total': total,

@@ -71,14 +71,14 @@
                     <tbody>
                         {% for item in order.lineitems.all %}
                         <tr>
-                            <td>{{ item.book.title }}</td>
-                            <td>{{ item.quantity }}</td>
-                            <td>{% if item.book.condition == 'used' %}
+                            <td scope="row">{{ item.book.title }}</td>
+                            <td scope="row">{{ item.quantity }}</td>
+                            <td scope="row">{% if item.book.condition == 'used' %}
                                 €{{ item.book.price | calc_used_price}}
                                 {% else %}
                                 €{{ item.book.price }}
                                 {% endif %}</td>
-                            <td>{% if item.book.condition == 'used' %}
+                            <td scope="row">{% if item.book.condition == 'used' %}
                                 €{{ item.book.price | calc_subtotal_used:item.quantity }}
                                 {% else %}
                                 €{{ item.book.price | calc_subtotal:item.quantity }}
@@ -110,10 +110,10 @@
                         {% if order.street_address2 %}
                         <p class="confirmation-txt-order my-0 p-0">{{ order.street_address2 }}</p>
                         {% endif %}
+                        <p class="confirmation-txt-order my-0 p-0">{{ order.town_or_city }}</p>
                         {% if order.county %}
                         <p class="confirmation-txt-order my-0 p-0">{{ order.county }}</p>
                         {% endif %}
-                        <p class="confirmation-txt-order my-0 p-0">{{ order.town_or_city }}</p>
                         {% if order.postcode %}
                         <p class="confirmation-txt-order my-0 p-0">{{ order.postcode }}</p>
                         {% endif %}
@@ -163,7 +163,7 @@
     </div>
     <div class="row justify-content-evenly my-3">
         {% if from_profile %}
-        <a href="" class="btn btn-checkout">
+        <a href="{% url 'profile' %}" class="btn btn-checkout">
             <span class="icon mr-2">
                 <i class="fas fa-angle-left"></i>
             </span>
