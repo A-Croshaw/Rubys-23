@@ -32,7 +32,7 @@
                         </thead>
                         <tbody>
                             {% for order in order %}
-                            <tr>
+                            <tr class="row-border">
                                 <td scope="row">
                                     <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}" class="update-txt">
@@ -55,19 +55,19 @@
                 </div>
                 <hr>
                 <div class="profile-bg rounded p-4 m-0">
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
                             <p class="profile-txt">Full Name:</p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
                             <p class="profile-txt">{{ user.profile.user }}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
                             <p class="profile-txt">Billing/Delivery Address:</p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
                             <p class="profile-txt my-0 p-0">{{ user.profile.street_address1 }}</p>
                             {% if user.profile.street_address2 %}
                             <p class="profile-txt my-0 p-0">{{ user.profile.street_address2 }}</p>
@@ -83,10 +83,10 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-6">
+                        <div class="col-4">
                             <p class="profile-txt">Phone Number:</p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
                             <p class="profile-txt">{{ user.profile.phone_number }}</p>
                         </div>
                     </div>

@@ -10,7 +10,7 @@
         <p class=" text-center toast-message-txt"> {{ message }}</p>
     </div>
     <div class="w-100 toast-capper bg-success pt-1"></div>
-    {% if overal_total and not profile_page %}
+    {% if overal_total and not profile_page and not add_page and not edit_page and not delete_page%}
     <p class="toast-message-txt text-center">Your cart has {{ item_count }} items</p>
     <hr class="mt-1 mb-3">
     <div class="container-fluid bg-white toast-item-list">
@@ -67,7 +67,7 @@
             </p>
             {% endif %}
     </div>
-    <div class="row justify-content-center pb-0 mb-0">
+    <div class="row justify-content-center pb-0 mb-0 mt-1">
         <a class="btn btn-toast" href="{% url 'shopping_cart' %}" aria-label="View shopping cart">
             <span class="text-uppercase pe-2">Basket</span>
             <span class="icon"><i class="fas fa-shopping-bag fa-sm"></i></span>

@@ -54,34 +54,32 @@
                         {% if book.condition == 'used' %}
                             <p class="mb-1 book-card-txt">Price:<strong class="strike-out"> €{{ book.price }}</strong> <strong> €{{ book.price | calc_used_price }}</strong></p>
                         {% else %}
-                        <p class="mb-1 book-card-txt">Price:<strong> €{{ book.price }}</strong></p>
+                            <p class="mb-1 book-card-txt">Price:<strong> €{{ book.price }}</strong></p>
                         {% endif %}
                         {% if book.genre %}
-                        <p class="book-card-txt my-1
-                        ">Category: {{ book.category|title}}</p>
-                        <p class="small my-1">
+                            <p class="book-card-txt my-1">Category: {{ book.category|title}}</p>
+                            <p class="small my-1">
                             <a class="text-muted book-card-txt" href="{% url 'books' %}?genre={{ book.genre }}">
                                 {{ book.genre.view_genre }}
                             </a>
-                        </p>
+                            </p>
                         {% endif %}
                         <p class="book-card-txt my-1">By: <strong>{{ book.author }}</strong></p>
                         {% if book.rating %}
-                        <small class="text-muted my-1 rating-txt"><i
-                                class="fas fa-star mr-1 rating"></i>{{ book.rating }} /
-                            5</small>
+                            <small class="text-muted my-1 rating-txt"><i
+                                class="fas fa-star mr-1 rating"></i>{{ book.rating }} / 5</small>
                         {% else %}
-                        <small class="text-muted my-1">No Rating</small>
+                            <small class="text-muted my-1">No Rating</small>
                         {% endif %}
                         {% if request.user.is_superuser %}
-                        <div class="row my-1">
-                            <small>
-                                <!--edit button-->
-                                <a href="{% url 'edit_book' book.id %}" aria-label="Edit {{ book.title }}">Edit</a> |
-                                <!--delete button-->
-                                <a class="text-danger" href="{% url 'book_delete' book.id %}" aria-label="Delete {{ book.title }}">Delete</a>
-                            </small>
-                        </div>
+                            <div class="row my-1">
+                                <small>
+                                    <!--edit button-->
+                                    <a href="{% url 'edit_book' book.id %}" aria-label="Edit {{ book.title }}">Edit</a> |
+                                    <!--delete button-->
+                                    <a class="text-danger" href="{% url 'book_delete' book.id %}" aria-label="Delete {{ book.title }}">Delete</a>
+                                </small>
+                            </div>
                         {% endif %}
                     </div>
                 </div>

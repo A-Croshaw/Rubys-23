@@ -258,14 +258,29 @@ input[type=number] {
 
 /* Forms */
 
-.contact-form{
+textarea.contact-form{
+    resize: none;
+}
+
+.search-form,
+.book-form,
+.contact-form,
+.newsletter-form,
+.profile-form {
+    border-radius: 8px;
     border: 2px solid var(--black-txt);
     font-family: var(--txt);
 }
 
-textarea.contact-form{
-    resize: none;
-  }
+.search-form:focus,
+.book-form:focus,
+.contact-form:focus,
+.newsletter-form:focus,
+.contact-form:focus,
+.profile-form:focus{
+    border: 1px solid var(--black-txt);
+    box-shadow: 1px 3px 5px 1px var(--red-tag);
+}
 
 /* Cart */
 
@@ -352,6 +367,7 @@ textarea.contact-form{
     background-color: var(--card-bg);
 }
 
+.maps,
 .newsletter-bg{
     background-color: var(--card-bg);
     border: 2px solid var(--black-bg)
@@ -483,6 +499,11 @@ textarea.contact-form{
     color: var(--black-txt);
     font-weight: 600;
     font-size: 3rem;
+}
+
+.row-border{
+    border: 2px solid var(--sort-hover);
+    border-radius: 15px;
 }
 
 /* Media Queries*/

@@ -43,6 +43,7 @@ def cart_contents(request):
         'delivery': delivery,
         'delivery_difference': delivery_difference,
         'free_delivery': settings.FREE_DELIVERY,
+        'standard_delivery': settings.STANDARD_DELIVERY,
         'overal_total': overal_total,
     }
 

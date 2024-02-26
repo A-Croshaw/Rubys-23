@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container rounded text-center mb-5 mt-1 mt-lg-5 py-2 ">
+<div class="container rounded text-center mb-5 mt-1 mt-lg-5 py-4 ">
     <div class="container-fluid pb-3">
         <div class="row d-flex justify-content-center">
             <div class="col text-center">
@@ -16,17 +16,23 @@
                 <hr class="mb-1">
             </div>
         </div>
+        <div class="row d-flex justify-content-center d-block d-lg-none pt-2">
+            <div>
+                <a class="btn rounded" href="{% url 'add_book' %}" aria-label="Add new book">Add New
+                    Book</a>
+            </div>
+        </div>
         <div class="row ">
-            <div class="col-12 col-md-8 d-flex justify-content-center">
+            <div class="col-12 col-lg-8 d-flex justify-content-center">
                 <h2 class="manage-header-2 text-center pt-3">Book list</h2>
             </div>
-            <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end mb-1">
+            <div class="col-12 col-lg-8 d-flex justify-content-center justify-content-md-end mb-1">
                 <div class="container rounded py-3 my-1 ">
                     <!--Search Bar For Mobile View-->
                     <form method="GET" action="">
                         <div class="input-group">
-                            <input class="form-control rounded" type="text" name="q" placeholder="Search our site">
-                            <div>
+                            <input class="form-control search-form rounded" type="text" name="q" placeholder="Search our site">
+                            <div class="ps-2">
                                 <button class="btn nav-txt" type="submit">
                                     <span>
                                         <i class="fas fa-search"></i>
@@ -35,11 +41,14 @@
                             </div>
                         </div>
                     </form>
+                    <div class="pt-3">
+                        <a href="{% url 'book_management' %}" class="sort-btn" aria-label="rest sorting filters">Reset</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row d-flex justify-content-center m-0 p-0">
-            <div class="col-12 col-lg-8 order-last order-lg-first book-list p-3 pt-1 book-management-bg">
+            <div class="col-12 col-lg-8 book-list p-3 pt-1 book-management-bg">
                 {% for book in books %}
                 <div class="container-fluid row text-center pt-2">
                     <div class="col-2 col-sm-1 p-0 m-0 ">
@@ -73,7 +82,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class=" col-12 col-lg-4 order-first order-lg-last">
+            <div class="col-lg-4 d-none d-lg-flex justify-content-center">
                 <div class="row p-2 mt-lg-2 ms-lg-1">
                     <div>
                         <a class="btn rounded" href="{% url 'add_book' %}" aria-label="Add new book">Add New
