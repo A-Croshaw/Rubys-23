@@ -10,6 +10,7 @@
 
     /* Colours */
 
+    --bg-fade: #aaaaaae0;
     --main-bg: #aaaaaa;
     --black-bg: #000000;
     --card-bg: #d3d0d0;
@@ -25,7 +26,7 @@
 }
 
 body {
-    background: url(/static/images/bg-image.png) no-repeat center;
+    background: url(/media/bg-image.png) no-repeat center;
     background-color: var(--main-bg);
     background-attachment: fixed;
 }
@@ -188,6 +189,8 @@ footer {
     width: 255px
 }
 
+.btn-home,
+.btn-sub,
 .btn-profile,
 .btn-checkout{
     font-size: 1rem;
@@ -237,7 +240,7 @@ input[type=number] {
 }
 
 .bg-fade{
-    background-color: #aaaaaae0;
+    background-color: var(--bg-fade);
     min-height: 700px;
 }
 
@@ -255,6 +258,41 @@ input[type=number] {
     color: var(--black-txt)
 }
 
+.home-sub-headers{
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: var(--headers);
+    color: var(--black-txt)
+}
+
+.home-txt{
+    font-size: 1.25rem;
+    font-family: var(--txt);
+    color: var(--black-txt)
+}
+
+.home-txt-lg{
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-family: var(--txt);
+    color: var(--black-txt)
+}
+
+.carousel-box{
+    width: 15rem;
+    height: 22.60rem;
+    background-color: var(--card-bg);
+    border: 5px solid var(--black-bg);
+    border-radius: 15px;
+}
+.carousel-img{
+    height: 22rem;
+}
+
+.chevrons{
+    color: var(--red-tag);
+    background-color: var(--bg-fade);
+}
 
 /* Forms */
 

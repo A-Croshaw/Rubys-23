@@ -34,6 +34,7 @@ def index(request):
 
     context = {
         'form': form,
+        'books': books,
     }
 
-    return render(request, 'home/index.html')
+    return render(request, 'home/index.html', context)

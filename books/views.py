@@ -16,7 +16,8 @@ def all_books(request):
     query = None
     sort = None
     dir = None
-
+    condition = None
+    
     if request.GET:
 
         if 'sort' in request.GET:
@@ -25,8 +26,6 @@ def all_books(request):
             if sorting == 'title':
                 sorting = 'lower_title'
                 books = books.annotate(lower_title=Lower('title'))
-            if sorting == 'genre':
-                sorting = 'genre__genre'
             if 'dir' in request.GET:
                 dir = request.GET['dir']
                 if dir == 'desc':
@@ -37,6 +36,10 @@ def all_books(request):
             genres = request.GET['genre'].split(',')
             books = books.filter(genre__genre__in=genres)
             genres = Genre.objects.filter(genre__in=genres)
+
+        if 'condition' in request.GET:
+            conditions = request.GET['condition'].split(',')
+            books = books.filter(condition__in=conditions)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -53,6 +56,7 @@ def all_books(request):
         'search_term': query,
         'sorted_genres': genres,
         'sorted': sorted,
+        'condition': condition,
     }
 
     return render(request, 'books/books.html', context)
