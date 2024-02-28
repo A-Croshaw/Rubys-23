@@ -26,7 +26,9 @@
 }
 
 body {
-    background: url(/static/images/bg-image.png) no-repeat center;
+    background-image: url(../images/bg-image.png);
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: var(--main-bg);
     background-attachment: fixed;
 }
