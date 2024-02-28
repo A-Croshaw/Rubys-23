@@ -110,9 +110,13 @@ Rubys is an fictional online book store based in Ballybunion.
 #### **Site Features**
 ##### **Home Page**
 
-* The home page has
+* The home page is simple with a carousell of sale books a small bit of text and a subcribe form for users to subscribe to monthly news letters.
 
-![Home Page](docs/readme_images/home.png)
+![Home Page](docs/readme_images/home-page-desk.png)
+
+* On mobile device the sale carousell moves below the text.
+
+![Home Page](docs/readme_images/home-page-mob.png)
 
 ##### **Header**
 ###### **Header Styling**
@@ -153,14 +157,22 @@ Rubys is an fictional online book store based in Ballybunion.
 * At Bootstraps sm screen size the monthly subscription text and buttom move side by side and the facebook link moves to the left.
 
 ![Footer Mobile](docs/readme_images/footer-mobile.png)
-![Footer Small Screen to Medium](docs/readme_images/footer-small.png)
+
 
 #### **Books**
 ##### **All Books**
 ###### **Medium Screens Plus**
+
+* Has the page title with sorting functions below on one line.
+* the book cards move side by side as the screen size gets larger.
+
 ![All Books](docs/readme_images/all-books-medium.png)
 
 ###### **Mobile to Medium Screens**
+
+* Has the page title with sorting functions below on two line.
+* the book cards move side by side as the screen size gets larger from a single card on mobile devices.
+
 ![All Books Mobile To Medium](docs/readme_images/all-book-mobile.png)
 
 ##### **Single Book View**
@@ -204,21 +216,18 @@ Rubys is an fictional online book store based in Ballybunion.
 ![Checkout Medium Screens Plus](docs/readme_images/checkout-view-medium-plus.png)
 
 ###### **Mobile To Medium Screens**
+![Checkout Mobile To Medium Screens](docs/readme_images/checkout-view-mobile.png)checkout-loading-overlay
+
+###### **Checkout Loading Overlay**
 ![Checkout Mobile To Medium Screens](docs/readme_images/checkout-view-mobile.png)
 
-##### **Checkout Success**
+##### **Checkout Success and Overview**
 ###### **Medium Screens Plus**
 ![Checkout Success Medium Screens Plus](docs/readme_images/checkout-success-medium-plus.png)
 
 ###### **Mobile To Medium Screens**
 ![Checkout Success Mobile To Medium Screens](docs/readme_images/checkout-success-mobile.png)
 
-##### **Stripe**
-###### **Medium Screens Plus**
-![Stripe Medium Screens Plus](docs/readme_images/Stripe-medium-plus.png)
-
-###### **Mobile To Medium Screens**
-![Stripe Mobile To Medium Screens](docs/readme_images/Stripe-mobile.png)
 
 #### **User Profiles**
 ##### **Main Profile**
@@ -228,19 +237,45 @@ Rubys is an fictional online book store based in Ballybunion.
 ###### **Mobile To Medium Screens**
 ![Main Profile Mobile To Medium Screens](docs/readme_images/main-profile-mobile.png)
 
-##### **Order View**
-###### **Medium Screens Plus**
-![Order View Medium Screens Plus](docs/readme_images/order-view-medium-plus.png)
-
-###### **Mobile To Medium Screens**
-![Order View Mobile To Medium Screens](docs/readme_images/order-view-mobile.png)
-
-##### **Details View**
+##### **User Update Details View**
 ###### **Medium Screens Plus**
 ![Details View Medium Screens Plus](docs/readme_images/details-view-medium-plus.png)
 
 ###### **Mobile To Medium Screens**
 ![Details View Mobile To Medium Screens](docs/readme_images/details-view-mobile.png)
+
+#### **About and Contact**
+##### **About**
+###### **Medium Screens Plus**
+![Main Profile Medium Screens Plus](docs/readme_images/about-medium-plus.png)
+
+###### **Mobile To Medium Screens**
+![Main Profile Mobile To Medium Screens](docs/readme_images/about-mobile.png)
+
+##### **Contact**
+###### **Medium Screens Plus**
+![Main Profile Medium Screens Plus](docs/readme_images/contact-medium-plus.png)
+
+###### **Mobile To Medium Screens**
+![Main Profile Mobile To Medium Screens](docs/readme_images/contact-mobile.png)
+
+#### **Subscribe**
+##### **Medium Screens Plus**
+![Main Profile Medium Screens Plus](docs/readme_images/subscribe-medium-plus.png)
+
+##### **Mobile To Medium Screens**
+![Main Profile Mobile To Medium Screens](docs/readme_images/subscribe-mobile.png)
+
+#### **Newsletters**
+##### **All Newsletters**
+
+![Main Profile Medium Screens Plus](docs/readme_images/newsletters.png)
+
+##### **Single Newsletters**
+![Main Profile Medium Screens Plus](docs/readme_images/single-newsletters.png)
+
+##### **Add Newsletters**
+![Main Profile Medium Screens Plus](docs/readme_images/add-newsletters.png)
 
 #### **Administration**
 ##### **Book Management**
@@ -251,15 +286,14 @@ Rubys is an fictional online book store based in Ballybunion.
 ![Book Management Mobile To Medium Screens](docs/readme_images/book-management-mobile.png)
 
 ##### **All Site Orders**
-###### **Medium Screens Plus**
-![All Site Orders Medium Screens Plus](docs/readme_images/all-orders-medium-plus.png)
 
-###### **Mobile To Medium Screens**
-![All Site Orders Mobile To Medium Screens](docs/readme_images/all-orders-mobile.png)
+* To be implemented for use for admin users to view all orders made with the ability to search them.
 
 #### **Messages** (Toasts)
 ##### **Medium Screens Plus**
 ![Messages](docs/readme_images/messages.png)
+
+![Cart](docs/readme_images/messages-cart.png)
 
 #### **Favicon**
 * A favicon was implemented to Show the user that They still are pressent on site
@@ -278,6 +312,7 @@ Rubys is an fictional online book store based in Ballybunion.
 
 ### **_Features to be Implemented_**
 
+* Add a order history page for admin users.
 
 # **_Skeleton Plane_**
 ## **_Database_**
@@ -297,10 +332,10 @@ Rubys is an fictional online book store based in Ballybunion.
 ## **_WireFrames_**
 
 # ** _Surface Plane_**
-
 ## **_Design_**
 ### _Colour And Style Scheme_
-Colour used within the site. 
+Colour used within the site.
+* Fade to cover background image: #aaaaaae0; 
 * Main background: #aaaaaa;
 * Black background: #000000;
 * Card Backgrond: #d3d0d0;
@@ -310,6 +345,7 @@ Colour used within the site.
 * Hover color: #ff0000;
 * Black text: #000000;
 * White text: #ffffff;
+* Stripe payment overlay: #ff04048f;
 * To clear background colour on the sort buttons: #ffffff00;
 * Sort Button Hover Color: #9c9c9c;
 
@@ -335,7 +371,7 @@ Colour used within the site.
 * Used to for main website language.
 ### **CSS**
 * For the styling for the website.
-### **Bootstarp 5.3.2**
+### **Bootstarp 5.2.3**
 * Is used With in the site for different styling and for responsiveness.
 ### **[Font Awesome](https://fontawesome.com/)**
 * Used for difrerent icons through out the site.
@@ -395,10 +431,14 @@ Visit the live deployment [HERE](https://rubys-97a7171770c1.herokuapp.com).
 * To clone the repository for download or use within your GitHub head-over to this [link](https://github.com/git-guides/git-clone) 
 
 # **_Credits_**
-* I used [python.org](https://www.python.org/) for References for the Pyhton code and functionality
+* I used [python.org](https://www.python.org/) for References for the Pyhton code and functionality.
 
-* I used [w3schools](https://www.w3schools.com/python/default.asp) for References for the Pyhton code and functionality
+* I used [w3schools](https://www.w3schools.com/python/default.asp) for References for the Pyhton code and functionality.
 
-* I used [stackoverflow](https://stackoverflow.com/) for References for the Pyhton code and functionality
+* I used [bootstrap V5.2.3](https://getbootstrap.com/) for References for the bootstrap styling and functionality.
 
-* I Used [Django Docs](https://docs.djangoproject.com/en/5.0/) to the reference for the django code and functionality
+* I used [stackoverflow](https://stackoverflow.com/) for References for the Pyhton code and functionality.
+
+* I Used [Django Docs](https://docs.djangoproject.com/en/5.0/) to the reference for the django code and functionality.
+
+* I Used the Code Institute Project - Boutique Ado as a base and used the JavaScript funtionalility with in the site.
