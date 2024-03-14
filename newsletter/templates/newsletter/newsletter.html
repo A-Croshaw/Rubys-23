@@ -18,7 +18,7 @@
             {% for newsletter in newsletter %}
             <div class="subscribe-bg d-flex flex-wrap justify-content-center p-2 rounded">
                 <div class="row newsletter-card justify-content-center p-0 rounded">
-                    <a href="{% url 'newsletter_view' newsletter.id %}" aria-label="View {{ newsletter.title }}">
+                    <a href="{% url 'newsletter_view' newsletter.id %}" aria-label="View {{ newsletter.title }}" rel="noopener">
                         <div class="row pt-3">
                             <p class="subscribe-txt px-3 text-center">{{ newsletter.title|title }}</p>
                         </div>
@@ -31,7 +31,7 @@
                         <small>
                             <!--delete button-->
                             <a class="text-danger" href="{% url 'newsletter_delete' newsletter.id %}"
-                                aria-label="Delete {{ newsletter.title }}">Delete</a>
+                                aria-label="Delete {{ newsletter.title }}" rel="noopener">Delete</a>
                         </small>
                     </div>
                 </div>

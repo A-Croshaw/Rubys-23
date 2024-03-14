@@ -17,7 +17,7 @@
     </div>
     <div class="row ">
         <div class="col-12 cart-total-box d-flex justify-content-center justify-content-md-end p-2">
-            <a href="{% url 'books' %}" class="btn btn-sign-up">
+            <a href="{% url 'books' %}" class="btn" aria-label="Opens all books view" rel="opener">
                 <span class="icon">
                     <i class="fas fa-arrow-left fa-md"></i>
                 </span>
@@ -37,12 +37,12 @@
                     <div class="row p-1">
                         <div class="col-4 col-md-2">
                             {% if item.book.image %}
-                            <a href="{% url 'book_view' item.book.id %}">
+                            <a href="{% url 'book_view' item.book.id %}" aria-label="Opens book view" rel="opener">
                                 <img class="img-fluid checkout-img rounded" src="{{ item.book.image.url }}"
                                     alt="{{ item.book.title }}">
                             </a>
                             {% else %}
-                            <a href="{% url 'book_view' item.book.id %}">
+                            <a href="{% url 'book_view' item.book.id %}" aria-label="Opens book view" rel="opener">
                                 <img class="img-fluid checkout-img rounded" src="{{ MEDIA_URL }}no-image.png"
                                     alt="{{ item.book.title }}">
                             </a>
@@ -146,9 +146,9 @@
                                     name="save-info" checked>
                                 {% else %}
                                 <label class="form-check-label checkout-txt" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create an
+                                    <a class="text-info" href="{% url 'account_signup' %}" aria-label="Opens account signup" rel="noopener">Create an
                                         account</a> or
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save
+                                    <a class="text-info" href="{% url 'account_login' %}" aria-label="Opens account login" rel="noopener">login</a> to save
                                     this information
                                 </label>
                                 {% endif %}
@@ -165,7 +165,7 @@
                         </fieldset>
                         <div class="col justify-content-center">
                             <div class="row justify-content-evenly">
-                                <a href="{% url 'shopping_cart' %}" class="btn btn-checkout rounded">
+                                <a href="{% url 'shopping_cart' %}" class="btn btn-checkout rounded" aria-label="Opens shopping cart" rel="opener">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>

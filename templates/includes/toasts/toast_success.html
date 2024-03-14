@@ -68,11 +68,11 @@
         {% endif %}
     </div>
     <div class="row justify-content-center pb-0 mb-0 mt-1">
-        <a class="btn btn-toast" href="{% url 'shopping_cart' %}" aria-label="View shopping cart">
+        <a class="btn btn-toast" href="{% url 'shopping_cart' %}" aria-label="View shopping cart"  rel="opener">
             <span class="text-uppercase pe-2">Basket</span>
             <span class="icon"><i class="fas fa-shopping-bag fa-sm"></i></span>
         </a>
-        <a href="{% url 'checkout' %}" class="btn btn-toast mt-1 mb-0">
+        <a href="{% url 'checkout' %}" class="btn btn-toast mt-1 mb-0" aria-label="Opens up checkout page"  rel="noopener">
             <span class="text-uppercase">Secure Checkout</span>
             <span class="icon"><i class="fas fa-lock"></i></span>
         </a>

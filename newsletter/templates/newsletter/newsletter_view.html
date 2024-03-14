@@ -9,7 +9,7 @@
             <div class="row d-flex justify-content-end p-1 m-0">
                 <!--closes single newsletter view and returns to all newsletters-->
                 <a href="{% url 'newsletters' %}" class="btn close-btn rounded p-0 m-0"
-                    aria-label="return to all newsletters"> <i class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
+                    aria-label="return to all newsletters" rel="noopener"> <i class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
             </div>
             <div class="col p-0 m-0">
                 <h1 class="about-headers text-center">Newsletter</h1>
@@ -24,7 +24,7 @@
             <small class="text-center">
                 <!--delete button-->
                 <a class="text-danger" href="{% url 'newsletter_delete' newsletter.id %}"
-                    aria-label="Delete {{ newsletter.title }}">Delete</a>
+                    aria-label="Delete {{ newsletter.title }}" rel="noopener">Delete</a>
             </small>
         </div>
     </div>

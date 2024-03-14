@@ -18,7 +18,7 @@
         </div>
         <div class="row d-flex justify-content-center d-block d-lg-none pt-2">
             <div>
-                <a class="btn rounded" href="{% url 'add_book' %}" aria-label="Add new book">Add New
+                <a class="btn rounded" href="{% url 'add_book' %}" aria-label="Add new book" rel="noopener">Add New
                     Book</a>
             </div>
         </div>
@@ -44,7 +44,7 @@
                     </form>
                     <div class="pt-3">
                         <a href="{% url 'book_management' %}" class="sort-btn"
-                            aria-label="rest sorting filters">Reset</a>
+                            aria-label="rest sorting filters" rel="noopener">Reset</a>
                     </div>
                 </div>
             </div>
@@ -55,11 +55,11 @@
                 <div class="container-fluid row text-center pt-2">
                     <div class="col-2 col-sm-1 p-0 m-0 ">
                         {% if book.image %}
-                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}">
+                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}" rel="opener">
                             <img class="manage-img" src="{{ book.image.url }}" alt="{{ book.title }}">
                         </a>
                         {% else %}
-                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}">
+                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}" rel="opener">
                             <img class="manage-img mb-4 pb-3" src="{{ MEDIA_URL }}no-image.png" alt="{{ book.title }}">
                         </a>
                         {% endif %}
@@ -74,10 +74,10 @@
                     <div class="col-4 col-sm-2 py-0 px-2 m-0">
                         <small>
                             <!--edit button-->
-                            <a href="{% url 'edit_book' book.id %}" aria-label="Edit {{ book.title }}">Edit</a> |
+                            <a href="{% url 'edit_book' book.id %}" aria-label="Edit {{ book.title }}" rel="noopener">Edit</a> |
                             <!--delete button-->
                             <a class="text-danger" href="{% url 'book_delete' book.id %}"
-                                aria-label="Delete {{ book.title }}">Delete</a>
+                                aria-label="Delete {{ book.title }}" rel="noopener">Delete</a>
                         </small>
                     </div>
                     <hr class="my-1">
@@ -87,7 +87,7 @@
             <div class="col-lg-4 d-none d-lg-flex justify-content-center">
                 <div class="row p-2 mt-lg-2 ms-lg-1">
                     <div>
-                        <a class="btn rounded" href="{% url 'add_book' %}" aria-label="Add new book">Add New
+                        <a class="btn rounded" href="{% url 'add_book' %}" aria-label="Add new book" rel="noopener">Add New
                             Book</a>
                     </div>
                 </div>

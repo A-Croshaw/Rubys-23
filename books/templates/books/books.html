@@ -40,11 +40,11 @@
                     <hr class="my-1">
                     <div class="col-4 book-card-img m-0 p-0">
                         {% if book.image %}
-                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}">
+                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}" rel="opener">
                             <img class="card-img" src="{{ book.image.url }}" alt="{{ book.title }}">
                         </a>
                         {% else %}
-                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}">
+                        <a href="{% url 'book_view' book.id %}" aria-label="View {{ book.title }}" rel="opener">
                             <img class="card-img" src="{{ MEDIA_URL }}no-image.png" alt="{{ book.title }}">
                         </a>
                         {% endif %}
@@ -59,7 +59,7 @@
                         {% if book.genre %}
                         <p class="book-card-txt my-1">Category: {{ book.category|title}}</p>
                         <p class="small my-1">
-                            <a class="text-muted book-card-txt" href="{% url 'books' %}?genre={{ book.genre }}">
+                            <a class="text-muted book-card-txt" href="{% url 'books' %}?genre={{ book.genre }}"  rel="opener">
                                 {{ book.genre.view_genre }}
                             </a>
                         </p>
@@ -75,10 +75,10 @@
                         <div class="row my-1">
                             <small>
                                 <!--edit button-->
-                                <a href="{% url 'edit_book' book.id %}" aria-label="Edit {{ book.title }}">Edit</a> |
+                                <a href="{% url 'edit_book' book.id %}" aria-label="Edit {{ book.title }}" rel="noopener">Edit</a> |
                                 <!--delete button-->
                                 <a class="text-danger" href="{% url 'book_delete' book.id %}"
-                                    aria-label="Delete {{ book.title }}">Delete</a>
+                                    aria-label="Delete {{ book.title }}"  rel="noopener">Delete</a>
                             </small>
                         </div>
                         {% endif %}

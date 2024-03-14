@@ -164,14 +164,14 @@
     </div>
     <div class="row justify-content-evenly my-3">
         {% if from_profile %}
-        <a href="{% url 'profile' %}" class="btn btn-checkout">
+        <a href="{% url 'profile' %}" class="btn btn-checkout" aria-label="Opens Profile" rel="noopener">
             <span class="icon mr-2">
                 <i class="fas fa-angle-left"></i>
             </span>
             <span class="text-uppercase">Back to Profile</span>
         </a>
         {% else %}
-        <a href="{% url 'books' %}" class="btn btn-checkout">
+        <a href="{% url 'books' %}" class="btn btn-checkout" aria-label="Opens all book view" rel="opener">
             <span class="icon">
                 <i class="fas fa-arrow-left fa-md"></i>
             </span>

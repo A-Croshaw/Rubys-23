@@ -35,7 +35,7 @@
                             <tr class="row-border">
                                 <td scope="row">
                                     <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}" class="update-txt">
+                                        title="{{ order.order_number }}" class="update-txt" aria-label="Openes cutomers order" rel="noopener">
                                         {{ order.order_number|truncatechars:10 }}
                                     </a>
                                 </td>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="row justify-content-center">
                             <a class="btn btn-profile" href="{% url 'personal_details' %}"
-                                aria-label="update you person details">Update Details</a>
+                                aria-label="update you person details" rel="noopener">Update Details</a>
                     </div>
                 </div>
             </div>

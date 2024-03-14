@@ -17,7 +17,7 @@
             <h2 class="cart-header">Cart Items</h2>
         </div>
         <div class="col-12 col-sm-5 col-md-4 cart-total-box d-flex justify-content-center justify-content-md-end">
-            <a href="{% url 'books' %}" class="btn btn-keep-shopping p-2">
+            <a href="{% url 'books' %}" class="btn btn-keep-shopping p-2" aria-label="Return to all books" rel="opener">
                 <span class="icon">
                     <i class="fas fa-arrow-left fa-md"></i>
                 </span>
@@ -33,12 +33,12 @@
                 <div class="row py-1 px-0 mt-1">
                     <div class="col-12 col-sm-3 py-2 ps-4 text-center">
                         {% if item.book.image %}
-                        <a href="{% url 'book_view' item.book.id %}">
+                        <a href="{% url 'book_view' item.book.id %}" aria-label="Opens book view" rel="opener">
                             <img class="img-fluid cart-img rounded" src="{{ item.book.image.url }}"
                                 alt="{{ item.book.title }}">
                         </a>
                         {% else %}
-                        <a href="{% url 'book_view' item.book.id %}">
+                        <a href="{% url 'book_view' item.book.id %}" aria-label="Opens book view" rel="opener">
                             <img class="img-fluid rounded" src="{{ MEDIA_URL }}no-image.png"
                                 alt="{{ item.book.title }}">
                         </a>
@@ -115,7 +115,7 @@
                 </p>
                 {% endif %}
                 <div class="row">
-                    <a href="{% url 'checkout' %}" class="btn">
+                    <a href="{% url 'checkout' %}" class="btn" aria-label="Directs to Checkout" rel="opener">
                         <span class="text-uppercase">Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
@@ -130,7 +130,7 @@
         <div class="col-2">
             <p class="cart-title text-center my-5">Your cart is empty.</p>
             <div class="text-center">
-                <a href="{% url 'books' %}" class="btn rounded">
+                <a href="{% url 'books' %}" class="btn rounded" aria-label="Directs to all books" rel="opener">
                     <span class="icon">
                         <i class="fas fa-arrow-left"></i>
                     </span>

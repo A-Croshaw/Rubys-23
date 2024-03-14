@@ -19,7 +19,7 @@
             </div>
             <div class="row d-flex justify-content-end p-1 m-0">
                 <!--closes single book view and returns to all books-->
-                <a href="{% url 'books' %}" class="btn close-btn rounded p-0 m-0" aria-label="return to all books"> <i
+                <a href="{% url 'books' %}" class="btn close-btn rounded p-0 m-0" aria-label="return to all books" rel="opener"> <i
                         class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
             </div>
             <div class="row d-flex justify-content-end p-0 m-0 pb-4 pb-md-0">
@@ -28,11 +28,11 @@
             <div class="col-md-3 ms-md-3 mt-md-3 pt-md-3">
                 {% if book.image %}
                 <!--Link to view picture in new tab-->
-                <a href="{{ book.image.url }}" target="_blank" aria-label="View image on a new tab">
+                <a href="{{ book.image.url }}" target="_blank" aria-label="View image on a new tab" rel="opener">
                     <img class="card-img-top img-fluid single-img" src="{{ book.image.url }}" alt="{{ book.title }}">
                 </a>
                 {% else %}
-                <a href="">
+                <a href="{{ book.image.url }}" target="_blank" aria-label="View image on a new tab" rel="opener">
                     <img class="card-img-top img-fluid single-img" src="{{ MEDIA_URL }}no-image.png"
                         alt="{{ book.title }}">
                 </a>
@@ -140,9 +140,9 @@
                     <small class="text-center">
                         <!--Edit + Delete buttons-->
                         <a class="text-center" href="{% url 'edit_book' book.id %}"
-                            aria-label="Edit {{ book.title }}">Edit</a> |
+                            aria-label="Edit {{ book.title }}" rel="nopoener">Edit</a> |
                         <a class="text-danger" href="{% url 'book_delete' book.id %}"
-                            aria-label="Delete {{ book.title }}">Delete</a>
+                            aria-label="Delete {{ book.title }}" rel="noopener">Delete</a>
                     </small>
                 </div>
                 {% endif %}

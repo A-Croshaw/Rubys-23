@@ -22,7 +22,7 @@
                     fiction and non-fiction for all ages.</p>
                 <p class="home-txt-lg text-center pt-2">So dive in and find your next great read.</p>
                 <div class="row justify-content-center mt-5 pt-5">
-                    <a class=" btn btn-home" href="" aria-label="View Books">
+                    <a class=" btn btn-home" href="" aria-label="View Books" rel="opener">
                         Shop ALL books
                     </a>
                 </div>
@@ -46,12 +46,12 @@
                             <div class="carousel-img-box">
                                 {% if book.image %}
                                 <!--Link to view picture in new tab-->
-                                <a href="{% url 'book_view' book.id %}" aria-label="View image on a new tab">
+                                <a href="{% url 'book_view' book.id %}" aria-label="View image on a new tab" rel="opener">
                                     <img class="card-img-top img-fluid carousel-img" src="{{ book.image.url }}"
                                         alt="{{ book.title }}">
                                 </a>
                                 {% else %}
-                                <a href="{% url 'book_view' book.id %}">
+                                <a href="{% url 'book_view' book.id %}" aria-label="View image on a new tab" rel="opener">
                                     <img class="card-img-top img-fluid carousel-img" src="{{ MEDIA_URL }}no-image.png"
                                         alt="{{ book.title }}">
                                 </a>

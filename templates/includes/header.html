@@ -3,7 +3,7 @@
     <div class="fixed-top">
         <div id="topnav" class="row d-none d-lg-flex nav-bg p-2 pb-0 mb-0">
             <div class="col-12 col-md-4 px-4">
-                <a href="{% url 'home' %}" class="nav-link nav-txt" aria-label="return to home page">
+                <a href="{% url 'home' %}" class="nav-link nav-txt" aria-label="return to home page" rel="opener">
                     <p class="logo">Ruby's</p>
                 </a>
             </div>
@@ -37,26 +37,26 @@
                             {% if request.user.is_superuser %}
                             <!--Book management links for admin users-->
                             <a href="{% url 'book_management' %}" class="nav-link nav-txt p-0 m-0"
-                                aria-label="View Book management">Book Management</a>
+                                aria-label="View Book management" rel="noopener">Book Management</a>
                             {% endif %}
                             <!--Profile link-->
-                            <a href="{% url 'profile' %}" class="nav-link nav-txt p-0 m-0" aria-label="View profile">My
+                            <a href="{% url 'profile' %}" class="nav-link nav-txt p-0 m-0" aria-label="View profile" rel="noopener">My
                                 Profile</a>
                             <!--Account links-->
                             <li><a href="{% url 'account_logout' %}" class="nav-link nav-txt p-0 m-0"
-                                    aria-label="logout">Logout</a></li>
+                                    aria-label="logout" rel="noopener">Logout</a></li>
                             {% else %}
                             <li><a href="{% url 'account_signup' %}" class="nav-link nav-txt p-0 m-0"
-                                    aria-label="sign up">Register</a></li>
+                                    aria-label="sign up" rel="opener">Register</a></li>
                             <li><a href="{% url 'account_login' %}" class="nav-link nav-txt p-0 m-0"
-                                    aria-label="login">Login</a>
+                                    aria-label="login" rel="noopener">Login</a>
                             </li>
                             {% endif %}
                         </ul>
                     </li>
                     <!--Shopping Cart-->
                     <li class="list-inline-item">
-                        <a class="nav-link" href="{% url 'shopping_cart' %}" aria-label="shopping cart">
+                        <a class="nav-link" href="{% url 'shopping_cart' %}" aria-label="shopping cart" rel="noopener">
                             <div class="text-center nav-txt">
                                 <div><i class="fas fa-shopping-bag fa-md"></i></div>
                                 <p class="my-0">
