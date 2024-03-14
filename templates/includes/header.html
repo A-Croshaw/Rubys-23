@@ -1,16 +1,17 @@
 {% load static %}
 <header class="container-fluid">
     <div class="fixed-top">
-        <div id="topnav" class="row d-none d-lg-flex nav-bg p-2">
+        <div id="topnav" class="row d-none d-lg-flex nav-bg p-2 pb-0 mb-0">
             <div class="col-12 col-md-4 px-4">
                 <a href="{% url 'home' %}" class="nav-link nav-txt" aria-label="return to home page">
-                    <h1 class="logo">Ruby's</h1>
+                    <p class="logo">Ruby's</p>
                 </a>
             </div>
-            <div class="col-12 col-md-4 pt-1">
-                <form method="GET" action="">
+            <div class="col-12 col-md-4 pt-2">
+                <form method="GET" action="{% url 'books' %}">
                     <div class="input-group">
-                        <input class="form-control search-form rounded" type="text" name="q" placeholder="Search our site">
+                        <input class="form-control search-form rounded" type="text" name="q"
+                            placeholder="Search our site">
                         <div class="ps-2">
                             <button class="btn nav-txt" type="submit">
                                 <span>
@@ -21,7 +22,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-md-4 d-md-flex justify-content-end pe-5">
+            <div class="col-12 col-md-4 d-md-flex justify-content-end pe-5 pt-2">
                 <ul class="list-inline list-unstyled my-0 d-md-flex gap-md-4">
                     <li class="list-inline-item dropdown ">
                         <a class="nav-link nav-txt " href="#" role="button" data-bs-toggle="dropdown"
@@ -33,20 +34,22 @@
                         </a>
                         <ul class="dropdown-menu account-menu nav-bg text-center p-0 m-0">
                             {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <!--Book management links for admin users-->
-                                <a href="{% url 'book_management' %}" class="nav-link nav-txt p-0 m-0"
-                                    aria-label="View Book management">Book Management</a>
-                                {% endif %}
+                            {% if request.user.is_superuser %}
+                            <!--Book management links for admin users-->
+                            <a href="{% url 'book_management' %}" class="nav-link nav-txt p-0 m-0"
+                                aria-label="View Book management">Book Management</a>
+                            {% endif %}
                             <!--Profile link-->
-                            <a href="{% url 'profile' %}" class="nav-link nav-txt p-0 m-0" aria-label="View profile">My Profile</a>
+                            <a href="{% url 'profile' %}" class="nav-link nav-txt p-0 m-0" aria-label="View profile">My
+                                Profile</a>
                             <!--Account links-->
                             <li><a href="{% url 'account_logout' %}" class="nav-link nav-txt p-0 m-0"
                                     aria-label="logout">Logout</a></li>
                             {% else %}
                             <li><a href="{% url 'account_signup' %}" class="nav-link nav-txt p-0 m-0"
                                     aria-label="sign up">Register</a></li>
-                            <li><a href="{% url 'account_login' %}" class="nav-link nav-txt p-0 m-0" aria-label="login">Login</a>
+                            <li><a href="{% url 'account_login' %}" class="nav-link nav-txt p-0 m-0"
+                                    aria-label="login">Login</a>
                             </li>
                             {% endif %}
                         </ul>
@@ -70,20 +73,18 @@
             </div>
         </div>
         <!--Delivery Banner Showing Free Delivery Amount-->
-        <div class="row delivery-banner w-110 my-0">
-            <marquee behavior="scroll" direction="left" scrollamount="5">
-                <h1 class="m-0 p-1 delivery-txt">Free delivery on orders over €{{ free_delivery }} ----
-                    Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
-                    Free delivery on orders over €{{ free_delivery }} ----
-                    Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
-                    Free delivery on orders over €{{ free_delivery }} ----
-                    Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
-                    Free delivery on orders over €{{ free_delivery }} ----
-                    Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
-                    Free delivery on orders over €{{ free_delivery }}
-                </h1>
-            </marquee>
-        </div>
+        <marquee class="row delivery-banner w-110 my-0" behavior="scroll" direction="left" scrollamount="5">
+            <h1 class="m-0 p-1 delivery-txt">Free delivery on orders over €{{ free_delivery }} ----
+                Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
+                Free delivery on orders over €{{ free_delivery }} ----
+                Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
+                Free delivery on orders over €{{ free_delivery }} ----
+                Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
+                Free delivery on orders over €{{ free_delivery }} ----
+                Red tag <i class="fa-solid fa-tag fa-beat red-tag"></i> sale on used books ----
+                Free delivery on orders over €{{ free_delivery }}
+            </h1>
+        </marquee>
         <div class="row nav-bg">
             <nav class="navbar navbar-expand-lg ps-3">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -92,13 +93,13 @@
                 </button>
                 {% include 'includes/mobile-header.html' %}
                 <div class="offcanvas offcanvas-menu offcanvas-start scrollbar " tabindex="-1" id="navbarOffcanvasLg"
-                    aria-labelledby="navbarOffcanvasLgLabel">
+                    aria-labelledby="navbarOffcanvasLg">
                     <div class="offcanvas-header nav-bg py-0 px-1">
                         <h1 class="nav-txt logo">Ruby's</h1>
                         <div class="row d-flex justify-content-end p-0 m-0">
                             <!--closes messages-->
                             <button type="button" class="btn close-btn p-0 m-0" data-bs-dismiss="offcanvas"
-                            aria-label="Close"><i class="fa-solid fa-x fa-xs p-0 m-0"></i></button>
+                                aria-label="Close"><i class="fa-solid fa-x fa-xs p-0 m-0"></i></button>
                         </div>
                     </div>
                     <div class="offcanvas-body nav-bg">

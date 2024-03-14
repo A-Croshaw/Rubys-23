@@ -740,7 +740,9 @@ whit that in mind the only minor bug that can be seen at pressent is the message
 
 All file passed through the [Code Institute PEP8](https://pep8ci.herokuapp.com/) Validator after removing a few white spaces and Shortening a few line lenghts.
 
-![PEP8 Validation](docs/testing/pep8-validation.png)
+There are a couple of exceptions for a couple of lines in the settings.py and webhook_handeler.py files with shortening these cause errors with in the project.
+
+![PEP8 Validation](docs/testing/pep8.png)
 
 ### W3 Valadator
 
