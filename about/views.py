@@ -20,8 +20,8 @@ def about(request):
         queries = Q(title__icontains=query) | Q(description__icontains=query)
         books = books.filter(queries)
         context = {
-        'books': books,
-        'search_term': query,
+            'books': books,
+            'search_term': query,
         }
         return render(request, 'books/books.html', context)
 
@@ -32,7 +32,6 @@ def contact(request):
     """ A view to return the contact page """
     books = Book.objects.all()
 
-
     if 'q' in request.GET:
         query = request.GET['q']
         if not query:
@@ -42,25 +41,31 @@ def contact(request):
         queries = Q(title__icontains=query) | Q(description__icontains=query)
         books = books.filter(queries)
         context = {
-        'books': books,
-        'search_term': query,
+            'books': books,
+            'search_term': query,
         }
         return render(request, 'books/books.html', context)
-
 
     if request.method == 'POST':
         contact_name = request.POST['contact-name']
         contact_email = request.POST['contact-email']
         contact_message = request.POST['contact-message']
-       
-        #Sending Email
+
+        # Sending Email
         send_mail(
             contact_name,
             contact_message,
             contact_email,
             ['rubysbooksonline@gmail.com'],
         )
-        messages.success(request, f'Thank you {contact_name}, We have recived your email and will be in touch soon')
-        return HttpResponseRedirect('../contact' , {'contact_name': contact_name})
+        messages.success(
+            request,
+            f'Thank you {contact_name},'
+            'We have recived your email and will be in touch soon'
+            )
+        return HttpResponseRedirect(
+            '../contact',
+            {'contact_name': contact_name}
+            )
     else:
         return render(request, 'about/contact.html',)

@@ -3,11 +3,11 @@ from . models import Subscribers, Newsletters
 
 
 class SubscribersForm(forms.ModelForm):
-    
+
     class Meta:
         model = Subscribers
         fields = ('email',)
-    
+
     def __init__(self, *args, **kwargs):
         """
         Add class, remove auto-generated

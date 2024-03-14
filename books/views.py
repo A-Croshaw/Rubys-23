@@ -7,6 +7,7 @@ from django.db.models.functions import Lower
 from .models import Book, Genre
 from .forms import BookForm
 
+
 def all_books(request):
     """
     A view to render all books with sorting and searching
@@ -17,7 +18,7 @@ def all_books(request):
     sort = None
     dir = None
     condition = None
-    
+
     if request.GET:
 
         if 'sort' in request.GET:
@@ -47,7 +48,8 @@ def all_books(request):
                 messages.error(request, "No Books with that criteria")
                 return redirect(reverse('books'))
 
-            queries = Q(title__icontains=query) | Q(description__icontains=query)
+            queries = Q(title__icontains=query) | Q(
+                description__icontains=query)
             books = books.filter(queries)
 
     sorted = f'{sort}_{dir}'
@@ -103,6 +105,7 @@ def add_book(request):
     }
     return render(request, template, context)
 
+
 @login_required
 @permission_required("books.edit_book", raise_exception=True)
 def edit_book(request, book_id):
@@ -116,11 +119,14 @@ def edit_book(request, book_id):
         form = BookForm(request.POST, request.FILES, instance=book)
         if form.is_valid():
             form.save()
-            messages.success(request, f'{book.title} was successfully updated!')
+            messages.success
+            (request, f'{book.title} was successfully updated!')
             return redirect(reverse('book_view', args=[book.id]))
         else:
-            messages.error(request,
-                            f'Updating {book.title} failed. Please ensure the details are valid.')
+            messages.error(
+                request,
+                f'Updating {book.title} failed.'
+                ' Please ensure the details are valid.')
     else:
         form = BookForm(instance=book)
         messages.info(request, f'Editing: {book.title}')
@@ -145,11 +151,12 @@ def book_delete(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     if request.method == "POST":
         book.delete()
-        messages.success(request, f'{book.title} has been delete successfully!')
+        messages.success(
+            request, f'{book.title} has been delete successfully!')
         return redirect(reverse('books'))
 
     context = {
-        'book':book,
+        'book': book,
     }
     return render(request, "books/book_delete.html", context)
 
@@ -169,12 +176,12 @@ def book_management(request):
     query = None
 
     if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(request, "No Books with that criteria")
-            
-            queries = Q(title__icontains=query) | Q(description__icontains=query)
-            books = books.filter(queries)
+        query = request.GET['q']
+        if not query:
+            messages.error(request, "No Books with that criteria")
+
+        queries = Q(title__icontains=query) | Q(description__icontains=query)
+        books = books.filter(queries)
 
     context = {
         'books': books,

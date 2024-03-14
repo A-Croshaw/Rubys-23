@@ -33,9 +33,16 @@ development = os.environ.get('DEVELOPMENT', False)
 
 DEBUG = development
 
-ALLOWED_HOSTS = ['rubys-97a7171770c1.herokuapp.com','localhost', '8000-acroshaw-rubys23-aumiaqq0yag.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = [
+    'rubys-97a7171770c1.herokuapp.com',
+    'localhost',
+    '8000-acroshaw-rubys23-aumiaqq0yag.ws-eu110.gitpod.io'
+    ]
 
-CSRF_TRUSTED_ORIGINS=['https://rubys-97a7171770c1.herokuapp.com', 'https://8000-acroshaw-rubys23-aumiaqq0yag.ws-eu110.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://rubys-97a7171770c1.herokuapp.com',
+    'https://8000-acroshaw-rubys23-aumiaqq0yag.ws-eu110.gitpod.io'
+    ]
 
 # Application definition
 
@@ -54,7 +61,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    #Apps
+    # Apps
     'home',
     'books',
     'about',
@@ -63,7 +70,7 @@ INSTALLED_APPS = [
     'profiles',
     'checkout',
 
-    #Others
+    # Others
     "crispy_forms",
     "crispy_bootstrap5",
 ]
@@ -87,7 +94,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR,TEMPLATES_ALLAUTH_DIR],
+        'DIRS': [TEMPLATES_DIR, TEMPLATES_ALLAUTH_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

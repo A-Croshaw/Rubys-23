@@ -5,6 +5,7 @@ from newsletter.forms import SubscribersForm
 from newsletter.models import Subscribers
 from books.models import Book
 
+
 def index(request):
     """ A view to return the home page """
     books = Book.objects.all()
@@ -18,8 +19,8 @@ def index(request):
         queries = Q(title__icontains=query) | Q(description__icontains=query)
         books = books.filter(queries)
         context = {
-        'books': books,
-        'search_term': query,
+            'books': books,
+            'search_term': query,
         }
         return render(request, 'books/books.html', context)
 
@@ -27,7 +28,8 @@ def index(request):
         form = SubscribersForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Thank you, your Subscription is successful.')
+            messages.success(
+                request, 'Thank you, your Subscription is successful.')
             return render(request, 'home/index.html')
     else:
         form = SubscribersForm()

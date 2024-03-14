@@ -21,6 +21,7 @@ def profile(request):
 
     return render(request, template, context)
 
+
 def personal_details(request):
     """ Users details and update """
 
@@ -32,7 +33,11 @@ def personal_details(request):
             form.save()
             messages.success(request, 'Your details was successsfully updated')
         else:
-            messages.error(request, 'Update failed. Please check all details are correst and try again.')
+            messages.error(
+                request,
+                'Update failed. Please check'
+                ' all details are correst and try again.'
+                )
     else:
         form = ProfileForm(instance=profile)
 

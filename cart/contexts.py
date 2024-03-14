@@ -30,7 +30,7 @@ def cart_contents(request):
     else:
         delivery = 0
         delivery_difference = 0
-    
+
     if total > 0:
         overal_total = delivery + total
     else:

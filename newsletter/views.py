@@ -9,7 +9,6 @@ from django.core.mail import send_mail
 from django_pandas.io import read_frame
 import datetime
 
-# Create your views here.
 
 def subscribe(request):
     """ A view to return the subscribe page """
@@ -17,7 +16,7 @@ def subscribe(request):
 
     today = datetime.date.today().month
     year = datetime.date.today().year
- 
+
     if request.method == 'POST':
         form = SubscribersForm(request.POST)
         if form.is_valid():
@@ -30,7 +29,7 @@ def subscribe(request):
         'form': form,
         'newsletter': newsletter,
         'year': year,
-        'today':today,
+        'today': today,
     }
     return render(request, 'newsletter/subscribe.html', context)
 
@@ -103,7 +102,8 @@ def new_newsletter(request):
                 subscriber_list,
                 fail_silently=False,
             )
-            messages.success(request, 'Montly newsletter has been sent successfully')
+            messages.success(
+                request, 'Montly newsletter has been sent successfully')
             return redirect('newsletters')
     else:
         form = NewslettersForm()
@@ -124,10 +124,12 @@ def newsletter_delete(request, newsletter_id):
     newsletter = get_object_or_404(Newsletters, pk=newsletter_id)
     if request.method == "POST":
         newsletter.delete()
-        messages.success(request, f'{newsletter.title} has been delete successfully!')
+        messages.success(
+            request, f'{newsletter.title} has been delete successfully!'
+            )
         return redirect(reverse('newsletters'))
 
     context = {
-        'newsletter':newsletter,
+        'newsletter': newsletter,
     }
     return render(request, "newsletter/newsletter_delete.html", context)
