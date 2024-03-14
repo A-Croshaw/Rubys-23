@@ -18,7 +18,8 @@
         <div class="col-12 col-md-6 col-lg-8 mt-5 justify-content-center ">
             <div class="justify-content-center mt-5">
                 <p class="home-txt-lg text-center pt-2">Where will your next book take you.</p>
-                <p class="home-txt-lg text-center pt-2">Here at <strong>Ruby's</strong> we have a great selection for fiction and non-fiction for all ages.</p>
+                <p class="home-txt-lg text-center pt-2">Here at <strong>Ruby's</strong> we have a great selection for
+                    fiction and non-fiction for all ages.</p>
                 <p class="home-txt-lg text-center pt-2">So dive in and find your next great read.</p>
                 <div class="row justify-content-center mt-5 pt-5">
                     <a class=" btn btn-home" href="" aria-label="View Books">
@@ -30,57 +31,62 @@
         <div class="col-12 col-md-6 col-lg-4 mt-3 justify-content-center">
             <h2 class="home-sub-headers text-center">
                 Red Tag Sale
-                <i class="fa-solid fa-tag fa-beat fa-sm red-tag"></i> 
+                <i class="fa-solid fa-tag fa-beat fa-sm red-tag"></i>
                 Now On
             </h2>
             <p class="home-txt text-center pt-2">Half price on all used books</p>
             <div class="row justify-content-center">
-                <div id="saleSarousel" class="carousel slide carousel-box" data-bs-ride="carousel" data-bs-interval="4000">
+                <div id="saleSarousel" class="carousel slide carousel-box" data-bs-ride="carousel"
+                    data-bs-interval="4000">
                     <div class="carousel-inner">
-                    {% for book in books %}
-                    {% if book.condition == 'used' %}
-                        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" id="book{{forloop.counter}}">
-                        <div class="carousel-img-box">
-                            {% if book.image %}
+                        {% for book in books %}
+                        {% if book.condition == 'used' %}
+                        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
+                            id="book{{forloop.counter}}">
+                            <div class="carousel-img-box">
+                                {% if book.image %}
                                 <!--Link to view picture in new tab-->
                                 <a href="{% url 'book_view' book.id %}" aria-label="View image on a new tab">
-                                    <img class="card-img-top img-fluid carousel-img" src="{{ book.image.url }}" alt="{{ book.title }}">
+                                    <img class="card-img-top img-fluid carousel-img" src="{{ book.image.url }}"
+                                        alt="{{ book.title }}">
                                 </a>
-                            {% else %}
+                                {% else %}
                                 <a href="{% url 'book_view' book.id %}">
                                     <img class="card-img-top img-fluid carousel-img" src="{{ MEDIA_URL }}no-image.png"
                                         alt="{{ book.title }}">
                                 </a>
-                            {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
-                        </div>
-                    {% endif %}
-                    {% endfor %}
+                        {% endif %}
+                        {% endfor %}
                     </div>
-                    <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#saleSarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#saleSarousel"
+                        data-bs-slide="prev">
                         <span aria-hidden="true"><i class="fa-solid fa-chevron-left fa-2xl chevrons"></i></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#saleSarousel" data-bs-slide="next">
+                    <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#saleSarousel"
+                        data-bs-slide="next">
                         <span aria-hidden="true"><i class="fa-solid fa-chevron-right fa-2xl chevrons"></i></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
-            </div>
         </div>
-        <div class="row justify-content-center my-4">
-            <div class="col-8">
-                <h3 class="home-sub-headers text-center">Subscribe to Newsletter</h3>
-                <p class="home-txt text-center pt-2">Subscribe to our monthly news letter and keep up with new releases and our great offers</p>
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <div class="row justify-content-center">
-                        <input class="btn btn-sub" type="submit" value="Subscribe">
-                    </div>
-                </form>
-            </div>
+    </div>
+    <div class="row justify-content-center my-4">
+        <div class="col-8">
+            <h3 class="home-sub-headers text-center">Subscribe to Newsletter</h3>
+            <p class="home-txt text-center pt-2">Subscribe to our monthly news letter and keep up with new releases and
+                our great offers</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="row justify-content-center">
+                    <input class="btn btn-sub" type="submit" value="Subscribe">
+                </div>
+            </form>
         </div>
     </div>
 </div>

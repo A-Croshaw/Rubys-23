@@ -45,9 +45,9 @@
                         {% endif %}
                     </div>
                     <div class="col-12 col-sm-5 text-center pt-2 mt-1">
-                        <h2 class="cart-title text-center">{{ item.book.title }} 
+                        <h2 class="cart-title text-center">{{ item.book.title }}
                             {%if item.book.condition == 'used'%}<i class="fa-solid fa-tag fa-beat"
-                            style="color: #fa0000;"></i>{%endif%}</h2>
+                                style="color: #fa0000;"></i>{%endif%}</h2>
                         <h3 class="cart-author">By {{ item.book.author }}</h3>
                         <p class="cart-txt p-0 m-0">Category: {{ item.book.category}}</p>
                         <p class="cart-txt p-0 m-0">Condition: {{ item.book.condition }}</p>
@@ -56,9 +56,11 @@
                     </div>
                     <div class="col-12 col-sm-4 text-center pt-2 mt-1">
                         {% if item.book.condition == 'used' %}
-                            <p class="cart-txt-price p-0 m-0">Price:<strong class="strike-out"> €{{ item.book.price }}</strong> <strong> €{{ item.book.price | calc_used_price }}</strong></p>
+                        <p class="cart-txt-price p-0 m-0">Price:<strong class="strike-out">
+                                €{{ item.book.price }}</strong> <strong>
+                                €{{ item.book.price | calc_used_price }}</strong></p>
                         {% else %}
-                            <p class="cart-txt-price p-0 m-0"><strong>Price: €{{ item.book.price }}</strong></p>
+                        <p class="cart-txt-price p-0 m-0"><strong>Price: €{{ item.book.price }}</strong></p>
                         {% endif %}
                         <form class="form update-form mb-2" method="POST" id="qty-update"
                             action="{% url 'update_cart' item.item_id %}">
@@ -72,8 +74,8 @@
                                             <i class="fas fa-minus"></i>
                                         </span>
                                     </button>
-                                    <input class="form-control qty-form qty_input cart-txt text-center rounded" type="number" name="quantity"
-                                        value="{{ item.quantity }}" min="1" max="99"
+                                    <input class="form-control qty-form qty_input cart-txt text-center rounded"
+                                        type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                         data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                     <button class="add-qty btn m-1" data-item_id="{{ item.item_id }}"
                                         id="add-qty_{{ item.item_id }}">
@@ -84,8 +86,7 @@
                                 </div>
                             </div>
                         </form>
-                        <a class="update-link text-dark"
-                            id="qty-update"><small>Update</small></a>
+                        <a class="update-link text-dark" id="qty-update"><small>Update</small></a>
                         <a class="remove-item text-danger ms-2" id="remove_{{ item.item_id }}"
                             data-product_size="{{ item.size }}"><small>Remove</small></a>
                         <p class="cart-txt pt-2">
@@ -102,7 +103,6 @@
             </div>
             {% endfor %}
         </div>
-
         <div class=" col-12 col-md-4 col-xl-3 order-first order-md-last">
             <div class="cart-card p-3 rounded ">
                 <h3 class="cart-totals pt-1">Number of items in Cart : {{ item_count }}</h3>
@@ -110,9 +110,9 @@
                 <h3 class="cart-totals pt-1">Delivery : €{{ delivery|floatformat:2 }}</h3>
                 <h3 class="cart-totals py-1"><strong>Final Price Total: €{{ overal_total|floatformat:2 }}</strong></h3>
                 {% if delivery_difference > 0 %}
-                    <p class="mb-1 text-danger">
-                        Spend <strong>€{{ delivery_difference }}</strong> more To qualify for free delivery
-                    </p>
+                <p class="mb-1 text-danger">
+                    Spend <strong>€{{ delivery_difference }}</strong> more To qualify for free delivery
+                </p>
                 {% endif %}
                 <div class="row">
                     <a href="{% url 'checkout' %}" class="btn">

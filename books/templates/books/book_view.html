@@ -19,7 +19,8 @@
             </div>
             <div class="row d-flex justify-content-end p-1 m-0">
                 <!--closes single book view and returns to all books-->
-                <a href="{% url 'books' %}" class="btn close-btn rounded p-0 m-0" aria-label="return to all books"> <i class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
+                <a href="{% url 'books' %}" class="btn close-btn rounded p-0 m-0" aria-label="return to all books"> <i
+                        class="fa-solid fa-x fa-sm p-0 m-0"></i></a>
             </div>
             <div class="row d-flex justify-content-end p-0 m-0 pb-4 pb-md-0">
                 <h2 class="view-header text-center">{{ book.title }}</h2>
@@ -70,10 +71,13 @@
                             </div>
                             <div class="col">
                                 {% if book.condition == 'used' %}
-                                <p class="view-price-txt p-0 pb-1 m-0 text-center strike-out">Price: €{{ book.price }}</p>
-                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price: €{{ book.price | calc_used_price }}</strong></p>
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center strike-out">Price: €{{ book.price }}
+                                </p>
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price:
+                                        €{{ book.price | calc_used_price }}</strong></p>
                                 {% else %}
-                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price: €{{ book.price }}</strong></p>
+                                <p class="view-price-txt p-0 pb-1 m-0 text-center"><strong>Price:
+                                        €{{ book.price }}</strong></p>
                                 {% endif %}
                                 <!--Form add to cart with quantities-->
                                 <form class="form" action="{% url 'add_to_cart' book.id %}" method="POST">
@@ -82,9 +86,8 @@
                                         <div class="container row">
                                             <p class="view-txt text-center p-0 m-0"><strong>Quantity:</strong></p>
                                             <div class="input-group justify-content-center">
-                                                <button class="take-qty btn m-1"
-                                                    data-item_id="{{ book.id }}" id="take-qty_{{ book.id }}"
-                                                    aria-label="remove items">
+                                                <button class="take-qty btn m-1" data-item_id="{{ book.id }}"
+                                                    id="take-qty_{{ book.id }}" aria-label="remove items">
                                                     <span class="icon">
                                                         <i class="fas fa-minus"></i>
                                                     </span>
@@ -104,8 +107,8 @@
                                         <div class="container justify-content-center pt-2">
                                             <div class="text-center nav-txt">
                                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                                <input type="submit" class="btn text-uppercase"
-                                                    value="Add to cart" aria-label="Add updates to cart">
+                                                <input type="submit" class="btn text-uppercase" value="Add to cart"
+                                                    aria-label="Add updates to cart">
                                             </div>
                                         </div>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -126,7 +129,8 @@
                     <!--Link to Goodreads.ie -->
                     <hr class="mb-1">
                     <p class="view-txt p-0 pb-1 m-0">Click here to see what other people think on
-                        <a href="{{ book.link }}" class="view-txt external-link-txt" aria-label="Go to Goodreads" rel="external" target="_blank">
+                        <a href="{{ book.link }}" class="view-txt external-link-txt" aria-label="Go to Goodreads"
+                            rel="external" target="_blank">
                             <strong class="pb-1 m-0">Goodreads</strong>.
                         </a>
                     </p>
@@ -137,18 +141,20 @@
                         <!--Edit + Delete buttons-->
                         <a class="text-center" href="{% url 'edit_book' book.id %}"
                             aria-label="Edit {{ book.title }}">Edit</a> |
-                        <a class="text-danger" href="{% url 'book_delete' book.id %}" aria-label="Delete {{ book.title }}">Delete</a>
+                        <a class="text-danger" href="{% url 'book_delete' book.id %}"
+                            aria-label="Delete {{ book.title }}">Delete</a>
                     </small>
                 </div>
                 {% endif %}
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 
-    <!--Post load js-->
-    {% block postloadjs %}
-    {% include 'includes/quantity_script.html' %}
-    {{ block.super }}
+<!--Post load js-->
+{% block postloadjs %}
+{% include 'includes/quantity_script.html' %}
+{{ block.super }}
 
-    {% endblock %}
+{% endblock %}

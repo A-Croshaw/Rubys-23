@@ -1,23 +1,28 @@
 <!--Logo for mobile view -->
-<li class="list-inline-item d-block d-lg-none">
-    <div class="py-1">
-        <a href="{% url 'home' %}" class="nav-link p-0 nav-txt" aria-label="Return to home page">
-            <p class="logo">Ruby's</p>
-        </a>
-    </div>
-</li>
-<!--Shopping cart for mobile view-->
-<li class="list-inline-item pe-3">
-    <a class="nav-link d-block d-lg-none" href="{% url 'shopping_cart' %}" aria-label="View shopping cart">
-        <div class="text-center nav-txt">
-            <div><i class="fas fa-shopping-bag fa-md"></i></div>
-            <p class="my-0">
-                {% if overal_total %}
-                €{{ overal_total|floatformat:2 }}
-                {% else %}
-                €0.00
-                {% endif %}
-            </p>
+<ul class="py-0 m-0">
+    <li class="list-inline-item d-block d-lg-none p-0 m-0">
+        <div class="py-1">
+            <a href="{% url 'home' %}" class="nav-link p-0 nav-txt" aria-label="Return to home page">
+                <p class="logo">Ruby's</p>
+            </a>
         </div>
-    </a>
-</li>
+    </li>
+</ul>
+<!--Shopping cart for mobile view-->
+<ul class="pe-2 py-0 m-0">
+    <li class="list-inline-item p-0 m-0 pe-3">
+        <a class="nav-link d-block d-lg-none" href="{% url 'shopping_cart' %}" aria-label="View shopping cart">
+            <div class="text-center nav-txt">
+                <div><i class="fas fa-shopping-bag fa-md"></i></div>
+                <p class="my-0">
+                    {% if overal_total %}
+                    €{{ overal_total|floatformat:2 }}
+                    {% else %}
+                    €0.00
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+    </li>
+</ul>
+

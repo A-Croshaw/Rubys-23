@@ -26,25 +26,24 @@
             </div>
         </div>
         <div class="col-12 col-md-7 col-lg-6 justify-content-center">
-                <h2 class="subscribe-headers text-center py-2">This months newsletter</h2>
-                <hr class="pb-4">
+            <h2 class="subscribe-headers text-center py-2">This months newsletter</h2>
+            <hr class="pb-4">
             {% for newsletter in newsletter %}
-                {% if newsletter.newsletter_date.month == today %}
-                    {% if newsletter.newsletter_date.year == year %}
-                    <div class="container newsletter-bg rounded">
-                        <div class="row p-0 m-0">
-                            <p class="subscribe-headers my-0 py-0 px-3 text-center">{{ newsletter.title|title }}</p>
-                        </div>
-                        <div class="row p-0 m-0">
-                            <p class="subscribe-txt my-0 py-0 px-3 text-center">{{ newsletter.newsletter_date }}</p>
-                        </div>
-                        <div class="row p-0 m-0">
-                            <p class="subscribe-txt my-0 py-0 px-3 text-center">{{ newsletter.message }}</p>
-                        </div>
-                    </div>
-
-                    {% endif %}
-                {% endif %}
+            {% if newsletter.newsletter_date.month == today %}
+            {% if newsletter.newsletter_date.year == year %}
+            <div class="container newsletter-bg rounded">
+                <div class="row p-0 m-0">
+                    <p class="subscribe-headers my-0 py-0 px-3 text-center">{{ newsletter.title|title }}</p>
+                </div>
+                <div class="row p-0 m-0">
+                    <p class="subscribe-txt my-0 py-0 px-3 text-center">{{ newsletter.newsletter_date }}</p>
+                </div>
+                <div class="row p-0 m-0">
+                    <p class="subscribe-txt my-0 py-0 px-3 text-center">{{ newsletter.message }}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endif %}
             {% endfor %}
         </div>
     </div>

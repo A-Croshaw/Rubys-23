@@ -14,12 +14,12 @@
                     <p class="sort-txt p-0 m-0">Price</p>
                 </div>
                 <div class="col p-0 m-0 pe-1">
-                    <button id="price-up" value="price_asc" {% if sorted == 'price_asc' %}selected{% endif %}
+                    <button id="price-up-xl" value="price_asc" {% if sorted == 'price_asc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by price assending"><i
                             class="fa-solid fa-arrow-up fa-sm"></i></button>
                 </div>
                 <div class="col p-0 m-0">
-                    <button id="price-down" value="price_desc" {% if sorted == 'price_desc' %}selected{% endif %}
+                    <button id="price-down-xl" value="price_desc" {% if sorted == 'price_desc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by price dessending"><i
                             class="fa-solid fa-arrow-down fa-sm"></i></button>
                 </div>
@@ -31,12 +31,12 @@
                     <p class="sort-txt p-0 m-0">Author</p>
                 </div>
                 <div class="col p-0 m-0 pe-1">
-                    <button id="author-up" value="author_asc" {% if sorted == 'author_asc' %}selected{% endif %}
+                    <button id="author-up-xl" value="author_asc" {% if sorted == 'author_asc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by author assending"><i
                             class="fa-solid fa-arrow-up fa-sm"></i></button>
                 </div>
                 <div class="col p-0 m-0">
-                    <button id="author-down" value="author_desc" {% if sorted == 'author_desc' %}selected{% endif %}
+                    <button id="author-down-xl" value="author_desc" {% if sorted == 'author_desc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by author dessending"><i
                             class="fa-solid fa-arrow-down fa-sm"></i></button>
                 </div>
@@ -48,12 +48,12 @@
                     <p class="sort-txt p-0 m-0">Title</p>
                 </div>
                 <div class="col p-0 m-0 pe-1">
-                    <button id="title-up" value="title_asc" {% if sorted == 'title_asc' %}selected{% endif %}
+                    <button id="title-up-xl" value="title_asc" {% if sorted == 'title_asc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by title assending"><i
                             class="fa-solid fa-arrow-up fa-sm"></i></button>
                 </div>
                 <div class="col p-0 m-0">
-                    <button id="title-down" value="title_desc" {% if sorted == 'title_desc' %}selected{% endif %}
+                    <button id="title-down-xl" value="title_desc" {% if sorted == 'title_desc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by title dessending"><i
                             class="fa-solid fa-arrow-down fa-sm"></i></button>
                 </div>
@@ -65,12 +65,12 @@
                     <p class="sort-txt p-0 m-0">Rating</p>
                 </div>
                 <div class="col p-0 m-0 pe-1">
-                    <button id="rating-up" value="rating_asc" {% if sorted == 'rating_asc' %}selected{% endif %}
+                    <button id="rating-up-xl" value="rating_asc" {% if sorted == 'rating_asc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by rating assending"><i
                             class="fa-solid fa-arrow-up fa-sm"></i></button>
                 </div>
                 <div class="col p-0 m-0">
-                    <button id="rating-down" value="rating_desc" {% if sorted == 'rating_desc' %}selected{% endif %}
+                    <button id="rating-down-xl" value="rating_desc" {% if sorted == 'rating_desc' %}selected{% endif %}
                         class="sort-btn p-0 m-0" aria-label="Sort by rating dessending"><i
                             class="fa-solid fa-arrow-down fa-sm"></i></button>
                 </div>
@@ -82,14 +82,14 @@
                     <p class="sort-txt p-0 m-0">Category</p>
                 </div>
                 <div class="col p-0 m-0 pe-1">
-                    <button id="category-up" value="category_asc" {% if sorted == 'category_asc' %}selected{% endif %}
-                        class="sort-btn p-0 m-0" aria-label="Sort by category assending"><i
-                            class="fa-solid fa-arrow-up fa-sm"></i></button>
+                    <button id="category-up-xl" value="category_asc"
+                        {% if sorted == 'category_asc' %}selected{% endif %} class="sort-btn p-0 m-0"
+                        aria-label="Sort by category assending"><i class="fa-solid fa-arrow-up fa-sm"></i></button>
                 </div>
                 <div class="col p-0 m-0">
-                    <button id="category-down" value="category_desc" {% if sorted == 'category_desc' %}selected{% endif %}
-                        class="sort-btn p-0 m-0" aria-label="Sort by category dessending"><i
-                            class="fa-solid fa-arrow-down fa-sm"></i></button>
+                    <button id="category-down-xl" value="category_desc"
+                        {% if sorted == 'category_desc' %}selected{% endif %} class="sort-btn p-0 m-0"
+                        aria-label="Sort by category dessending"><i class="fa-solid fa-arrow-down fa-sm"></i></button>
                 </div>
             </div>
         </li>

@@ -49,27 +49,29 @@
                             {% endif %}
                         </div>
                         <div class="col-7 ">
-                            <h2 class="toast-txt">{{ item.book.title }} 
-                            <h3 class="toast-txt">By {{ item.book.author }}</h3>
-                            <p class="toast-txt">SKU: {{ item.book.sku|upper }}</p>
+                            <h2 class="toast-txt">{{ item.book.title }}
+                                <h3 class="toast-txt">By {{ item.book.author }}</h3>
+                                <p class="toast-txt">SKU: {{ item.book.sku|upper }}</p>
                         </div>
                         <div class="col-12 col-md-3">
                             <div class="row p-0 m-0">
                                 {% if item.book.condition == 'used' %}
-                                <p class="toast-txt col-4 col-md-12">Price:<strong class="strike-out"> €{{ item.book.price }}</strong> <strong> €{{ item.book.price | calc_used_price }}</strong></p>
-                            {% else %}
-                                <p class="toast-txt col-4 col-md-12">Price: <strong>€{{ item.book.price }}</strong></p>
-                            {% endif %}
-                            <p class="toast-txt col-4 col-md-12">Quantity: <strong>{{ item.quantity }}</strong></p>
-                            <p class="toast-txt col-4 col-md-12">
-                                Total: <strong>
-                                {% if item.book.condition == 'used' %}
-                                €{{ item.book.price | calc_subtotal_used:item.quantity }}
+                                <p class="toast-txt col-4 col-md-12">Price:<strong class="strike-out">
+                                        €{{ item.book.price }}</strong> <strong>
+                                        €{{ item.book.price | calc_used_price }}</strong></p>
                                 {% else %}
-                                €{{ item.book.price | calc_subtotal:item.quantity }}
+                                <p class="toast-txt col-4 col-md-12">Price: <strong>€{{ item.book.price }}</strong></p>
                                 {% endif %}
-                                </strong>
-                            </p>
+                                <p class="toast-txt col-4 col-md-12">Quantity: <strong>{{ item.quantity }}</strong></p>
+                                <p class="toast-txt col-4 col-md-12">
+                                    Total: <strong>
+                                        {% if item.book.condition == 'used' %}
+                                        €{{ item.book.price | calc_subtotal_used:item.quantity }}
+                                        {% else %}
+                                        €{{ item.book.price | calc_subtotal:item.quantity }}
+                                        {% endif %}
+                                    </strong>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -188,14 +190,7 @@
                         </div>
                     </form>
                 </div>
-            
-                </div>
             </div>
-        </div>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-12">
-            
         </div>
     </div>
 </div>

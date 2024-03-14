@@ -8,7 +8,16 @@ document.getElementById("author-up").addEventListener("click", ordered);
 document.getElementById("author-down").addEventListener("click", ordered);
 document.getElementById("category-up").addEventListener("click", ordered);
 document.getElementById("category-down").addEventListener("click", ordered);
-
+document.getElementById("price-up-xl").addEventListener("click", ordered);
+document.getElementById("price-down-xl").addEventListener("click", ordered);
+document.getElementById("rating-up-xl").addEventListener("click", ordered);
+document.getElementById("rating-down-xl").addEventListener("click", ordered);
+document.getElementById("title-up-xl").addEventListener("click", ordered);
+document.getElementById("title-down-xl").addEventListener("click", ordered);
+document.getElementById("author-up-xl").addEventListener("click", ordered);
+document.getElementById("author-down-xl").addEventListener("click", ordered);
+document.getElementById("category-up-xl").addEventListener("click", ordered);
+document.getElementById("category-down-xl").addEventListener("click", ordered);
 
 function ordered() {
     const selector = $(this);
