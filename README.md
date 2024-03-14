@@ -83,7 +83,6 @@ Rubys is an fictional online book store based in Ballybunion.
 * As a User,I would like to be able to have order confirmation emailed to my email.
 * As a User,I would like to be able to complete an order with out creating an account.
 
-
 **EPIC 7** - Profile
 * As a User,I would like to be able to create a profile to save my orders.
 * As a User,I would like to be able to create a profile to save my details for faster checkout on future purchases.
@@ -91,12 +90,25 @@ Rubys is an fictional online book store based in Ballybunion.
 * As a User,I would like to be able to view my details that i have saved to my profile.
 * As a User,I would like to be able to edit my details that i have saved to my profile.
 
-**EPIC 8** - Deployment
+**EPIC 8** - Newsletters with Subscriptions
+* As admin user i would like to create newsletters
+* As admin user i would like to send newsletters to all subscribers
+* As a user i would like to be able to subscribe to newsletters
+
+**EPIC 9** - About/Contact
+* As a user i would like to read about the company
+* As a user i would like to be able to view contact details for company
+* As a user i would like to be able to contact via the site
+
+**EPIC 10** - Deployment
 * As a developer, I need to deploy the project to heroku so that it is live for customer
 
-**EPIC 9** - Documentation
+**EPIC 11** - Documentation
 * Complete readme documentation
 * Complete testing documentation write up
+
+**EPIC 12** - Marketing
+* Marketing practises for the site like facebook page meta tags for goolge and a site map
 
 # **_Scope Plane_**
 * Fully responsive Design that will function on all device off 320px and up.
@@ -413,11 +425,18 @@ Colour used within the site.
 * Choose app name and select your region, press "Create app".
 * Go to "Settings" and navigate to Config Vars.
 * Add Config Vars. 
-    This app used ? confid vars 
+    This app used 10 confid vars 
     * Clouninary (KEY: CLOUNDINARY_URL / VALUE: *****)
-    * Database (KEY: DATABASE_URL / VALUE: ****** )
-    * KEY: SECRET_KEY / VALUE:*******
-    
+    * Database (KEY: DATABASE_URL / VALUE: ******)
+    * Secret key: (KEY: SECRET_KEY / VALUE:*******)
+    * Development: (KEY: DEVELOPMENT / VALUE: True)
+    * Stripe: - Public key : (KEY: STRIPE_PUBLIC_KEY / VALUE: ******)
+              - Secret Key: (KEY: STRIPE_SECRET_KEY / VALUE: ******)
+              - Webhook secret: (KEY: STRIPE_WH_SECRET / VALUE: ******)
+    * Django emails: - Host User:(KEY: EMAIL_USER / VALUE: ******)
+                     - From User:(KEY: EMAIL_FROM_USER / VALUE: ******)
+                     - Host Password:(KEY: EMAIL_PASS / VALUE: ******)
+    (Django emails is set to use gmail (EMAIL_HOST = 'smtp.gmail.com'))
 * Now go to the Deploy tab.
 * Scroll Down to Deployment Method and select GitHub.
 *  Select repository to be deployed and connect to Heroku.
