@@ -18,7 +18,6 @@
 - [Validation](#features)
     - [PEP8 Valadator](#implemented-features)
     - [W3 Valadator](#site-features)
-    - [Lighthouse Report](#home-page)
 - [Responsiveness](#header)
 ## _Functional Testing_
 
@@ -746,15 +745,10 @@ There are a couple of exceptions for a couple of lines in the settings.py and we
 
 ### W3 Valadator
 
-The site passed through W3 Valadator with just a few minor errors on carousel ids as they had same name, so after remaning them it passed.
+The site passed through W3 Valadator with one exeption of the marquee as this is not a true html5 element but is supported across all browsers.
+the error states that the marquee can not be a child element of a div.
 
-![W3 Validation](docs/testing/w3-validation.png)
-
-### Lighthouse Report
-
-Lighthouse report has shown areas to be improved. with the over all scores are 90 and above. 
-
-![Lighthouse](docs/testing/lighthouse.png)
+![W3 Validation](docs/testing/html.png)
 
 ## Responsiveness
 
