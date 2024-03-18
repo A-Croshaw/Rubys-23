@@ -461,17 +461,16 @@ Colour used within the site.
 * Choose app name and select your region, press "Create app".
 * Go to "Settings" and navigate to Config Vars.
 * Add Config Vars. 
-    This app used 10 confid vars 
+    This app used 9 confid vars 
     * Clouninary (KEY: CLOUNDINARY_URL / VALUE: *****)
     * Database (KEY: DATABASE_URL / VALUE: ******)
     * Secret key: (KEY: SECRET_KEY / VALUE:*******)
-    * Development: (KEY: DEVELOPMENT / VALUE: True)
+    * Development: (KEY: DEVELOPMENT / VALUE: True) * for devolopment not deployment. 
     * Stripe: - Public key : (KEY: STRIPE_PUBLIC_KEY / VALUE: ******)
               - Secret Key: (KEY: STRIPE_SECRET_KEY / VALUE: ******)
               - Webhook secret: (KEY: STRIPE_WH_SECRET / VALUE: ******)
     * Django emails: - Host User:(KEY: EMAIL_USER / VALUE: ******)
                      - From User:(KEY: EMAIL_FROM_USER / VALUE: ******)
-                     - Host Password:(KEY: EMAIL_PASS / VALUE: ******)
     (Django emails is set to use gmail (EMAIL_HOST = 'smtp.gmail.com'))
 * Now go to the Deploy tab.
 * Scroll Down to Deployment Method and select GitHub.
