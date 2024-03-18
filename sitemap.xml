@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/cart/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=art</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=biography</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=business_finance</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=climate_sustainability</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=cookbooks</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=fashion</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=health_wellbeing</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=history</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=home_gardening</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=language_dictionaries</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=medical</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=music</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=nature</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=parenting</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=philosophy</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=photography</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=science</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=sport</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=technology</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=true_crime</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=other_Non-Fiction</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=adventure</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=biographical</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=crime_mystery</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=erotic</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=fantasy</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=general_literary</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=generational_sagas</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=historical</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=horror_supernatural</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=humorous</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=myths_fairy_tales</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=romance</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=science_fiction</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=speculative</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=sport_fiction</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=teen_young_adult</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=thriller</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=other_fiction</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=childrens_0_to_4</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=childrens_5_to_8</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=childrens_9</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=childrens_other</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?condition=used</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/about/about/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/about/contact/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/1/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/5/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/7/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/9/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/28/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/newsletter/subscribe/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/6/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/2/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/3/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/8/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/10/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/11/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/12/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/13/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/14/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/17/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/18/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/19/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/20/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/16/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/21/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/23/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/22/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/25/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/24/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/30/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/32/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/33/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/29/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/31/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/34/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/35/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/?genre=travel</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/4/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/15/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/27/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://rubys-97a7171770c1.herokuapp.com/books/26/</loc>
+  <lastmod>2024-03-18T15:22:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

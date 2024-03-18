@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: /newsletter/
+Sitemap: https://rubys-97a7171770c1.herokuapp.com/sitemap.xml
