@@ -338,6 +338,47 @@ Rubys is an fictional online book store based in Ballybunion.
 
 ## **_WireFrames_**
 
+**Home Page**
+
+![Home](docs/readme_images/home.png)
+
+**All Book View**
+
+![All Books](docs/readme_images/all-books.png)
+
+Single Book View
+
+![Single Book](docs/readme_images/single-book.png)
+
+**Cart View**
+
+![Cart](docs/readme_images/cart.png)
+
+**Checkout View**
+
+![Checkout](docs/readme_images/checkout.png)
+
+**Profile View**
+
+![Profile](docs/readme_images/profile.png)
+
+**Profile Details Update View**
+
+![Profile Detail Update](docs/readme_images/profile-detail-update.png)
+
+**Book Management View**
+
+![Book Management](docs/readme_images/book-management.png)
+
+**About View**
+
+![About](docs/readme_images/about.png)
+
+**Contact View**
+
+![Contact](docs/readme_images/contact.png)
+
+
 # ** _Surface Plane_**
 ## **_Design_**
 ### _Colour And Style Scheme_
