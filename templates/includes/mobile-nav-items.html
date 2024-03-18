@@ -295,44 +295,6 @@
             </li>
         </ul>
     </li>
-    <li class="nav-item dropdown m-0 mb-1 p-0">
-        <a class="nav-link dropdown-toggle nav-txt side-nav-txt m-0 p-0" href="#" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account">
-            Account
-        </a>
-        <ul class="dropdown-menu nav-bg side-nav">
-            {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-            <li class="nav-item m-0 mb-1 p-0">
-                <!--Product management links for admin users-->
-                <a href="{% url 'book_management' %}" class="nav-link nav-txt side-nav-txt m-0 p-0"
-                    aria-label="View Book management" rel="noopener">Book
-                    Management</a>
-            </li>
-            {% endif %}
-            <li class="nav-item m-0 mb-1 p-0">
-                <!--Profile link-->
-                <a href="{% url 'profile' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View profile"
-                    rel="noopener">My
-                    Profile</a>
-            </li>
-            <!--Account links-->
-            <li class="nav-item m-0 mb-1 p-0">
-                <a href="{% url 'account_logout' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="logout"
-                    rel="noopener">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item m-0 mb-1 p-0">
-                <a href="{% url 'account_signup' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="sign up"
-                    rel="noopener">Register</a>
-            </li>
-            <li class="nav-item m-0 mb-1 p-0">
-                <a href="{% url 'account_login' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="login"
-                    rel="noopener">Login</a>
-            </li>
-            {% endif %}
-        </ul>
-    </li>
     <li class="nav-item m-0 mb-1 p-0">
         <a class="nav-link nav-txt side-nav-txt m-0 p-0" href="{% url 'books' %}?condition=used"
             aria-label="View sale books" rel="opener">
@@ -368,4 +330,46 @@
         </ul>
     </li>
     {% endif %}
+    <li class="nav-item dropdown m-0 mb-1 p-0">
+        <a class="nav-link dropdown-toggle nav-txt side-nav-txt m-0 p-0" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account">
+            {% if request.user.is_authenticated %}
+            {{user.username}}
+            {% else %}
+            Account
+            {% endif %}
+        </a>
+        <ul class="dropdown-menu nav-bg side-nav">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <li class="nav-item m-0 mb-1 p-0">
+                <!--Product management links for admin users-->
+                <a href="{% url 'book_management' %}" class="nav-link nav-txt side-nav-txt m-0 p-0"
+                    aria-label="View Book management" rel="noopener">Book
+                    Management</a>
+            </li>
+            {% endif %}
+            <li class="nav-item m-0 mb-1 p-0">
+                <!--Profile link-->
+                <a href="{% url 'profile' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="View profile"
+                    rel="noopener">My
+                    Profile</a>
+            </li>
+            <!--Account links-->
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="{% url 'account_logout' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="logout"
+                    rel="noopener">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="{% url 'account_signup' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="sign up"
+                    rel="noopener">Register</a>
+            </li>
+            <li class="nav-item m-0 mb-1 p-0">
+                <a href="{% url 'account_login' %}" class="nav-link nav-txt side-nav-txt m-0 p-0" aria-label="login"
+                    rel="noopener">Login</a>
+            </li>
+            {% endif %}
+        </ul>
+    </li>
 </ul>

@@ -29,7 +29,12 @@
                             aria-expanded="false" aria-label="My account">
                             <div class="text-center nav-txt">
                                 <div><i class="fas fa-user fa-md"></i></div>
-                                <p class="my-0 dropdown-toggle">Account</p>
+                                <p class="my-0 dropdown-toggle">
+                                {% if request.user.is_authenticated %}
+                                {{user.username}}
+                                {% else %}
+                                Account
+                                {% endif %}</p>
                             </div>
                         </a>
                         <ul class="dropdown-menu account-menu nav-bg text-center p-0 m-0">
