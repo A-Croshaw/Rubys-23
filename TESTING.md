@@ -732,6 +732,8 @@ Testing was performed on the footer link and Button
 
 After Testing the site there does not appeart to be any faults with the functions of the site main features.
 whit that in mind the only minor bug that can be seen at pressent is the messages outputed to the user after updating items with out redirecting are only shown when the page is reloaded.
+
+Order confirmation emails dont seem to be sending even with the correct email settings are implemented as are sending from the newsletters and enquires sections of the site.
     
 ## _Validation_
 
